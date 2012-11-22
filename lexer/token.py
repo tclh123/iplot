@@ -11,12 +11,12 @@ class Token_Type:
     SCALE,
     ROT,
     IS,
-    TO,
+    TO,     # 4.
     STEP,
     DRAW,
     FOR,
     FROM,
-    VAR,  # T
+    VAR,  # T   9.
 #    COLOR, # colors
 
     # delimiter
@@ -25,24 +25,24 @@ class Token_Type:
     BRACKET_R,
     COMMA,
 
-    COMMENT,
+    COMMENT,    # 14.
 
     # operator
     PLUS,
     MINUS,
     MUL,
     DIV,
-    POWER,
+    POWER,      # 19.
 
     # functions
     FUNC,
 
     #datas
     CONSTANT,   # constant vars
-    NUMBERS,
+    NUMBERS,    # 22.
 
     # FLAGS
-    UNKNOWN
+    UNKNOWN     # 23.
     ) = range(24)
 
     name = [
