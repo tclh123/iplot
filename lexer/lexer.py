@@ -88,20 +88,20 @@ class Lexer:
         Match an operator.
         """
         if c in token.Dict['delimiter']:
-            return Token(token.Dict['delimiter'][c], c, self._lineno)
+            return Token(token.Dict['delimiter'][c], c, self._lineno, c)
 
         if c == '+':
-            return Token(token.Dict['operator'][c], c, self._lineno)
+            return Token(token.Dict['operator'][c], c, self._lineno, c)
 
         if c in '-/*':
             next = self._peek()
             if next == c:
                 if next == '*':
                     self._advance()
-                    return Token(token.Dict['operator']['**'], c+next, self._lineno)
+                    return Token(token.Dict['operator']['**'], c+next, self._lineno, c)
                 return self._match_comment(c)
             else:
-                return Token(token.Dict['operator'][c], c, self._lineno)
+                return Token(token.Dict['operator'][c], c, self._lineno, c)
         else:
             return None
 
