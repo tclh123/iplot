@@ -2,16 +2,17 @@
 # -*- coding: utf-8 -*-
 
 import web
-#import json
+import json
 from Interpreter import *
 
 render = web.template.render('templates')
 
 urls = (
-    '/', 'Index'
+    '/', 'Index',
+    '/service', 'Service'
     )
 
-def test():
+def testlexer():
     s = ''
     for t in lexer.Lexer(
         """ -- 合法与非法输入的测试
@@ -36,8 +37,8 @@ def test():
         s += str(t)
     return s
 
-def test2():
-    case = 4
+def testparser():
+    case = 2
     p = parser.Parser(
         ["""
         //test1
@@ -133,13 +134,34 @@ for T from 0 to 150 step 1 draw (t, t);	-- 函数f(t)=t的轨迹
  for T from 0 to 55 step 1 draw (t, -(t**2));	-- 函数f(t)=t**2的轨迹
          """][case])
     p.parse()
+    return p.output
 
 class Index:
     def GET(self):
         """
         """
-        test2()
-        return test()
+        form = my_form()
+        return render.index(form, "Your text goes here.")
         return 'welcome to wbmsg | code by tclh123'
+#    def POST(self):
+#        form = my_form()
+#        form.validates()
+#        s = form.value['textfield']
+#        return s
+
+class Service:
+    def POST(self):
+        form = my_form()
+        form.validates()
+        source = form.value['textfield']
+        p = parser.Parser(source)
+        p.parse()
+        return json.dumps(p.output)
+        return json.dumps(testparser())
+        return 'Service'
+
+my_form = web.form.Form(
+    web.form.Textarea('', class_='textfield', id='textfield', placeholder="Input your source code here!")
+)
 
 app = web.application(urls, globals()).wsgifunc()

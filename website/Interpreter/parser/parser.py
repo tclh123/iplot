@@ -4,7 +4,7 @@
 if __name__ == '__main__':
     import os
     instance_path = os.path.abspath(os.path.dirname(__file__))
-    print instance_path
+    # print instance_path
     import sys
     sys.path.insert(0, '..')
     from lexer import lexer, token
@@ -22,20 +22,50 @@ class Parser:
         self.tokens = []
         self.nodes = [] # stack holding the AST nodes
 
+        # debug flag
+        self._debug = False
+
+        # output
+        self.output = {}
+
         # vars used by semantic
         self.param = { 'T' : 0.0 }
 
         # coord
         self.origin_x = 0.0
         self.origin_y = 0.0
-        self.scale_x = 0.0
-        self.scale_y = 0.0
+        self.scale_x = 1.0
+        self.scale_y = 1.0
         self.rot_angle = 0.0
 
-    def parse(self):
+    def out(self, action, content):
+        """
+        output = {
+            'error': [
+                'syntax error 1: line x, xxxxxx',
+                'syntax error 1: line x, xxxxxx',
+                ...
+            ],
+            'draw': [
+                [x,y],
+                [x,y],
+                ...
+            ],
+            'origin': [x,y]
+        }
+        """
+        if action == 'origin':
+            self.output[action] = content
+            return
+        if action not in self.output:
+            self.output[action] = []
+        self.output[action].append(content)
+
+    def parse(self, debug=False):
         """
         Parse the input stream into an AST.
         """
+        self._debug = debug
         self.next_token()   # fetch first token
         self._sub_program() #loop
 
@@ -60,7 +90,8 @@ class Parser:
         """
         print syntax error
         """
-#        print "error_id: %d" % error_id
+        if self._debug: print "error_id: %d" % error_id
+        self.out('error', "error_id: %d" % error_id)
 
     ######################################
     def _match_token(self, expect_token):
@@ -100,7 +131,8 @@ class Parser:
 
         self._match_token(token.Token_Type.BRACKET_R)
 
-        print "origin is (%f, %f);" % (self.origin_x, self.origin_y)
+        if self._debug: print "origin is (%f, %f);" % (self.origin_x, self.origin_y)
+        self.out('origin', (self.origin_x, self.origin_y))
 
     def _sub_scale_statement(self):
         self._match_token(token.Token_Type.SCALE)
@@ -116,7 +148,7 @@ class Parser:
         self.scale_y = tmp2.eval()
 
         self._match_token(token.Token_Type.BRACKET_R)
-        print "scale is (%f, %f);" % (self.scale_x, self.scale_y)
+        if self._debug: print "scale is (%f, %f);" % (self.scale_x, self.scale_y)
 
     def _sub_rot_statement(self):
         self._match_token(token.Token_Type.ROT)
@@ -124,7 +156,7 @@ class Parser:
         tmp = self.expression()
 
         self.rot_angle = tmp.eval()
-        print "rot is %f;" % self.rot_angle
+        if self._debug: print "rot is %f;" % self.rot_angle
 
     def _sub_for_statement(self):
         self.param['T'] = 0.0
@@ -162,11 +194,10 @@ class Parser:
 
         self._match_token(token.Token_Type.BRACKET_R)
 
-        semantic.draw_loop(self.param, start, end, step, x_exp, y_exp,      #TODO 绘图！
-            self.scale_x, self.scale_y, self.rot_angle, self.origin_x, self.origin_y)
+        semantic.draw_loop(self, start, end, step, x_exp, y_exp)      #TODO 绘图！
         x2 = x_exp.eval()
         y2 = y_exp.eval()
-        print "for T from %f to %f step %f draw (%f, %f)->(%f, %f);" % (start, end, step, x, y, x2, y2) # debug msg(data before origin/rot/scale)
+        if self._debug: print "for T from %f to %f step %f draw (%f, %f)->(%f, %f);" % (start, end, step, x, y, x2, y2) # debug msg(data before origin/rot/scale)
 
     ###############################
 
@@ -331,4 +362,5 @@ for T from 0 to 55 step 1 draw (t, -(t*t));		-- 函数f(t)=t*t的轨迹
 origin is (150, 400);							-- 设置新原点（横坐标右移100）
 for T from 0 to 55 step 1 draw (t, -(t**2));	-- 函数f(t)=t**2的轨迹
         """][case])
-    p.parse()
+    p.parse(True)
+    print p.output

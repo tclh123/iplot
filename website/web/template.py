@@ -277,7 +277,7 @@ class Parser:
                 return
         
         def attr_access():
-            from website.lexer.token import NAME # python token constants
+            from token import NAME # python token constants
             dot = tokens.lookahead()
             if tokens.lookahead2().type == NAME:
                 tokens.next() # consume dot

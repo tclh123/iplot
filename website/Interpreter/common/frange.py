@@ -17,5 +17,6 @@ def frange(start, end=None, inc=1.0):
     L = [start] * count
     for i in xrange(1, count):
         L[i] = start + i * inc
+        # L[i] = round(start + i * inc, 1) ??
 
     return L

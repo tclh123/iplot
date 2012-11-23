@@ -20,13 +20,11 @@ def calc_coord(x_exp, y_exp, scale_x, scale_y, rot_angle, origin_x, origin_y):
 
     return x, y
 
-def draw_loop(param, start, end, step, x_exp, y_exp, scale_x, scale_y, rot_angle, origin_x, origin_y):
+def draw_loop(parser, start, end, step, x_exp, y_exp):
     for i in common.frange(start, end+step, step):
-        param['T'] = i
-        x, y = calc_coord(x_exp, y_exp, scale_x, scale_y, rot_angle, origin_x, origin_y)
-        draw_pixel(x, y)
-#        print 'var is %f' % var
-    pass
+        parser.param['T'] = i
+        x, y = calc_coord(x_exp, y_exp, parser.scale_x, parser.scale_y, parser.rot_angle, parser.origin_x, parser.origin_y)
+        draw_pixel(parser, x, y)
 
-def draw_pixel(x, y):
-    pass
+def draw_pixel(parser, x, y):
+    parser.out('draw', (x,y))

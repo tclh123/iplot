@@ -1,2 +1,213 @@
-$def with (name)
-<b>hello, $name. test by web.py</b>
+$def with (form, text)
+<html>
+
+<head>
+    <title>Hello</title>
+    <link rel="stylesheet" type="text/css" href="/static/site.css" />
+    <link rel="stylesheet" type="text/css" href="/static/iplot.css" />
+
+    <script type="text/javascript" src="/static/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.autosize-min.js"></script>
+
+    <script type="text/javascript">
+        (function(doc, win){
+            var canvas = null;
+
+            $$(doc).ready(function() {
+                $$('#textfield').autosize();
+                $$('#example').change(function(){
+                    var list = ["//test1\n\
+                        --------------- 函数f(t)=t的图形\n\
+                        -- origin is (200, 300);						-- 设置原点的偏移量\n\
+                    -- rot is pi/6;								-- 设置旋转角度\n\
+                    -- scale is (2, 1);							-- 设置横坐标和纵坐标的比例\n\
+                    for T from 0 to 200 step 1 draw (t, 0);		-- 横坐标的轨迹\n\
+                    for T from 0 to 180 step 1 draw (0, t);	-- 纵坐标的轨迹\n\
+                    for T from 0 to 150 step 1 draw (t, t);	-- 函数f(t)=t的轨迹\n\
+                    ",
+                    "//test2\n\
+                    --------------- 图形1：\n\
+ origin is (20, 200);									-- 设置原点的偏移量\n\
+                    rot is 0;												-- 不旋转\n\
+                    scale is (40, 40);										-- 设置比例\n\
+                    for T from 0 to 2*pi step pi/50 draw (t, -sin(t));		-- 画T的轨迹\n\
+                    origin is (20, 240);									-- 下移40单位\n\
+                    for T from 0 to 2*pi step pi/50 draw (t, -sin(t));		-- 画T的轨迹\n\
+                    origin is (20, 280);									-- 再下移40单位\n\
+                    for T from 0 to 2*pi step pi/50 draw (t, -sin(t));		-- 画T的轨迹\n\
+\n\
+                    --------------- 图形2：\n\
+ origin is (380, 240);									-- 右移\n\
+                    scale is (80, 80/3);									-- y方向压缩为三分之一\n\
+                    rot is pi/2+0*pi/3 ;									-- 旋转初值设置\n\
+                    for T from -pi to pi step pi/50 draw (cos(t), sin(t));	-- 画T的轨迹\n\
+                    rot is pi/2+2*pi/3;										-- 旋转2/3*pi\n\
+                    for T from -pi to pi step pi/50 draw (cos(t), sin(t));	-- 画T的轨迹\n\
+                    rot is pi/2-2*pi/3;										-- 再旋转2/3*pi\n\
+                    for T from -pi to pi step pi/50 draw (cos(t), sin(t));	-- 画T的轨迹\n\
+\n\
+                    --------------- 图形3：\n\
+ origin is(580, 240);									-- 再右移\n\
+                    scale is (80, 80);										-- 恢复原比例\n\
+                    rot is 0;												-- 不旋转\n\
+                    for t from 0 to 2*pi step pi/50 draw(cos(t),sin(t));	-- 画T的轨迹\n\
+                    for t from 0 to Pi*20 step Pi/50 draw					-- 画T的轨迹\n\
+                            ((1-1/(10/7))*Cos(T)+1/(10/7)*Cos(-T*((10/7)-1)),\n\
+                                    (1-1/(10/7))*Sin(T)+1/(10/7)*Sin(-T*((10/7)-1)));\n\
+                    ",
+                    "//test3\n\
+                    --------------- 函数复杂度图形：\n\
+ rot is 0;										-- 不旋转\n\
+                    origin is (50, 400);							-- 设置新原点（距系统默认原点的偏移量）\n\
+\n\
+ scale is (2, 1);								-- 设置比例\n\
+                    for T from 0 to 300 step 1 draw (t, 0);			-- 横坐标\n\
+                    for T from 0 to 300 step 1 draw (0, -t);		-- 纵坐标\n\
+\n\
+                    scale is (2, 1);								-- 设置比例\n\
+                    for T from 0 to 300 step 1 draw (t, -t);		-- 函数f(t)=t的轨迹\n\
+\n\
+                    scale is (2, 0.1);								-- 设置比例\n\
+                    for T from 0 to 55 step 1 draw (t, -(t*t));		-- 函数f(t)=t*t的轨迹\n\
+\n\
+                    scale is (10, 5);								-- 设置比例\n\
+                    for T from 0 to 60 step 1 draw (t, -sqrt(t));	-- 函数f(t)=sqrt(t)的轨迹\n\
+\n\
+                    scale is (20, 0.1);								-- 设置比例\n\
+                    for T from 0 to 8 step 0.1 draw (t, -exp(t));	-- 函数f(t)=exp(t)的轨迹\n\
+\n\
+                    scale is (2, 20);								-- 设置比例\n\
+                    //for T from 0 to 300 step 1 draw (t, -ln(t));	-- 函数f(t)=ln(t)的轨迹          //ln 函数暂时没实现。\n\
+                    ",
+                    "//test4\n\
+                    origin is (350, 220);					-- 原点位置\n\
+                    rot is 0;						-- 旋转角度为零\n\
+                    scale is (100, 100);					-- 横、纵坐标比例因子\n\
+                    for t from 0 to 2*pi step pi/100 draw(cos(t), sin(t));	-- 画园\n\
+                    scale is (150, 150);  				        -- 横、纵坐标比例因子\n\
+                    for t from 0 to 2*pi step pi/150 draw(cos(t), sin(t));	-- 画园\n\
+                    scale is (200, 200);					-- 横、纵坐标比例因子\n\
+                    for t from 0 to 2*pi step pi/200 draw(cos(t), sin(t));	-- 画园\n\
+                    ",
+                    "//test5\n\
+                    --------------- 测试f(t)=t*t与f(t)=t**2的图形：\n\
+ rot is 0;										-- 不旋转\n\
+                    origin is (50, 400);							-- 设置新原点（距系统默认原点的偏移量）\n\
+ scale is (1, 1);								-- 设置比例\n\
+\n\
+                    for T from 0 to 300 step 1 draw (t, 0);			-- 横坐标\n\
+                    for T from 0 to 300 step 1 draw (0, -t);		-- 纵坐标\n\
+\n\
+                    scale is (2, 0.1);								-- 设置比例\n\
+                    for T from 0 to 55 step 1 draw (t, -(t*t));		-- 函数f(t)=t*t的轨迹\n\
+\n\
+                    origin is (150, 400);							-- 设置新原点（横坐标右移100）\n\
+ for T from 0 to 55 step 1 draw (t, -(t**2));	-- 函数f(t)=t**2的轨迹\n\
+                    "];
+                    $$("#textfield").get(0).value = list[$$("#example").val()-1];
+                    work();
+                });
+                $$('#debug').live('click', function () //因为通过ajax加载后的dom,这边用live
+                {
+                    var div2 = $$('#foo');
+                    if (div2.is(':visible')) //如果id为div2的区域显示
+                    {
+                        div2.hide(); //隐藏
+                    }
+                    else
+                    {
+                        div2.show();
+                    }
+                });
+                $$("#clear").click(function(){
+                    canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
+                    $$('#foo').html('');
+                });
+
+                $$("#textfield").keyup(work);
+                //$$("#textfield").onpaste(work);   //no onpaste?
+                //$$(".button").click(work);
+
+                canvas = $$("canvas#canvas").get(0);
+
+            });//end ready
+
+            var work = function() {
+                var input_string = $$("#textfield").val();
+                $$.ajax({
+                    url: "/service",
+                    type: "POST",
+                    data: {textfield : input_string},
+                    success: function(data) {
+                        $$('#foo').html(data).hide().fadeIn(1500);
+                        var obj = eval('('+data+')');
+                        var draw = new Draw(canvas, obj['draw']);
+                    }
+                });
+                return false;
+            };
+
+            function Draw(canvas, arr) {
+                this.canvas = canvas;
+                this.init(arr);
+            }
+
+            Draw.prototype = {
+                init: function(arr) {
+                    this.context = this.canvas.getContext('2d');
+                    this.arr = arr;
+                    this.run();
+                },
+                run: function(){
+                    for(var i=0; i<this.arr.length; i++){
+                        this.drawing(this.arr[i][0], this.arr[i][1]);
+                    }
+                },
+                drawing: function(x,y) {
+                    //console.log('drawing('+x+','+y+')');
+                    this.context.beginPath();
+                    this.context.moveTo(x,y);
+                    this.context.lineTo(x+1,y+1);
+                    this.context.stroke();
+                }
+            };
+        })(document, window)
+    </script>
+</head>
+
+<body>
+<div id="container">
+    <h1><span itemprop="name">iplot</span> <small itemprop="description">A simple plotting language.</small></h1>
+    <h3>Soucre Code</h3>
+    <form class="form" method="post">
+        $:form.render()
+        <!--<input class="button" type="submit" value="send"/>-->
+    </form>
+    <p id="note"><strong>Example</strong>:
+        <select id="example">
+            <option value=1>Test - 1</option>
+            <option value=2>Test - 2</option>
+            <option value=3>Test - 3</option>
+            <option value=4>Test - 4</option>
+            <option value=5>Test - 5</option>
+        </select>
+    </p>
+    <h3>Graph / <a id="clear" href="#">clear</a></h3>
+    <canvas id="canvas" width="1000" height="500"></canvas>
+    <h3 id="debug">Json.data</h3>
+    <p id="foo" style="display: none;">Json data goes here.</p>
+    <p id="madeby" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Made by © <a itemprop="url" href="http://tclh123.com/"><strong itemprop="name">tclh123</strong></a>, 2012-2013. / <a href="mailto:tclh123@gmail.com?subject=iplot" id="email"><strong>Email Me</strong></a>. / <a href="https://github.com/tclh123/iplot"><strong>Github</strong></a>.</p>
+    <div id="clicki_widget_4960" ></div>
+</div>
+<script type='text/javascript'>
+    (function() {
+        var c = document.createElement('script');
+        c.type = 'text/javascript';
+        c.async = true;
+        c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.clicki.cn/boot/47861';
+        var h = document.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(c, h);
+    })();
+</script>
+</body>
+</html>
