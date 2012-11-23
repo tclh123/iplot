@@ -164,7 +164,7 @@ class Lexer:
             return Token(Token_Type.UNKNOWN, s, self._lineno)
 
 
-if __name__ == '__main__':
+def test():
     for t in Lexer(
         """ -- 合法与非法输入的测试
 
@@ -186,3 +186,6 @@ if __name__ == '__main__':
             -- 空记号（源程序结束）：NONTOKEN,
         """):
         print t
+
+if __name__ == '__main__':
+    test()

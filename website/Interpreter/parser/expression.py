@@ -4,6 +4,8 @@ __author__ = 'tclh123'
 
 import operator
 
+#TODO reconstruct
+
 class Node(object):
     """
     A Node represents a node in an expression(abstract syntax tree).
@@ -79,4 +81,4 @@ class Parameter(Node):
         self.value = value
 
     def eval(self):
-        return self.value   # ParaPtr??
+        return self.value['T']   # Param

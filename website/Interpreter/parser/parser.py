@@ -1,8 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+if __name__ == '__main__':
+    import os
+    instance_path = os.path.abspath(os.path.dirname(__file__))
+    print instance_path
+    import sys
+    sys.path.insert(0, '..')
+    from lexer import lexer, token
+else:
+    from lexer import lexer, token
+
 __author__ = 'tclh123'
 
-from lexer import lexer, token
+import semantic
 from expression import *
 
 class Parser:
@@ -12,7 +23,9 @@ class Parser:
         self.nodes = [] # stack holding the AST nodes
 
         # vars used by semantic
-        self.var = 0.0
+        self.param = { 'T' : 0.0 }
+
+        # coord
         self.origin_x = 0.0
         self.origin_y = 0.0
         self.scale_x = 0.0
@@ -36,7 +49,7 @@ class Parser:
             pass
 
         # Error 1
-        if self.next.type == token.Token_Type.UNKNOWN:
+        if self.next.type ==  token.Token_Type.UNKNOWN:
             self._syntax_error(1)
 
 #        if self.next:
@@ -114,7 +127,7 @@ class Parser:
         print "rot is %f;" % self.rot_angle
 
     def _sub_for_statement(self):
-        # start, end, step = 0.0, 0.0, 0.0
+        self.param['T'] = 0.0
 
         self._match_token(token.Token_Type.FOR)
         self._match_token(token.Token_Type.VAR)
@@ -139,18 +152,21 @@ class Parser:
         self._match_token(token.Token_Type.DRAW)
         self._match_token(token.Token_Type.BRACKET_L)
 
-        x_node = self.expression()
-        x = x_node.eval()   #TODO  应该都是T， e.g. for T from 0 to 200 step 1 draw (t, 0);
+        x_exp = self.expression()   # the expression will be used in loop
+        x = x_exp.eval()
 
         self._match_token(token.Token_Type.COMMA)
 
-        y_node = self.expression()
-        y = y_node.eval()
+        y_exp = self.expression()
+        y = y_exp.eval()
 
         self._match_token(token.Token_Type.BRACKET_R)
 
-        # DrawLoop (Start, End, Step, x_ptr, y_ptr);     #TODO 绘图！
-        print "for T from %f to %f step %f draw (%f, %f);" % (start, end, step, x, y)
+        semantic.draw_loop(self.param, start, end, step, x_exp, y_exp,      #TODO 绘图！
+            self.scale_x, self.scale_y, self.rot_angle, self.origin_x, self.origin_y)
+        x2 = x_exp.eval()
+        y2 = y_exp.eval()
+        print "for T from %f to %f step %f draw (%f, %f)->(%f, %f);" % (start, end, step, x, y, x2, y2) # debug msg(data before origin/rot/scale)
 
     ###############################
 
@@ -201,7 +217,7 @@ class Parser:
             address = Const(t.value)   #TODO
         elif self.next.type == token.Token_Type.VAR:
             self._match_token(token.Token_Type.VAR)
-            address = Parameter(self.var)          #TODO???
+            address = Parameter(self.param)          # pass by reference using dict #TODO
         elif self.next.type == token.Token_Type.FUNC:
             self._match_token(token.Token_Type.FUNC)
             self._match_token(token.Token_Type.BRACKET_L)
@@ -220,9 +236,9 @@ class Parser:
         return address
 
 if __name__ == '__main__':
+    case = 4
     p = Parser(
-        """
-
+        ["""
         //test1
 --------------- 函数f(t)=t的图形
 -- origin is (200, 300);						-- 设置原点的偏移量
@@ -231,7 +247,8 @@ if __name__ == '__main__':
 for T from 0 to 200 step 1 draw (t, 0);		-- 横坐标的轨迹
 for T from 0 to 180 step 1 draw (0, t);	-- 纵坐标的轨迹
 for T from 0 to 150 step 1 draw (t, t);	-- 函数f(t)=t的轨迹
-
+        """,
+        """
         //test2
 --------------- 图形1：
 origin is (20, 200);									-- 设置原点的偏移量
@@ -261,8 +278,8 @@ for t from 0 to 2*pi step pi/50 draw(cos(t),sin(t));	-- 画T的轨迹
 for t from 0 to Pi*20 step Pi/50 draw					-- 画T的轨迹
    ((1-1/(10/7))*Cos(T)+1/(10/7)*Cos(-T*((10/7)-1)),
 	(1-1/(10/7))*Sin(T)+1/(10/7)*Sin(-T*((10/7)-1)));
-
-
+        """,
+        """
         //test3
 --------------- 函数复杂度图形：
 rot is 0;										-- 不旋转
@@ -286,8 +303,8 @@ for T from 0 to 8 step 0.1 draw (t, -exp(t));	-- 函数f(t)=exp(t)的轨迹
 
 scale is (2, 20);								-- 设置比例
 //for T from 0 to 300 step 1 draw (t, -ln(t));	-- 函数f(t)=ln(t)的轨迹          //ln 函数暂时没实现。
-
-
+        """,
+        """
         //test4
 origin is (350, 220);					-- 原点位置
 rot is 0;						-- 旋转角度为零
@@ -297,7 +314,8 @@ scale is (150, 150);  				        -- 横、纵坐标比例因子
 for t from 0 to 2*pi step pi/150 draw(cos(t), sin(t));	-- 画园
 scale is (200, 200);					-- 横、纵坐标比例因子
 for t from 0 to 2*pi step pi/200 draw(cos(t), sin(t));	-- 画园
-
+        """,
+        """
         //test5
 --------------- 测试f(t)=t*t与f(t)=t**2的图形：
 rot is 0;										-- 不旋转
@@ -312,6 +330,5 @@ for T from 0 to 55 step 1 draw (t, -(t*t));		-- 函数f(t)=t*t的轨迹
 
 origin is (150, 400);							-- 设置新原点（横坐标右移100）
 for T from 0 to 55 step 1 draw (t, -(t**2));	-- 函数f(t)=t**2的轨迹
-
-        """)
+        """][case])
     p.parse()
