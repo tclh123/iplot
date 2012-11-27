@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>website.web.python23</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="website-module.html">Package&nbsp;website</a> ::
+        <a href="website.web-module.html">Package&nbsp;web</a> ::
+        Module&nbsp;python23
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="website.web.python23-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="website.web.python23-module.html">Module website.web.python23</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-docstring">"""Python 2.3 compatabilty"""</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">threading</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="threadlocal"></a><div id="threadlocal-def"><a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="threadlocal-toggle" onclick="return toggle('threadlocal');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.python23.threadlocal-class.html">threadlocal</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="threadlocal-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="threadlocal-expanded"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">    <tt class="py-docstring">"""Implementation of threading.local for python2.3.</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="threadlocal.__getattribute__"></a><div id="threadlocal.__getattribute__-def"><a name="L7"></a><tt class="py-lineno"> 7</tt> <a class="py-toggle" href="#" id="threadlocal.__getattribute__-toggle" onclick="return toggle('threadlocal.__getattribute__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.python23.threadlocal-class.html#__getattribute__">__getattribute__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="threadlocal.__getattribute__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="threadlocal.__getattribute__-expanded"><a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-0" class="py-name" targets="Variable website.Interpreter.lexer.token.Token_Type.name=website.Interpreter.lexer.token.Token_Type-class.html#name,Variable website.web.template.name=website.web.template-module.html#name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-0', 'name', 'link-0');">name</a></tt> <tt class="py-op">==</tt> <tt class="py-string">"__dict__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-1" class="py-name" targets="Class website.web.python23.threadlocal=website.web.python23.threadlocal-class.html"><a title="website.web.python23.threadlocal" class="py-name" href="#" onclick="return doclink('link-1', 'threadlocal', 'link-1');">threadlocal</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method website.web.python23.threadlocal._getd()=website.web.python23.threadlocal-class.html#_getd"><a title="website.web.python23.threadlocal._getd" class="py-name" href="#" onclick="return doclink('link-2', '_getd', 'link-2');">_getd</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">object</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method website.web.python23.threadlocal.__getattribute__()=website.web.python23.threadlocal-class.html#__getattribute__"><a title="website.web.python23.threadlocal.__getattribute__" class="py-name" href="#" onclick="return doclink('link-3', '__getattribute__', 'link-3');">__getattribute__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-4', 'name', 'link-0');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">                    <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt id="link-5" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-5', 'name', 'link-0');">name</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">                <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">                    <tt class="py-keyword">raise</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">,</tt> <tt id="link-6" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-6', 'name', 'link-0');">name</a></tt> </tt>
+</div><a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">             </tt>
+<a name="threadlocal.__setattr__"></a><div id="threadlocal.__setattr__-def"><a name="L19"></a><tt class="py-lineno">19</tt> <a class="py-toggle" href="#" id="threadlocal.__setattr__-toggle" onclick="return toggle('threadlocal.__setattr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.python23.threadlocal-class.html#__setattr__">__setattr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="threadlocal.__setattr__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="threadlocal.__setattr__-expanded"><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt id="link-7" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-7', 'name', 'link-0');">name</a></tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name" targets="Variable website.web.db.SQLParam.value=website.web.db.SQLParam-class.html#value"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-8', 'value', 'link-8');">value</a></tt> </tt>
+</div><a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">         </tt>
+<a name="threadlocal.__delattr__"></a><div id="threadlocal.__delattr__-def"><a name="L22"></a><tt class="py-lineno">22</tt> <a class="py-toggle" href="#" id="threadlocal.__delattr__-toggle" onclick="return toggle('threadlocal.__delattr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.python23.threadlocal-class.html#__delattr__">__delattr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="threadlocal.__delattr__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="threadlocal.__delattr__-expanded"><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">            <tt class="py-keyword">del</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt id="link-9" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-9', 'name', 'link-0');">name</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">,</tt> <tt id="link-10" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-10', 'name', 'link-0');">name</a></tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">     </tt>
+<a name="threadlocal._getd"></a><div id="threadlocal._getd-def"><a name="L28"></a><tt class="py-lineno">28</tt> <a class="py-toggle" href="#" id="threadlocal._getd-toggle" onclick="return toggle('threadlocal._getd');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.python23.threadlocal-class.html#_getd">_getd</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="threadlocal._getd-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="threadlocal._getd-expanded"><a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt class="py-name">t</tt> <tt class="py-op">=</tt> <tt class="py-name">threading</tt><tt class="py-op">.</tt><tt class="py-name">currentThread</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">hasattr</tt><tt class="py-op">(</tt><tt class="py-name">t</tt><tt class="py-op">,</tt> <tt class="py-string">'_d'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">            <tt class="py-comment"># using __dict__ of thread as thread local storage</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">            <tt class="py-name">t</tt><tt class="py-op">.</tt><tt class="py-name">_d</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">         </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt class="py-name">_id</tt> <tt class="py-op">=</tt> <tt class="py-name">id</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt class="py-comment"># there could be multiple instances of threadlocal.</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-comment"># use id(self) as key</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">_id</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">t</tt><tt class="py-op">.</tt><tt class="py-name">_d</tt><tt class="py-op">:</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">            <tt class="py-name">t</tt><tt class="py-op">.</tt><tt class="py-name">_d</tt><tt class="py-op">[</tt><tt class="py-name">_id</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">t</tt><tt class="py-op">.</tt><tt class="py-name">_d</tt><tt class="py-op">[</tt><tt class="py-name">_id</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">         </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">'__main__'</tt><tt class="py-op">:</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">     <tt id="link-11" class="py-name" targets="Variable website.web.form.Form.d=website.web.form.Form-class.html#d"><a title="website.web.form.Form.d" class="py-name" href="#" onclick="return doclink('link-11', 'd', 'link-11');">d</a></tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="website.web.python23.threadlocal" class="py-name" href="#" onclick="return doclink('link-12', 'threadlocal', 'link-1');">threadlocal</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">     <tt id="link-13" class="py-name"><a title="website.web.form.Form.d" class="py-name" href="#" onclick="return doclink('link-13', 'd', 'link-11');">d</a></tt><tt class="py-op">.</tt><tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">     <tt class="py-keyword">print</tt> <tt id="link-14" class="py-name"><a title="website.web.form.Form.d" class="py-name" href="#" onclick="return doclink('link-14', 'd', 'link-11');">d</a></tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">     <tt class="py-keyword">print</tt> <tt id="link-15" class="py-name"><a title="website.web.form.Form.d" class="py-name" href="#" onclick="return doclink('link-15', 'd', 'link-11');">d</a></tt><tt class="py-op">.</tt><tt class="py-name">x</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Nov 28 02:31:24 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

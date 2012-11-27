@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>website.web.form</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="website-module.html">Package&nbsp;website</a> ::
+        <a href="website.web-module.html">Package&nbsp;web</a> ::
+        Module&nbsp;form
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="website.web.form-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="website.web.form-module.html">Module website.web.form</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">HTML forms</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">(part of web.py)</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Method website.web.form.AttributeList.copy()=website.web.form.AttributeList-class.html#copy,Method website.web.utils.ThreadedDict.copy()=website.web.utils.ThreadedDict-class.html#copy"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-0', 'copy', 'link-0');">copy</a></tt><tt class="py-op">,</tt> <tt class="py-name">re</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module website.web.webapi=website.web.webapi-module.html"><a title="website.web.webapi" class="py-name" href="#" onclick="return doclink('link-1', 'webapi', 'link-1');">webapi</a></tt> <tt class="py-keyword">as</tt> <tt id="link-2" class="py-name" targets="Package website.web=website.web-module.html"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-2', 'web', 'link-2');">web</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Module website.web.utils=website.web.utils-module.html"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-3', 'utils', 'link-3');">utils</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Module website.web.net=website.web.net-module.html"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-4', 'net', 'link-4');">net</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="attrget"></a><div id="attrget-def"><a name="L10"></a><tt class="py-lineno"> 10</tt> <a class="py-toggle" href="#" id="attrget-toggle" onclick="return toggle('attrget');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form-module.html#attrget">attrget</a><tt class="py-op">(</tt><tt class="py-param">obj</tt><tt class="py-op">,</tt> <tt class="py-param">attr</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="attrget-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="attrget-expanded"><a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">hasattr</tt><tt class="py-op">(</tt><tt class="py-name">obj</tt><tt class="py-op">,</tt> <tt class="py-string">'has_key'</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">obj</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method website.web.utils.ThreadedDict.has_key()=website.web.utils.ThreadedDict-class.html#has_key"><a title="website.web.utils.ThreadedDict.has_key" class="py-name" href="#" onclick="return doclink('link-5', 'has_key', 'link-5');">has_key</a></tt><tt class="py-op">(</tt><tt class="py-name">attr</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">obj</tt><tt class="py-op">[</tt><tt class="py-name">attr</tt><tt class="py-op">]</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">TypeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-comment"># Handle the case where has_key takes different number of arguments.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">        <tt class="py-comment"># This is the case with Model objects on appengine. See #134</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">hasattr</tt><tt class="py-op">(</tt><tt class="py-name">obj</tt><tt class="py-op">,</tt> <tt class="py-name">attr</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">obj</tt><tt class="py-op">,</tt> <tt class="py-name">attr</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-6" class="py-name" targets="Variable website.web.db.SQLParam.value=website.web.db.SQLParam-class.html#value"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-6', 'value', 'link-6');">value</a></tt> </tt>
+</div><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="Form"></a><div id="Form-def"><a name="L22"></a><tt class="py-lineno"> 22</tt> <a class="py-toggle" href="#" id="Form-toggle" onclick="return toggle('Form');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Form-class.html">Form</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Form-expanded"><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt class="py-docstring">r"""</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    HTML form.</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; f = Form(Textbox("x"))</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; f.render()</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;table&gt;\n    &lt;tr&gt;&lt;th&gt;&lt;label for="x"&gt;x&lt;/label&gt;&lt;/th&gt;&lt;td&gt;&lt;input type="text" id="x" name="x"/&gt;&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;'</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Form.__init__"></a><div id="Form.__init__-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="Form.__init__-toggle" onclick="return toggle('Form.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">inputs</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form.__init__-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">inputs</tt> <tt class="py-op">=</tt> <tt class="py-name">inputs</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method website.web.form.Validator.valid()=website.web.form.Validator-class.html#valid,Method website.web.form.regexp.valid()=website.web.form.regexp-class.html#valid"><a title="website.web.form.Validator.valid
+website.web.form.regexp.valid" class="py-name" href="#" onclick="return doclink('link-7', 'valid', 'link-7');">valid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">note</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">validators</tt> <tt class="py-op">=</tt> <tt class="py-name">kw</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method website.web.utils.ThreadedDict.pop()=website.web.utils.ThreadedDict-class.html#pop"><a title="website.web.utils.ThreadedDict.pop" class="py-name" href="#" onclick="return doclink('link-8', 'pop', 'link-8');">pop</a></tt><tt class="py-op">(</tt><tt class="py-string">'validators'</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="Form.__call__"></a><div id="Form.__call__-def"><a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="Form.__call__-toggle" onclick="return toggle('Form.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">x</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form.__call__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form.__call__-expanded"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">o</tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-9', 'copy', 'link-0');">copy</a></tt><tt class="py-op">.</tt><tt class="py-name">deepcopy</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">x</tt><tt class="py-op">:</tt> <tt class="py-name">o</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method website.web.form.Form.validates()=website.web.form.Form-class.html#validates"><a title="website.web.form.Form.validates" class="py-name" href="#" onclick="return doclink('link-10', 'validates', 'link-10');">validates</a></tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">o</tt> </tt>
+</div><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">     </tt>
+<a name="Form.render"></a><div id="Form.render-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="Form.render-toggle" onclick="return toggle('Form.render');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#render">render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form.render-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form.render-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt id="link-11" class="py-name" targets="Method website.Interpreter.parser.parser.Parser.out()=website.Interpreter.parser.parser.Parser-class.html#out"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-11', 'out', 'link-11');">out</a></tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt id="link-12" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-12', 'out', 'link-11');">out</a></tt> <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method website.web.form.Form.rendernote()=website.web.form.Form-class.html#rendernote,Method website.web.form.Input.rendernote()=website.web.form.Input-class.html#rendernote"><a title="website.web.form.Form.rendernote
+website.web.form.Input.rendernote" class="py-name" href="#" onclick="return doclink('link-13', 'rendernote', 'link-13');">rendernote</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">note</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt id="link-14" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-14', 'out', 'link-11');">out</a></tt> <tt class="py-op">+=</tt> <tt class="py-string">'&lt;table&gt;\n'</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">         </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">inputs</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt class="py-name">html</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-15', 'utils', 'link-3');">utils</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Function website.web.utils.safeunicode()=website.web.utils-module.html#safeunicode"><a title="website.web.utils.safeunicode" class="py-name" href="#" onclick="return doclink('link-16', 'safeunicode', 'link-16');">safeunicode</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">pre</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Variable website.main.render=website.main-module.html#render,Method website.web.form.Button.render()=website.web.form.Button-class.html#render,Method website.web.form.Checkbox.render()=website.web.form.Checkbox-class.html#render,Method website.web.form.Dropdown.render()=website.web.form.Dropdown-class.html#render,Method website.web.form.Form.render()=website.web.form.Form-class.html#render,Method website.web.form.GroupedDropdown.render()=website.web.form.GroupedDropdown-class.html#render,Method website.web.form.Input.render()=website.web.form.Input-class.html#render,Method website.web.form.Radio.render()=website.web.form.Radio-class.html#render,Method website.web.form.Textarea.render()=website.web.form.Textarea-class.html#render"><a title="website.main.render
+website.web.form.Button.render
+website.web.form.Checkbox.render
+website.web.form.Dropdown.render
+website.web.form.Form.render
+website.web.form.GroupedDropdown.render
+website.web.form.Input.render
+website.web.form.Radio.render
+website.web.form.Textarea.render" class="py-name" href="#" onclick="return doclink('link-17', 'render', 'link-17');">render</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="website.web.form.Form.rendernote
+website.web.form.Input.rendernote" class="py-name" href="#" onclick="return doclink('link-18', 'rendernote', 'link-13');">rendernote</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">note</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt id="link-19" class="py-name"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-19', 'utils', 'link-3');">utils</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="website.web.utils.safeunicode" class="py-name" href="#" onclick="return doclink('link-20', 'safeunicode', 'link-16');">safeunicode</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">post</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Method website.web.form.Hidden.is_hidden()=website.web.form.Hidden-class.html#is_hidden,Method website.web.form.Input.is_hidden()=website.web.form.Input-class.html#is_hidden"><a title="website.web.form.Hidden.is_hidden
+website.web.form.Input.is_hidden" class="py-name" href="#" onclick="return doclink('link-21', 'is_hidden', 'link-21');">is_hidden</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">                <tt id="link-22" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-22', 'out', 'link-11');">out</a></tt> <tt class="py-op">+=</tt> <tt class="py-string">'    &lt;tr style="display: none;"&gt;&lt;th&gt;&lt;/th&gt;&lt;td&gt;%s&lt;/td&gt;&lt;/tr&gt;\n'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">html</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">                <tt id="link-23" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-23', 'out', 'link-11');">out</a></tt> <tt class="py-op">+=</tt> <tt class="py-string">'    &lt;tr&gt;&lt;th&gt;&lt;label for="%s"&gt;%s&lt;/label&gt;&lt;/th&gt;&lt;td&gt;%s&lt;/td&gt;&lt;/tr&gt;\n'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">,</tt> <tt id="link-24" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-24', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Function website.web.net.websafe()=website.web.net-module.html#websafe"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-25', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">description</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">html</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt id="link-26" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-26', 'out', 'link-11');">out</a></tt> <tt class="py-op">+=</tt> <tt class="py-string">"&lt;/table&gt;"</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-27" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-27', 'out', 'link-11');">out</a></tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">         </tt>
+<a name="Form.render_css"></a><div id="Form.render_css-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="Form.render_css-toggle" onclick="return toggle('Form.render_css');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#render_css">render_css</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+</div><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt id="link-28" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-28', 'out', 'link-11');">out</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt>  </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt id="link-29" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-29', 'out', 'link-11');">out</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method website.web.db.SQLQuery.append()=website.web.db.SQLQuery-class.html#append"><a title="website.web.db.SQLQuery.append" class="py-name" href="#" onclick="return doclink('link-30', 'append', 'link-30');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="website.web.form.Form.rendernote
+website.web.form.Input.rendernote" class="py-name" href="#" onclick="return doclink('link-31', 'rendernote', 'link-13');">rendernote</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">note</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>  </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">inputs</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="website.web.form.Hidden.is_hidden
+website.web.form.Input.is_hidden" class="py-name" href="#" onclick="return doclink('link-32', 'is_hidden', 'link-21');">is_hidden</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                <tt id="link-33" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-33', 'out', 'link-11');">out</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="website.web.db.SQLQuery.append" class="py-name" href="#" onclick="return doclink('link-34', 'append', 'link-30');">append</a></tt><tt class="py-op">(</tt><tt class="py-string">'&lt;label for="%s"&gt;%s&lt;/label&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">,</tt> <tt id="link-35" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-35', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-36', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">description</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>  </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">            <tt id="link-37" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-37', 'out', 'link-11');">out</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="website.web.db.SQLQuery.append" class="py-name" href="#" onclick="return doclink('link-38', 'append', 'link-30');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">pre</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">            <tt id="link-39" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-39', 'out', 'link-11');">out</a></tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="website.web.db.SQLQuery.append" class="py-name" href="#" onclick="return doclink('link-40', 'append', 'link-30');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="website.main.render
+website.web.form.Button.render
+website.web.form.Checkbox.render
+website.web.form.Dropdown.render
+website.web.form.Form.render
+website.web.form.GroupedDropdown.render
+website.web.form.Input.render
+website.web.form.Radio.render
+website.web.form.Textarea.render" class="py-name" href="#" onclick="return doclink('link-41', 'render', 'link-17');">render</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>  </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">            <tt id="link-42" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-42', 'out', 'link-11');">out</a></tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="website.web.db.SQLQuery.append" class="py-name" href="#" onclick="return doclink('link-43', 'append', 'link-30');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="website.web.form.Form.rendernote
+website.web.form.Input.rendernote" class="py-name" href="#" onclick="return doclink('link-44', 'rendernote', 'link-13');">rendernote</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">note</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">            <tt id="link-45" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-45', 'out', 'link-11');">out</a></tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="website.web.db.SQLQuery.append" class="py-name" href="#" onclick="return doclink('link-46', 'append', 'link-30');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">post</tt><tt class="py-op">)</tt>  </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">            <tt id="link-47" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-47', 'out', 'link-11');">out</a></tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="website.web.db.SQLQuery.append" class="py-name" href="#" onclick="return doclink('link-48', 'append', 'link-30');">append</a></tt><tt class="py-op">(</tt><tt class="py-string">'\n'</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">''</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name" targets="Static Method website.web.db.SQLQuery.join()=website.web.db.SQLQuery-class.html#join"><a title="website.web.db.SQLQuery.join" class="py-name" href="#" onclick="return doclink('link-49', 'join', 'link-49');">join</a></tt><tt class="py-op">(</tt><tt id="link-50" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-50', 'out', 'link-11');">out</a></tt><tt class="py-op">)</tt>  </tt>
+</div><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">         </tt>
+<a name="Form.rendernote"></a><div id="Form.rendernote-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="Form.rendernote-toggle" onclick="return toggle('Form.rendernote');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#rendernote">rendernote</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">note</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form.rendernote-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form.rendernote-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">note</tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;strong class="wrong"&gt;%s&lt;/strong&gt;'</tt> <tt class="py-op">%</tt> <tt id="link-51" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-51', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-52', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">note</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt class="py-string">""</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">     </tt>
+<a name="Form.validates"></a><div id="Form.validates-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="Form.validates-toggle" onclick="return toggle('Form.validates');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#validates">validates</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">source</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">_validate</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form.validates-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form.validates-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-name">source</tt> <tt class="py-op">=</tt> <tt class="py-name">source</tt> <tt class="py-keyword">or</tt> <tt class="py-name">kw</tt> <tt class="py-keyword">or</tt> <tt id="link-53" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-53', 'web', 'link-2');">web</a></tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Function website.web.webapi.input()=website.web.webapi-module.html#input"><a title="website.web.webapi.input" class="py-name" href="#" onclick="return doclink('link-54', 'input', 'link-54');">input</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt id="link-55" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-55', 'out', 'link-11');">out</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">inputs</tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">            <tt class="py-name">v</tt> <tt class="py-op">=</tt> <tt id="link-56" class="py-name" targets="Function website.web.form.attrget()=website.web.form-module.html#attrget"><a title="website.web.form.attrget" class="py-name" href="#" onclick="return doclink('link-56', 'attrget', 'link-56');">attrget</a></tt><tt class="py-op">(</tt><tt class="py-name">source</tt><tt class="py-op">,</tt> <tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name" targets="Variable website.Interpreter.lexer.token.Token_Type.name=website.Interpreter.lexer.token.Token_Type-class.html#name,Variable website.web.template.name=website.web.template-module.html#name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-57', 'name', 'link-57');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-58" class="py-name" targets="Method website.web.form.Form._validate()=website.web.form.Form-class.html#_validate"><a title="website.web.form.Form._validate" class="py-name" href="#" onclick="return doclink('link-58', '_validate', 'link-58');">_validate</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                <tt id="link-59" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-59', 'out', 'link-11');">out</a></tt> <tt class="py-op">=</tt> <tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name" targets="Method website.web.form.Input.validate()=website.web.form.Input-class.html#validate"><a title="website.web.form.Input.validate" class="py-name" href="#" onclick="return doclink('link-60', 'validate', 'link-60');">validate</a></tt><tt class="py-op">(</tt><tt class="py-name">v</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt id="link-61" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-61', 'out', 'link-11');">out</a></tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                <tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name" targets="Method website.web.form.Checkbox.set_value()=website.web.form.Checkbox-class.html#set_value,Method website.web.form.Input.set_value()=website.web.form.Input-class.html#set_value"><a title="website.web.form.Checkbox.set_value
+website.web.form.Input.set_value" class="py-name" href="#" onclick="return doclink('link-62', 'set_value', 'link-62');">set_value</a></tt><tt class="py-op">(</tt><tt class="py-name">v</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-63" class="py-name"><a title="website.web.form.Form._validate" class="py-name" href="#" onclick="return doclink('link-63', '_validate', 'link-58');">_validate</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">            <tt id="link-64" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-64', 'out', 'link-11');">out</a></tt> <tt class="py-op">=</tt> <tt id="link-65" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-65', 'out', 'link-11');">out</a></tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="website.web.form.Form._validate" class="py-name" href="#" onclick="return doclink('link-66', '_validate', 'link-58');">_validate</a></tt><tt class="py-op">(</tt><tt class="py-name">source</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="website.web.form.Validator.valid
+website.web.form.regexp.valid" class="py-name" href="#" onclick="return doclink('link-67', 'valid', 'link-7');">valid</a></tt> <tt class="py-op">=</tt> <tt id="link-68" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-68', 'out', 'link-11');">out</a></tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-69" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-69', 'out', 'link-11');">out</a></tt> </tt>
+</div><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"> </tt>
+<a name="Form._validate"></a><div id="Form._validate-def"><a name="L86"></a><tt class="py-lineno"> 86</tt> <a class="py-toggle" href="#" id="Form._validate-toggle" onclick="return toggle('Form._validate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#_validate">_validate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form._validate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form._validate-expanded"><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-70', 'value', 'link-6');">value</a></tt> <tt class="py-op">=</tt> <tt id="link-71" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-71', 'value', 'link-6');">value</a></tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">validators</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">v</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="website.web.form.Validator.valid
+website.web.form.regexp.valid" class="py-name" href="#" onclick="return doclink('link-72', 'valid', 'link-7');">valid</a></tt><tt class="py-op">(</tt><tt id="link-73" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-73', 'value', 'link-6');">value</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">note</tt> <tt class="py-op">=</tt> <tt class="py-name">v</tt><tt class="py-op">.</tt><tt class="py-name">msg</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="Form.fill"></a><div id="Form.fill-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="Form.fill-toggle" onclick="return toggle('Form.fill');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#fill">fill</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">source</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form.fill-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form.fill-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name"><a title="website.web.form.Form.validates" class="py-name" href="#" onclick="return doclink('link-74', 'validates', 'link-10');">validates</a></tt><tt class="py-op">(</tt><tt class="py-name">source</tt><tt class="py-op">,</tt> <tt id="link-75" class="py-name"><a title="website.web.form.Form._validate" class="py-name" href="#" onclick="return doclink('link-75', '_validate', 'link-58');">_validate</a></tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kw</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">     </tt>
+<a name="Form.__getitem__"></a><div id="Form.__getitem__-def"><a name="L97"></a><tt class="py-lineno"> 97</tt> <a class="py-toggle" href="#" id="Form.__getitem__-toggle" onclick="return toggle('Form.__getitem__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#__getitem__">__getitem__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">i</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form.__getitem__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form.__getitem__-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">inputs</tt><tt class="py-op">:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">x</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-76', 'name', 'link-57');">name</a></tt> <tt class="py-op">==</tt> <tt class="py-name">i</tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt class="py-name">x</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">KeyError</tt><tt class="py-op">,</tt> <tt class="py-name">i</tt> </tt>
+</div><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="Form.__getattr__"></a><div id="Form.__getattr__-def"><a name="L102"></a><tt class="py-lineno">102</tt> <a class="py-toggle" href="#" id="Form.__getattr__-toggle" onclick="return toggle('Form.__getattr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#__getattr__">__getattr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form.__getattr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form.__getattr__-expanded"><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-comment"># don't interfere with deepcopy</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">inputs</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name" targets="Method website.web.form.Form.get()=website.web.form.Form-class.html#get,Method website.web.utils.ThreadedDict.get()=website.web.utils.ThreadedDict-class.html#get"><a title="website.web.form.Form.get
+website.web.utils.ThreadedDict.get" class="py-name" href="#" onclick="return doclink('link-77', 'get', 'link-77');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">'inputs'</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">inputs</tt><tt class="py-op">:</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">x</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-78', 'name', 'link-57');">name</a></tt> <tt class="py-op">==</tt> <tt id="link-79" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-79', 'name', 'link-57');">name</a></tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt class="py-name">x</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">,</tt> <tt id="link-80" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-80', 'name', 'link-57');">name</a></tt> </tt>
+</div><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">     </tt>
+<a name="Form.get"></a><div id="Form.get-def"><a name="L109"></a><tt class="py-lineno">109</tt> <a class="py-toggle" href="#" id="Form.get-toggle" onclick="return toggle('Form.get');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#get">get</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">i</tt><tt class="py-op">,</tt> <tt class="py-param">default</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Form.get-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Form.get-expanded"><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">default</tt> </tt>
+</div><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">             </tt>
+<a name="Form._get_d"></a><div id="Form._get_d-def"><a name="L115"></a><tt class="py-lineno">115</tt> <a class="py-toggle" href="#" id="Form._get_d-toggle" onclick="return toggle('Form._get_d');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Form-class.html#_get_d">_get_d</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> <tt class="py-comment">#@@ should really be form.attr, no?</tt> </tt>
+</div><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-81" class="py-name"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-81', 'utils', 'link-3');">utils</a></tt><tt class="py-op">.</tt><tt class="py-name">storage</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-82', 'name', 'link-57');">name</a></tt><tt class="py-op">,</tt> <tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-83" class="py-name" targets="Method website.web.form.Checkbox.get_value()=website.web.form.Checkbox-class.html#get_value,Method website.web.form.Input.get_value()=website.web.form.Input-class.html#get_value"><a title="website.web.form.Checkbox.get_value
+website.web.form.Input.get_value" class="py-name" href="#" onclick="return doclink('link-83', 'get_value', 'link-83');">get_value</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">inputs</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt id="link-84" class="py-name" targets="Variable website.web.form.Form.d=website.web.form.Form-class.html#d"><a title="website.web.form.Form.d" class="py-name" href="#" onclick="return doclink('link-84', 'd', 'link-84');">d</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-85" class="py-name" targets="Method website.web.form.Form._get_d()=website.web.form.Form-class.html#_get_d"><a title="website.web.form.Form._get_d" class="py-name" href="#" onclick="return doclink('link-85', '_get_d', 'link-85');">_get_d</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="Input"></a><div id="Input-def"><a name="L119"></a><tt class="py-lineno">119</tt> <a class="py-toggle" href="#" id="Input-toggle" onclick="return toggle('Input');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Input-class.html">Input</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Input-expanded"><a name="Input.__init__"></a><div id="Input.__init__-def"><a name="L120"></a><tt class="py-lineno">120</tt> <a class="py-toggle" href="#" id="Input.__init__-toggle" onclick="return toggle('Input.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">attrs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.__init__-expanded"><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-86" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-86', 'name', 'link-57');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-87" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-87', 'name', 'link-57');">name</a></tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">validators</tt> <tt class="py-op">=</tt> <tt class="py-name">validators</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrs</tt> <tt class="py-op">=</tt> <tt class="py-name">attrs</tt> <tt class="py-op">=</tt> <tt id="link-88" class="py-name" targets="Class website.web.form.AttributeList=website.web.form.AttributeList-class.html"><a title="website.web.form.AttributeList" class="py-name" href="#" onclick="return doclink('link-88', 'AttributeList', 'link-88');">AttributeList</a></tt><tt class="py-op">(</tt><tt class="py-name">attrs</tt><tt class="py-op">)</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">         </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">description</tt> <tt class="py-op">=</tt> <tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-89" class="py-name"><a title="website.web.utils.ThreadedDict.pop" class="py-name" href="#" onclick="return doclink('link-89', 'pop', 'link-8');">pop</a></tt><tt class="py-op">(</tt><tt class="py-string">'description'</tt><tt class="py-op">,</tt> <tt id="link-90" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-90', 'name', 'link-57');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-91" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-91', 'value', 'link-6');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-92" class="py-name"><a title="website.web.utils.ThreadedDict.pop" class="py-name" href="#" onclick="return doclink('link-92', 'pop', 'link-8');">pop</a></tt><tt class="py-op">(</tt><tt class="py-string">'value'</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pre</tt> <tt class="py-op">=</tt> <tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-93" class="py-name"><a title="website.web.utils.ThreadedDict.pop" class="py-name" href="#" onclick="return doclink('link-93', 'pop', 'link-8');">pop</a></tt><tt class="py-op">(</tt><tt class="py-string">'pre'</tt><tt class="py-op">,</tt> <tt class="py-string">""</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">post</tt> <tt class="py-op">=</tt> <tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-94" class="py-name"><a title="website.web.utils.ThreadedDict.pop" class="py-name" href="#" onclick="return doclink('link-94', 'pop', 'link-8');">pop</a></tt><tt class="py-op">(</tt><tt class="py-string">'post'</tt><tt class="py-op">,</tt> <tt class="py-string">""</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">note</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">         </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt> <tt class="py-op">=</tt> <tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-95" class="py-name" targets="Method website.web.utils.ThreadedDict.setdefault()=website.web.utils.ThreadedDict-class.html#setdefault"><a title="website.web.utils.ThreadedDict.setdefault" class="py-name" href="#" onclick="return doclink('link-95', 'setdefault', 'link-95');">setdefault</a></tt><tt class="py-op">(</tt><tt class="py-string">'id'</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-96" class="py-name" targets="Method website.web.form.Checkbox.get_default_id()=website.web.form.Checkbox-class.html#get_default_id,Method website.web.form.Input.get_default_id()=website.web.form.Input-class.html#get_default_id"><a title="website.web.form.Checkbox.get_default_id
+website.web.form.Input.get_default_id" class="py-name" href="#" onclick="return doclink('link-96', 'get_default_id', 'link-96');">get_default_id</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">         </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'class_'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">attrs</tt><tt class="py-op">:</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">            <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'class'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'class_'</tt><tt class="py-op">]</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">            <tt class="py-keyword">del</tt> <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'class_'</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">         </tt>
+<a name="Input.is_hidden"></a><div id="Input.is_hidden-def"><a name="L137"></a><tt class="py-lineno">137</tt> <a class="py-toggle" href="#" id="Input.is_hidden-toggle" onclick="return toggle('Input.is_hidden');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#is_hidden">is_hidden</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.is_hidden-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.is_hidden-expanded"><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+</div><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">         </tt>
+<a name="Input.get_type"></a><div id="Input.get_type-def"><a name="L140"></a><tt class="py-lineno">140</tt> <a class="py-toggle" href="#" id="Input.get_type-toggle" onclick="return toggle('Input.get_type');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#get_type">get_type</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.get_type-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.get_type-expanded"><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">         </tt>
+<a name="Input.get_default_id"></a><div id="Input.get_default_id-def"><a name="L143"></a><tt class="py-lineno">143</tt> <a class="py-toggle" href="#" id="Input.get_default_id-toggle" onclick="return toggle('Input.get_default_id');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#get_default_id">get_default_id</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.get_default_id-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.get_default_id-expanded"><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-97" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-97', 'name', 'link-57');">name</a></tt> </tt>
+</div><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="Input.validate"></a><div id="Input.validate-def"><a name="L146"></a><tt class="py-lineno">146</tt> <a class="py-toggle" href="#" id="Input.validate-toggle" onclick="return toggle('Input.validate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#validate">validate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.validate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.validate-expanded"><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-98" class="py-name"><a title="website.web.form.Checkbox.set_value
+website.web.form.Input.set_value" class="py-name" href="#" onclick="return doclink('link-98', 'set_value', 'link-62');">set_value</a></tt><tt class="py-op">(</tt><tt id="link-99" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-99', 'value', 'link-6');">value</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">validators</tt><tt class="py-op">:</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">v</tt><tt class="py-op">.</tt><tt id="link-100" class="py-name"><a title="website.web.form.Validator.valid
+website.web.form.regexp.valid" class="py-name" href="#" onclick="return doclink('link-100', 'valid', 'link-7');">valid</a></tt><tt class="py-op">(</tt><tt id="link-101" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-101', 'value', 'link-6');">value</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">note</tt> <tt class="py-op">=</tt> <tt class="py-name">v</tt><tt class="py-op">.</tt><tt class="py-name">msg</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"> </tt>
+<a name="Input.set_value"></a><div id="Input.set_value-def"><a name="L155"></a><tt class="py-lineno">155</tt> <a class="py-toggle" href="#" id="Input.set_value-toggle" onclick="return toggle('Input.set_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#set_value">set_value</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.set_value-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.set_value-expanded"><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-102" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-102', 'value', 'link-6');">value</a></tt> <tt class="py-op">=</tt> <tt id="link-103" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-103', 'value', 'link-6');">value</a></tt> </tt>
+</div><a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"> </tt>
+<a name="Input.get_value"></a><div id="Input.get_value-def"><a name="L158"></a><tt class="py-lineno">158</tt> <a class="py-toggle" href="#" id="Input.get_value-toggle" onclick="return toggle('Input.get_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#get_value">get_value</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.get_value-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.get_value-expanded"><a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-104" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-104', 'value', 'link-6');">value</a></tt> </tt>
+</div><a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"> </tt>
+<a name="Input.render"></a><div id="Input.render-def"><a name="L161"></a><tt class="py-lineno">161</tt> <a class="py-toggle" href="#" id="Input.render-toggle" onclick="return toggle('Input.render');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#render">render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.render-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.render-expanded"><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-105" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-105', 'copy', 'link-0');">copy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'type'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-106" class="py-name" targets="Method website.web.form.File.get_type()=website.web.form.File-class.html#get_type,Method website.web.form.Hidden.get_type()=website.web.form.Hidden-class.html#get_type,Method website.web.form.Input.get_type()=website.web.form.Input-class.html#get_type,Method website.web.form.Password.get_type()=website.web.form.Password-class.html#get_type,Method website.web.form.Textbox.get_type()=website.web.form.Textbox-class.html#get_type"><a title="website.web.form.File.get_type
+website.web.form.Hidden.get_type
+website.web.form.Input.get_type
+website.web.form.Password.get_type
+website.web.form.Textbox.get_type" class="py-name" href="#" onclick="return doclink('link-106', 'get_type', 'link-106');">get_type</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-107" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-107', 'value', 'link-6');">value</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">            <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'value'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-108" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-108', 'value', 'link-6');">value</a></tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-109" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-109', 'name', 'link-57');">name</a></tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;input %s/&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-name">attrs</tt> </tt>
+</div><a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"> </tt>
+<a name="Input.rendernote"></a><div id="Input.rendernote-def"><a name="L169"></a><tt class="py-lineno">169</tt> <a class="py-toggle" href="#" id="Input.rendernote-toggle" onclick="return toggle('Input.rendernote');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#rendernote">rendernote</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">note</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.rendernote-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.rendernote-expanded"><a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">note</tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;strong class="wrong"&gt;%s&lt;/strong&gt;'</tt> <tt class="py-op">%</tt> <tt id="link-110" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-110', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-111" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-111', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">note</tt><tt class="py-op">)</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt class="py-string">""</tt> </tt>
+</div><a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">         </tt>
+<a name="Input.addatts"></a><div id="Input.addatts-def"><a name="L173"></a><tt class="py-lineno">173</tt> <a class="py-toggle" href="#" id="Input.addatts-toggle" onclick="return toggle('Input.addatts');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Input-class.html#addatts">addatts</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Input.addatts-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Input.addatts-expanded"><a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">        <tt class="py-comment"># add leading space for backward-compatibility</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt id="link-112" class="py-name" targets="Static Method website.Interpreter.lexer.token.Token_Type.str()=website.Interpreter.lexer.token.Token_Type-class.html#str"><a title="website.Interpreter.lexer.token.Token_Type.str" class="py-name" href="#" onclick="return doclink('link-112', 'str', 'link-112');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrs</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"> </tt>
+<a name="AttributeList"></a><div id="AttributeList-def"><a name="L177"></a><tt class="py-lineno">177</tt> <a class="py-toggle" href="#" id="AttributeList-toggle" onclick="return toggle('AttributeList');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.AttributeList-class.html">AttributeList</a><tt class="py-op">(</tt><tt class="py-base-class">dict</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AttributeList-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="AttributeList-expanded"><a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">    <tt class="py-docstring">"""List of atributes of input.</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; a = AttributeList(type='text', name='x', value=20)</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; a</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-docstring">    &lt;attrs: 'type="text" name="x" value="20"'&gt;</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="AttributeList.copy"></a><div id="AttributeList.copy-def"><a name="L184"></a><tt class="py-lineno">184</tt> <a class="py-toggle" href="#" id="AttributeList.copy-toggle" onclick="return toggle('AttributeList.copy');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.AttributeList-class.html#copy">copy</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AttributeList.copy-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AttributeList.copy-expanded"><a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-113" class="py-name"><a title="website.web.form.AttributeList" class="py-name" href="#" onclick="return doclink('link-113', 'AttributeList', 'link-88');">AttributeList</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">         </tt>
+<a name="AttributeList.__str__"></a><div id="AttributeList.__str__-def"><a name="L187"></a><tt class="py-lineno">187</tt> <a class="py-toggle" href="#" id="AttributeList.__str__-toggle" onclick="return toggle('AttributeList.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.AttributeList-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AttributeList.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AttributeList.__str__-expanded"><a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">" "</tt><tt class="py-op">.</tt><tt id="link-114" class="py-name"><a title="website.web.db.SQLQuery.join" class="py-name" href="#" onclick="return doclink('link-114', 'join', 'link-49');">join</a></tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-string">'%s="%s"'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">k</tt><tt class="py-op">,</tt> <tt id="link-115" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-115', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-116" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-116', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">v</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt> <tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-117" class="py-name" targets="Variable website.web.db.SQLQuery.items=website.web.db.SQLQuery-class.html#items,Method website.web.utils.ThreadedDict.items()=website.web.utils.ThreadedDict-class.html#items"><a title="website.web.db.SQLQuery.items
+website.web.utils.ThreadedDict.items" class="py-name" href="#" onclick="return doclink('link-117', 'items', 'link-117');">items</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">         </tt>
+<a name="AttributeList.__repr__"></a><div id="AttributeList.__repr__-def"><a name="L190"></a><tt class="py-lineno">190</tt> <a class="py-toggle" href="#" id="AttributeList.__repr__-toggle" onclick="return toggle('AttributeList.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.AttributeList-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AttributeList.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AttributeList.__repr__-expanded"><a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;attrs: %s&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-name">repr</tt><tt class="py-op">(</tt><tt id="link-118" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.str" class="py-name" href="#" onclick="return doclink('link-118', 'str', 'link-112');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"> </tt>
+<a name="Textbox"></a><div id="Textbox-def"><a name="L193"></a><tt class="py-lineno">193</tt> <a class="py-toggle" href="#" id="Textbox-toggle" onclick="return toggle('Textbox');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Textbox-class.html">Textbox</a><tt class="py-op">(</tt><tt class="py-base-class">Input</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Textbox-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Textbox-expanded"><a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">    <tt class="py-docstring">"""Textbox input.</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; Textbox(name='foo', value='bar').render()</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;input type="text" id="foo" value="bar" name="foo"/&gt;'</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; Textbox(name='foo', value=0).render()</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;input type="text" id="foo" value="0" name="foo"/&gt;'</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt>         </tt>
+<a name="Textbox.get_type"></a><div id="Textbox.get_type-def"><a name="L201"></a><tt class="py-lineno">201</tt> <a class="py-toggle" href="#" id="Textbox.get_type-toggle" onclick="return toggle('Textbox.get_type');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Textbox-class.html#get_type">get_type</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Textbox.get_type-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Textbox.get_type-expanded"><a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'text'</tt> </tt>
+</div></div><a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"> </tt>
+<a name="Password"></a><div id="Password-def"><a name="L204"></a><tt class="py-lineno">204</tt> <a class="py-toggle" href="#" id="Password-toggle" onclick="return toggle('Password');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Password-class.html">Password</a><tt class="py-op">(</tt><tt class="py-base-class">Input</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Password-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Password-expanded"><a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">    <tt class="py-docstring">"""Password input.</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; Password(name='password', value='secret').render()</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;input type="password" id="password" value="secret" name="password"/&gt;'</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">     </tt>
+<a name="Password.get_type"></a><div id="Password.get_type-def"><a name="L211"></a><tt class="py-lineno">211</tt> <a class="py-toggle" href="#" id="Password.get_type-toggle" onclick="return toggle('Password.get_type');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Password-class.html#get_type">get_type</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Password.get_type-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Password.get_type-expanded"><a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'password'</tt> </tt>
+</div></div><a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"> </tt>
+<a name="Textarea"></a><div id="Textarea-def"><a name="L214"></a><tt class="py-lineno">214</tt> <a class="py-toggle" href="#" id="Textarea-toggle" onclick="return toggle('Textarea');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Textarea-class.html">Textarea</a><tt class="py-op">(</tt><tt class="py-base-class">Input</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Textarea-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Textarea-expanded"><a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">    <tt class="py-docstring">"""Textarea input.</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; Textarea(name='foo', value='bar').render()</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;textarea id="foo" name="foo"&gt;bar&lt;/textarea&gt;'</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Textarea.render"></a><div id="Textarea.render-def"><a name="L220"></a><tt class="py-lineno">220</tt> <a class="py-toggle" href="#" id="Textarea.render-toggle" onclick="return toggle('Textarea.render');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Textarea-class.html#render">render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Textarea.render-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Textarea.render-expanded"><a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-119" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-119', 'copy', 'link-0');">copy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-120" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-120', 'name', 'link-57');">name</a></tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">        <tt id="link-121" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-121', 'value', 'link-6');">value</a></tt> <tt class="py-op">=</tt> <tt id="link-122" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-122', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-123" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-123', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-124" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-124', 'value', 'link-6');">value</a></tt> <tt class="py-keyword">or</tt> <tt class="py-string">''</tt><tt class="py-op">)</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;textarea %s&gt;%s&lt;/textarea&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">attrs</tt><tt class="py-op">,</tt> <tt id="link-125" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-125', 'value', 'link-6');">value</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"> </tt>
+<a name="Dropdown"></a><div id="Dropdown-def"><a name="L226"></a><tt class="py-lineno">226</tt> <a class="py-toggle" href="#" id="Dropdown-toggle" onclick="return toggle('Dropdown');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Dropdown-class.html">Dropdown</a><tt class="py-op">(</tt><tt class="py-base-class">Input</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Dropdown-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Dropdown-expanded"><a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">    <tt class="py-docstring">r"""Dropdown/select input.</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; Dropdown(name='foo', args=['a', 'b', 'c'], value='b').render()</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;select id="foo" name="foo"&gt;\n  &lt;option value="a"&gt;a&lt;/option&gt;\n  &lt;option selected="selected" value="b"&gt;b&lt;/option&gt;\n  &lt;option value="c"&gt;c&lt;/option&gt;\n&lt;/select&gt;\n'</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; Dropdown(name='foo', args=[('a', 'aa'), ('b', 'bb'), ('c', 'cc')], value='b').render()</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;select id="foo" name="foo"&gt;\n  &lt;option value="a"&gt;aa&lt;/option&gt;\n  &lt;option selected="selected" value="b"&gt;bb&lt;/option&gt;\n  &lt;option value="c"&gt;cc&lt;/option&gt;\n&lt;/select&gt;\n'</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Dropdown.__init__"></a><div id="Dropdown.__init__-def"><a name="L234"></a><tt class="py-lineno">234</tt> <a class="py-toggle" href="#" id="Dropdown.__init__-toggle" onclick="return toggle('Dropdown.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Dropdown-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">attrs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Dropdown.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Dropdown.__init__-expanded"><a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt> <tt class="py-op">=</tt> <tt class="py-name">args</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-126" class="py-name" targets="Class website.web.form.Dropdown=website.web.form.Dropdown-class.html"><a title="website.web.form.Dropdown" class="py-name" href="#" onclick="return doclink('link-126', 'Dropdown', 'link-126');">Dropdown</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-127" class="py-name" targets="Method website.Interpreter.lexer.lexer.Lexer.__init__()=website.Interpreter.lexer.lexer.Lexer-class.html#__init__,Method website.Interpreter.lexer.token.Token.__init__()=website.Interpreter.lexer.token.Token-class.html#__init__,Method website.Interpreter.parser.expression.BinaryOp.__init__()=website.Interpreter.parser.expression.BinaryOp-class.html#__init__,Method website.Interpreter.parser.expression.Const.__init__()=website.Interpreter.parser.expression.Const-class.html#__init__,Method website.Interpreter.parser.expression.Func.__init__()=website.Interpreter.parser.expression.Func-class.html#__init__,Method website.Interpreter.parser.expression.Parameter.__init__()=website.Interpreter.parser.expression.Parameter-class.html#__init__,Method website.Interpreter.parser.parser.Parser.__init__()=website.Interpreter.parser.parser.Parser-class.html#__init__,Method website.web.application'.Reloader.__init__()=website.web.application%27.Reloader-class.html#__init__,Method website.web.application'.application.__init__()=website.web.application%27.application-class.html#__init__,Method website.web.application'.auto_application.__init__()=website.web.application%27.auto_application-class.html#__init__,Method website.web.browser.AppBrowser.__init__()=website.web.browser.AppBrowser-class.html#__init__,Method website.web.browser.AppHandler.__init__()=website.web.browser.AppHandler-class.html#__init__,Method website.web.browser.Browser.__init__()=website.web.browser.Browser-class.html#__init__,Method website.web.contrib.template.cache.__init__()=website.web.contrib.template.cache-class.html#__init__,Method website.web.contrib.template.render_cheetah.__init__()=website.web.contrib.template.render_cheetah-class.html#__init__,Method website.web.contrib.template.render_genshi.__init__()=website.web.contrib.template.render_genshi-class.html#__init__,Method website.web.contrib.template.render_jinja.__init__()=website.web.contrib.template.render_jinja-class.html#__init__,Method website.web.contrib.template.render_mako.__init__()=website.web.contrib.template.render_mako-class.html#__init__,Method website.web.db.DB.__init__()=website.web.db.DB-class.html#__init__,Method website.web.db.FirebirdDB.__init__()=website.web.db.FirebirdDB-class.html#__init__,Method website.web.db.MSSQLDB.__init__()=website.web.db.MSSQLDB-class.html#__init__,Method website.web.db.MySQLDB.__init__()=website.web.db.MySQLDB-class.html#__init__,Method website.web.db.OracleDB.__init__()=website.web.db.OracleDB-class.html#__init__,Method website.web.db.PostgresDB.__init__()=website.web.db.PostgresDB-class.html#__init__,Method website.web.db.SQLLiteral.__init__()=website.web.db.SQLLiteral-class.html#__init__,Method website.web.db.SQLParam.__init__()=website.web.db.SQLParam-class.html#__init__,Method website.web.db.SQLQuery.__init__()=website.web.db.SQLQuery-class.html#__init__,Method website.web.db.SqliteDB.__init__()=website.web.db.SqliteDB-class.html#__init__,Method website.web.db.Transaction.__init__()=website.web.db.Transaction-class.html#__init__,Method website.web.db._ItplError.__init__()=website.web.db._ItplError-class.html#__init__,Method website.web.form.Button.__init__()=website.web.form.Button-class.html#__init__,Method website.web.form.Checkbox.__init__()=website.web.form.Checkbox-class.html#__init__,Method website.web.form.Dropdown.__init__()=website.web.form.Dropdown-class.html#__init__,Method website.web.form.Form.__init__()=website.web.form.Form-class.html#__init__,Method website.web.form.GroupedDropdown.__init__()=website.web.form.GroupedDropdown-class.html#__init__,Method website.web.form.Input.__init__()=website.web.form.Input-class.html#__init__,Method website.web.form.Radio.__init__()=website.web.form.Radio-class.html#__init__,Method website.web.form.Validator.__init__()=website.web.form.Validator-class.html#__init__,Method website.web.form.regexp.__init__()=website.web.form.regexp-class.html#__init__,Method website.web.httpserver.LogMiddleware.__init__()=website.web.httpserver.LogMiddleware-class.html#__init__,Method website.web.httpserver.StaticApp.__init__()=website.web.httpserver.StaticApp-class.html#__init__,Method website.web.httpserver.StaticMiddleware.__init__()=website.web.httpserver.StaticMiddleware-class.html#__init__,Method website.web.session.DBStore.__init__()=website.web.session.DBStore-class.html#__init__,Method website.web.session.DiskStore.__init__()=website.web.session.DiskStore-class.html#__init__,Method website.web.session.Session.__init__()=website.web.session.Session-class.html#__init__,Method website.web.session.SessionExpired.__init__()=website.web.session.SessionExpired-class.html#__init__,Method website.web.session.ShelfStore.__init__()=website.web.session.ShelfStore-class.html#__init__,Method website.web.template.AssignmentNode.__init__()=website.web.template.AssignmentNode-class.html#__init__,Method website.web.template.BaseTemplate.__init__()=website.web.template.BaseTemplate-class.html#__init__,Method website.web.template.BlockNode.__init__()=website.web.template.BlockNode-class.html#__init__,Method website.web.template.CodeNode.__init__()=website.web.template.CodeNode-class.html#__init__,Method website.web.template.CompiledTemplate.__init__()=website.web.template.CompiledTemplate-class.html#__init__,Method website.web.template.DefNode.__init__()=website.web.template.DefNode-class.html#__init__,Method website.web.template.DefwithNode.__init__()=website.web.template.DefwithNode-class.html#__init__,Method website.web.template.ExpressionNode.__init__()=website.web.template.ExpressionNode-class.html#__init__,Method website.web.template.ForLoop.__init__()=website.web.template.ForLoop-class.html#__init__,Method website.web.template.ForLoopContext.__init__()=website.web.template.ForLoopContext-class.html#__init__,Method website.web.template.ForNode.__init__()=website.web.template.ForNode-class.html#__init__,Method website.web.template.GAE_Render.__init__()=website.web.template.GAE_Render-class.html#__init__,Method website.web.template.LineNode.__init__()=website.web.template.LineNode-class.html#__init__,Method website.web.template.Parser.__init__()=website.web.template.Parser-class.html#__init__,Method website.web.template.PythonTokenizer.__init__()=website.web.template.PythonTokenizer-class.html#__init__,Method website.web.template.Render.__init__()=website.web.template.Render-class.html#__init__,Method website.web.template.SafeVisitor.__init__()=website.web.template.SafeVisitor-class.html#__init__,Method website.web.template.StatementNode.__init__()=website.web.template.StatementNode-class.html#__init__,Method website.web.template.SuiteNode.__init__()=website.web.template.SuiteNode-class.html#__init__,Method website.web.template.Template.__init__()=website.web.template.Template-class.html#__init__,Method website.web.template.TemplateResult.__init__()=website.web.template.TemplateResult-class.html#__init__,Method website.web.template.TextNode.__init__()=website.web.template.TextNode-class.html#__init__,Method website.web.template.VarNode.__init__()=website.web.template.VarNode-class.html#__init__,Method website.web.utils.CaptureStdout.__init__()=website.web.utils.CaptureStdout-class.html#__init__,Method website.web.utils.IterBetter.__init__()=website.web.utils.IterBetter-class.html#__init__,Method website.web.utils.Memoize.__init__()=website.web.utils.Memoize-class.html#__init__,Method website.web.utils.Profile.__init__()=website.web.utils.Profile-class.html#__init__,Method website.web.utils.ThreadedDict.__init__()=website.web.utils.ThreadedDict-class.html#__init__,Method website.web.utils._EmailMessage.__init__()=website.web.utils._EmailMessage-class.html#__init__,Method website.web.utils._re_subm_proxy.__init__()=website.web.utils._re_subm_proxy-class.html#__init__,Method website.web.webapi.Accepted.__init__()=website.web.webapi.Accepted-class.html#__init__,Method website.web.webapi.BadRequest.__init__()=website.web.webapi.BadRequest-class.html#__init__,Method website.web.webapi.Conflict.__init__()=website.web.webapi.Conflict-class.html#__init__,Method website.web.webapi.Created.__init__()=website.web.webapi.Created-class.html#__init__,Method website.web.webapi.Forbidden.__init__()=website.web.webapi.Forbidden-class.html#__init__,Method website.web.webapi.Found.__init__()=website.web.webapi.Found-class.html#__init__,Method website.web.webapi.Gone.__init__()=website.web.webapi.Gone-class.html#__init__,Method website.web.webapi.HTTPError.__init__()=website.web.webapi.HTTPError-class.html#__init__,Method website.web.webapi.NoMethod.__init__()=website.web.webapi.NoMethod-class.html#__init__,Method website.web.webapi.NotAcceptable.__init__()=website.web.webapi.NotAcceptable-class.html#__init__,Method website.web.webapi.NotModified.__init__()=website.web.webapi.NotModified-class.html#__init__,Method website.web.webapi.OK.__init__()=website.web.webapi.OK-class.html#__init__,Method website.web.webapi.PreconditionFailed.__init__()=website.web.webapi.PreconditionFailed-class.html#__init__,Method website.web.webapi.Redirect.__init__()=website.web.webapi.Redirect-class.html#__init__,Method website.web.webapi.SeeOther.__init__()=website.web.webapi.SeeOther-class.html#__init__,Method website.web.webapi.TempRedirect.__init__()=website.web.webapi.TempRedirect-class.html#__init__,Method website.web.webapi.Unauthorized.__init__()=website.web.webapi.Unauthorized-class.html#__init__,Method website.web.webapi.UnsupportedMediaType.__init__()=website.web.webapi.UnsupportedMediaType-class.html#__init__,Method website.web.webapi._InternalError.__init__()=website.web.webapi._InternalError-class.html#__init__,Method website.web.webapi._NotFound.__init__()=website.web.webapi._NotFound-class.html#__init__,Method website.web.wsgiserver.CP_fileobject.__init__()=website.web.wsgiserver.CP_fileobject-class.html#__init__,Method website.web.wsgiserver.CherryPyWSGIServer.__init__()=website.web.wsgiserver.CherryPyWSGIServer-class.html#__init__,Method website.web.wsgiserver.ChunkedRFile.__init__()=website.web.wsgiserver.ChunkedRFile-class.html#__init__,Method website.web.wsgiserver.Gateway.__init__()=website.web.wsgiserver.Gateway-class.html#__init__,Method website.web.wsgiserver.HTTPConnection.__init__()=website.web.wsgiserver.HTTPConnection-class.html#__init__,Method website.web.wsgiserver.HTTPRequest.__init__()=website.web.wsgiserver.HTTPRequest-class.html#__init__,Method website.web.wsgiserver.HTTPServer.__init__()=website.web.wsgiserver.HTTPServer-class.html#__init__,Method website.web.wsgiserver.KnownLengthRFile.__init__()=website.web.wsgiserver.KnownLengthRFile-class.html#__init__,Method website.web.wsgiserver.SSLAdapter.__init__()=website.web.wsgiserver.SSLAdapter-class.html#__init__,Method website.web.wsgiserver.SizeCheckWrapper.__init__()=website.web.wsgiserver.SizeCheckWrapper-class.html#__init__,Method website.web.wsgiserver.ThreadPool.__init__()=website.web.wsgiserver.ThreadPool-class.html#__init__,Method website.web.wsgiserver.WSGIGateway.__init__()=website.web.wsgiserver.WSGIGateway-class.html#__init__,Method website.web.wsgiserver.WSGIPathInfoDispatcher.__init__()=website.web.wsgiserver.WSGIPathInfoDispatcher-class.html#__init__,Method website.web.wsgiserver.WorkerThread.__init__()=website.web.wsgiserver.WorkerThread-class.html#__init__"><a title="website.Interpreter.lexer.lexer.Lexer.__init__
+website.Interpreter.lexer.token.Token.__init__
+website.Interpreter.parser.expression.BinaryOp.__init__
+website.Interpreter.parser.expression.Const.__init__
+website.Interpreter.parser.expression.Func.__init__
+website.Interpreter.parser.expression.Parameter.__init__
+website.Interpreter.parser.parser.Parser.__init__
+website.web.application'.Reloader.__init__
+website.web.application'.application.__init__
+website.web.application'.auto_application.__init__
+website.web.browser.AppBrowser.__init__
+website.web.browser.AppHandler.__init__
+website.web.browser.Browser.__init__
+website.web.contrib.template.cache.__init__
+website.web.contrib.template.render_cheetah.__init__
+website.web.contrib.template.render_genshi.__init__
+website.web.contrib.template.render_jinja.__init__
+website.web.contrib.template.render_mako.__init__
+website.web.db.DB.__init__
+website.web.db.FirebirdDB.__init__
+website.web.db.MSSQLDB.__init__
+website.web.db.MySQLDB.__init__
+website.web.db.OracleDB.__init__
+website.web.db.PostgresDB.__init__
+website.web.db.SQLLiteral.__init__
+website.web.db.SQLParam.__init__
+website.web.db.SQLQuery.__init__
+website.web.db.SqliteDB.__init__
+website.web.db.Transaction.__init__
+website.web.db._ItplError.__init__
+website.web.form.Button.__init__
+website.web.form.Checkbox.__init__
+website.web.form.Dropdown.__init__
+website.web.form.Form.__init__
+website.web.form.GroupedDropdown.__init__
+website.web.form.Input.__init__
+website.web.form.Radio.__init__
+website.web.form.Validator.__init__
+website.web.form.regexp.__init__
+website.web.httpserver.LogMiddleware.__init__
+website.web.httpserver.StaticApp.__init__
+website.web.httpserver.StaticMiddleware.__init__
+website.web.session.DBStore.__init__
+website.web.session.DiskStore.__init__
+website.web.session.Session.__init__
+website.web.session.SessionExpired.__init__
+website.web.session.ShelfStore.__init__
+website.web.template.AssignmentNode.__init__
+website.web.template.BaseTemplate.__init__
+website.web.template.BlockNode.__init__
+website.web.template.CodeNode.__init__
+website.web.template.CompiledTemplate.__init__
+website.web.template.DefNode.__init__
+website.web.template.DefwithNode.__init__
+website.web.template.ExpressionNode.__init__
+website.web.template.ForLoop.__init__
+website.web.template.ForLoopContext.__init__
+website.web.template.ForNode.__init__
+website.web.template.GAE_Render.__init__
+website.web.template.LineNode.__init__
+website.web.template.Parser.__init__
+website.web.template.PythonTokenizer.__init__
+website.web.template.Render.__init__
+website.web.template.SafeVisitor.__init__
+website.web.template.StatementNode.__init__
+website.web.template.SuiteNode.__init__
+website.web.template.Template.__init__
+website.web.template.TemplateResult.__init__
+website.web.template.TextNode.__init__
+website.web.template.VarNode.__init__
+website.web.utils.CaptureStdout.__init__
+website.web.utils.IterBetter.__init__
+website.web.utils.Memoize.__init__
+website.web.utils.Profile.__init__
+website.web.utils.ThreadedDict.__init__
+website.web.utils._EmailMessage.__init__
+website.web.utils._re_subm_proxy.__init__
+website.web.webapi.Accepted.__init__
+website.web.webapi.BadRequest.__init__
+website.web.webapi.Conflict.__init__
+website.web.webapi.Created.__init__
+website.web.webapi.Forbidden.__init__
+website.web.webapi.Found.__init__
+website.web.webapi.Gone.__init__
+website.web.webapi.HTTPError.__init__
+website.web.webapi.NoMethod.__init__
+website.web.webapi.NotAcceptable.__init__
+website.web.webapi.NotModified.__init__
+website.web.webapi.OK.__init__
+website.web.webapi.PreconditionFailed.__init__
+website.web.webapi.Redirect.__init__
+website.web.webapi.SeeOther.__init__
+website.web.webapi.TempRedirect.__init__
+website.web.webapi.Unauthorized.__init__
+website.web.webapi.UnsupportedMediaType.__init__
+website.web.webapi._InternalError.__init__
+website.web.webapi._NotFound.__init__
+website.web.wsgiserver.CP_fileobject.__init__
+website.web.wsgiserver.CherryPyWSGIServer.__init__
+website.web.wsgiserver.ChunkedRFile.__init__
+website.web.wsgiserver.Gateway.__init__
+website.web.wsgiserver.HTTPConnection.__init__
+website.web.wsgiserver.HTTPRequest.__init__
+website.web.wsgiserver.HTTPServer.__init__
+website.web.wsgiserver.KnownLengthRFile.__init__
+website.web.wsgiserver.SSLAdapter.__init__
+website.web.wsgiserver.SizeCheckWrapper.__init__
+website.web.wsgiserver.ThreadPool.__init__
+website.web.wsgiserver.WSGIGateway.__init__
+website.web.wsgiserver.WSGIPathInfoDispatcher.__init__
+website.web.wsgiserver.WorkerThread.__init__" class="py-name" href="#" onclick="return doclink('link-127', '__init__', 'link-127');">__init__</a></tt><tt class="py-op">(</tt><tt id="link-128" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-128', 'name', 'link-57');">name</a></tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">attrs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line"> </tt>
+<a name="Dropdown.render"></a><div id="Dropdown.render-def"><a name="L238"></a><tt class="py-lineno">238</tt> <a class="py-toggle" href="#" id="Dropdown.render-toggle" onclick="return toggle('Dropdown.render');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Dropdown-class.html#render">render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Dropdown.render-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Dropdown.render-expanded"><a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-129" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-129', 'copy', 'link-0');">copy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-130" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-130', 'name', 'link-57');">name</a></tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">         </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">        <tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt class="py-string">'&lt;select %s&gt;\n'</tt> <tt class="py-op">%</tt> <tt class="py-name">attrs</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">         </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">arg</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">:</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">            <tt class="py-name">x</tt> <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-131" class="py-name" targets="Method website.web.form.Dropdown._render_option()=website.web.form.Dropdown-class.html#_render_option"><a title="website.web.form.Dropdown._render_option" class="py-name" href="#" onclick="return doclink('link-131', '_render_option', 'link-131');">_render_option</a></tt><tt class="py-op">(</tt><tt class="py-name">arg</tt><tt class="py-op">)</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">        <tt class="py-name">x</tt> <tt class="py-op">+=</tt> <tt class="py-string">'&lt;/select&gt;\n'</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">x</tt> </tt>
+</div><a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line"> </tt>
+<a name="Dropdown._render_option"></a><div id="Dropdown._render_option-def"><a name="L250"></a><tt class="py-lineno">250</tt> <a class="py-toggle" href="#" id="Dropdown._render_option-toggle" onclick="return toggle('Dropdown._render_option');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Dropdown-class.html#_render_option">_render_option</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">arg</tt><tt class="py-op">,</tt> <tt class="py-param">indent</tt><tt class="py-op">=</tt><tt class="py-string">'  '</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Dropdown._render_option-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Dropdown._render_option-expanded"><a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">arg</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">tuple</tt><tt class="py-op">,</tt> <tt class="py-name">list</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">            <tt id="link-132" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-132', 'value', 'link-6');">value</a></tt><tt class="py-op">,</tt> <tt class="py-name">desc</tt><tt class="py-op">=</tt> <tt class="py-name">arg</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">            <tt id="link-133" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-133', 'value', 'link-6');">value</a></tt><tt class="py-op">,</tt> <tt class="py-name">desc</tt> <tt class="py-op">=</tt> <tt class="py-name">arg</tt><tt class="py-op">,</tt> <tt class="py-name">arg</tt>  </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-134" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-134', 'value', 'link-6');">value</a></tt> <tt class="py-op">==</tt> <tt id="link-135" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-135', 'value', 'link-6');">value</a></tt> <tt class="py-keyword">or</tt> <tt class="py-op">(</tt><tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-136" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-136', 'value', 'link-6');">value</a></tt><tt class="py-op">,</tt> <tt class="py-name">list</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt id="link-137" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-137', 'value', 'link-6');">value</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-138" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-138', 'value', 'link-6');">value</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">            <tt class="py-name">select_p</tt> <tt class="py-op">=</tt> <tt class="py-string">' selected="selected"'</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">            <tt class="py-name">select_p</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">indent</tt> <tt class="py-op">+</tt> <tt class="py-string">'&lt;option%s value="%s"&gt;%s&lt;/option&gt;\n'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">select_p</tt><tt class="py-op">,</tt> <tt id="link-139" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-139', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-140" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-140', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt id="link-141" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-141', 'value', 'link-6');">value</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-142" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-142', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-143" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-143', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">desc</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">         </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"> </tt>
+<a name="GroupedDropdown"></a><div id="GroupedDropdown-def"><a name="L263"></a><tt class="py-lineno">263</tt> <a class="py-toggle" href="#" id="GroupedDropdown-toggle" onclick="return toggle('GroupedDropdown');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.GroupedDropdown-class.html">GroupedDropdown</a><tt class="py-op">(</tt><tt class="py-base-class">Dropdown</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GroupedDropdown-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="GroupedDropdown-expanded"><a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">    <tt class="py-docstring">r"""Grouped Dropdown/select input.</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; GroupedDropdown(name='car_type', args=(('Swedish Cars', ('Volvo', 'Saab')), ('German Cars', ('Mercedes', 'Audi'))), value='Audi').render()</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;select id="car_type" name="car_type"&gt;\n  &lt;optgroup label="Swedish Cars"&gt;\n    &lt;option value="Volvo"&gt;Volvo&lt;/option&gt;\n    &lt;option value="Saab"&gt;Saab&lt;/option&gt;\n  &lt;/optgroup&gt;\n  &lt;optgroup label="German Cars"&gt;\n    &lt;option value="Mercedes"&gt;Mercedes&lt;/option&gt;\n    &lt;option selected="selected" value="Audi"&gt;Audi&lt;/option&gt;\n  &lt;/optgroup&gt;\n&lt;/select&gt;\n'</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; GroupedDropdown(name='car_type', args=(('Swedish Cars', (('v', 'Volvo'), ('s', 'Saab'))), ('German Cars', (('m', 'Mercedes'), ('a', 'Audi')))), value='a').render()</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;select id="car_type" name="car_type"&gt;\n  &lt;optgroup label="Swedish Cars"&gt;\n    &lt;option value="v"&gt;Volvo&lt;/option&gt;\n    &lt;option value="s"&gt;Saab&lt;/option&gt;\n  &lt;/optgroup&gt;\n  &lt;optgroup label="German Cars"&gt;\n    &lt;option value="m"&gt;Mercedes&lt;/option&gt;\n    &lt;option selected="selected" value="a"&gt;Audi&lt;/option&gt;\n  &lt;/optgroup&gt;\n&lt;/select&gt;\n'</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="GroupedDropdown.__init__"></a><div id="GroupedDropdown.__init__-def"><a name="L272"></a><tt class="py-lineno">272</tt> <a class="py-toggle" href="#" id="GroupedDropdown.__init__-toggle" onclick="return toggle('GroupedDropdown.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.GroupedDropdown-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">attrs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GroupedDropdown.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="GroupedDropdown.__init__-expanded"><a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt> <tt class="py-op">=</tt> <tt class="py-name">args</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-144" class="py-name"><a title="website.web.form.Dropdown" class="py-name" href="#" onclick="return doclink('link-144', 'Dropdown', 'link-126');">Dropdown</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-145" class="py-name"><a title="website.Interpreter.lexer.lexer.Lexer.__init__
+website.Interpreter.lexer.token.Token.__init__
+website.Interpreter.parser.expression.BinaryOp.__init__
+website.Interpreter.parser.expression.Const.__init__
+website.Interpreter.parser.expression.Func.__init__
+website.Interpreter.parser.expression.Parameter.__init__
+website.Interpreter.parser.parser.Parser.__init__
+website.web.application'.Reloader.__init__
+website.web.application'.application.__init__
+website.web.application'.auto_application.__init__
+website.web.browser.AppBrowser.__init__
+website.web.browser.AppHandler.__init__
+website.web.browser.Browser.__init__
+website.web.contrib.template.cache.__init__
+website.web.contrib.template.render_cheetah.__init__
+website.web.contrib.template.render_genshi.__init__
+website.web.contrib.template.render_jinja.__init__
+website.web.contrib.template.render_mako.__init__
+website.web.db.DB.__init__
+website.web.db.FirebirdDB.__init__
+website.web.db.MSSQLDB.__init__
+website.web.db.MySQLDB.__init__
+website.web.db.OracleDB.__init__
+website.web.db.PostgresDB.__init__
+website.web.db.SQLLiteral.__init__
+website.web.db.SQLParam.__init__
+website.web.db.SQLQuery.__init__
+website.web.db.SqliteDB.__init__
+website.web.db.Transaction.__init__
+website.web.db._ItplError.__init__
+website.web.form.Button.__init__
+website.web.form.Checkbox.__init__
+website.web.form.Dropdown.__init__
+website.web.form.Form.__init__
+website.web.form.GroupedDropdown.__init__
+website.web.form.Input.__init__
+website.web.form.Radio.__init__
+website.web.form.Validator.__init__
+website.web.form.regexp.__init__
+website.web.httpserver.LogMiddleware.__init__
+website.web.httpserver.StaticApp.__init__
+website.web.httpserver.StaticMiddleware.__init__
+website.web.session.DBStore.__init__
+website.web.session.DiskStore.__init__
+website.web.session.Session.__init__
+website.web.session.SessionExpired.__init__
+website.web.session.ShelfStore.__init__
+website.web.template.AssignmentNode.__init__
+website.web.template.BaseTemplate.__init__
+website.web.template.BlockNode.__init__
+website.web.template.CodeNode.__init__
+website.web.template.CompiledTemplate.__init__
+website.web.template.DefNode.__init__
+website.web.template.DefwithNode.__init__
+website.web.template.ExpressionNode.__init__
+website.web.template.ForLoop.__init__
+website.web.template.ForLoopContext.__init__
+website.web.template.ForNode.__init__
+website.web.template.GAE_Render.__init__
+website.web.template.LineNode.__init__
+website.web.template.Parser.__init__
+website.web.template.PythonTokenizer.__init__
+website.web.template.Render.__init__
+website.web.template.SafeVisitor.__init__
+website.web.template.StatementNode.__init__
+website.web.template.SuiteNode.__init__
+website.web.template.Template.__init__
+website.web.template.TemplateResult.__init__
+website.web.template.TextNode.__init__
+website.web.template.VarNode.__init__
+website.web.utils.CaptureStdout.__init__
+website.web.utils.IterBetter.__init__
+website.web.utils.Memoize.__init__
+website.web.utils.Profile.__init__
+website.web.utils.ThreadedDict.__init__
+website.web.utils._EmailMessage.__init__
+website.web.utils._re_subm_proxy.__init__
+website.web.webapi.Accepted.__init__
+website.web.webapi.BadRequest.__init__
+website.web.webapi.Conflict.__init__
+website.web.webapi.Created.__init__
+website.web.webapi.Forbidden.__init__
+website.web.webapi.Found.__init__
+website.web.webapi.Gone.__init__
+website.web.webapi.HTTPError.__init__
+website.web.webapi.NoMethod.__init__
+website.web.webapi.NotAcceptable.__init__
+website.web.webapi.NotModified.__init__
+website.web.webapi.OK.__init__
+website.web.webapi.PreconditionFailed.__init__
+website.web.webapi.Redirect.__init__
+website.web.webapi.SeeOther.__init__
+website.web.webapi.TempRedirect.__init__
+website.web.webapi.Unauthorized.__init__
+website.web.webapi.UnsupportedMediaType.__init__
+website.web.webapi._InternalError.__init__
+website.web.webapi._NotFound.__init__
+website.web.wsgiserver.CP_fileobject.__init__
+website.web.wsgiserver.CherryPyWSGIServer.__init__
+website.web.wsgiserver.ChunkedRFile.__init__
+website.web.wsgiserver.Gateway.__init__
+website.web.wsgiserver.HTTPConnection.__init__
+website.web.wsgiserver.HTTPRequest.__init__
+website.web.wsgiserver.HTTPServer.__init__
+website.web.wsgiserver.KnownLengthRFile.__init__
+website.web.wsgiserver.SSLAdapter.__init__
+website.web.wsgiserver.SizeCheckWrapper.__init__
+website.web.wsgiserver.ThreadPool.__init__
+website.web.wsgiserver.WSGIGateway.__init__
+website.web.wsgiserver.WSGIPathInfoDispatcher.__init__
+website.web.wsgiserver.WorkerThread.__init__" class="py-name" href="#" onclick="return doclink('link-145', '__init__', 'link-127');">__init__</a></tt><tt class="py-op">(</tt><tt id="link-146" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-146', 'name', 'link-57');">name</a></tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">attrs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line"> </tt>
+<a name="GroupedDropdown.render"></a><div id="GroupedDropdown.render-def"><a name="L276"></a><tt class="py-lineno">276</tt> <a class="py-toggle" href="#" id="GroupedDropdown.render-toggle" onclick="return toggle('GroupedDropdown.render');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.GroupedDropdown-class.html#render">render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GroupedDropdown.render-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="GroupedDropdown.render-expanded"><a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-147" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-147', 'copy', 'link-0');">copy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-148" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-148', 'name', 'link-57');">name</a></tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">         </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">        <tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt class="py-string">'&lt;select %s&gt;\n'</tt> <tt class="py-op">%</tt> <tt class="py-name">attrs</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">         </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">label</tt><tt class="py-op">,</tt> <tt class="py-name">options</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">:</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">            <tt class="py-name">x</tt> <tt class="py-op">+=</tt> <tt class="py-string">'  &lt;optgroup label="%s"&gt;\n'</tt> <tt class="py-op">%</tt> <tt id="link-149" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-149', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-150" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-150', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">label</tt><tt class="py-op">)</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">arg</tt> <tt class="py-keyword">in</tt> <tt class="py-name">options</tt><tt class="py-op">:</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">                <tt class="py-name">x</tt> <tt class="py-op">+=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-151" class="py-name"><a title="website.web.form.Dropdown._render_option" class="py-name" href="#" onclick="return doclink('link-151', '_render_option', 'link-131');">_render_option</a></tt><tt class="py-op">(</tt><tt class="py-name">arg</tt><tt class="py-op">,</tt> <tt class="py-name">indent</tt> <tt class="py-op">=</tt> <tt class="py-string">'    '</tt><tt class="py-op">)</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">            <tt class="py-name">x</tt> <tt class="py-op">+=</tt>  <tt class="py-string">'  &lt;/optgroup&gt;\n'</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">             </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">        <tt class="py-name">x</tt> <tt class="py-op">+=</tt> <tt class="py-string">'&lt;/select&gt;\n'</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">x</tt> </tt>
+</div></div><a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line"> </tt>
+<a name="Radio"></a><div id="Radio-def"><a name="L291"></a><tt class="py-lineno">291</tt> <a class="py-toggle" href="#" id="Radio-toggle" onclick="return toggle('Radio');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Radio-class.html">Radio</a><tt class="py-op">(</tt><tt class="py-base-class">Input</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Radio-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Radio-expanded"><a name="Radio.__init__"></a><div id="Radio.__init__-def"><a name="L292"></a><tt class="py-lineno">292</tt> <a class="py-toggle" href="#" id="Radio.__init__-toggle" onclick="return toggle('Radio.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Radio-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">attrs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Radio.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Radio.__init__-expanded"><a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt> <tt class="py-op">=</tt> <tt class="py-name">args</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-152" class="py-name" targets="Class website.web.form.Radio=website.web.form.Radio-class.html"><a title="website.web.form.Radio" class="py-name" href="#" onclick="return doclink('link-152', 'Radio', 'link-152');">Radio</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-153" class="py-name"><a title="website.Interpreter.lexer.lexer.Lexer.__init__
+website.Interpreter.lexer.token.Token.__init__
+website.Interpreter.parser.expression.BinaryOp.__init__
+website.Interpreter.parser.expression.Const.__init__
+website.Interpreter.parser.expression.Func.__init__
+website.Interpreter.parser.expression.Parameter.__init__
+website.Interpreter.parser.parser.Parser.__init__
+website.web.application'.Reloader.__init__
+website.web.application'.application.__init__
+website.web.application'.auto_application.__init__
+website.web.browser.AppBrowser.__init__
+website.web.browser.AppHandler.__init__
+website.web.browser.Browser.__init__
+website.web.contrib.template.cache.__init__
+website.web.contrib.template.render_cheetah.__init__
+website.web.contrib.template.render_genshi.__init__
+website.web.contrib.template.render_jinja.__init__
+website.web.contrib.template.render_mako.__init__
+website.web.db.DB.__init__
+website.web.db.FirebirdDB.__init__
+website.web.db.MSSQLDB.__init__
+website.web.db.MySQLDB.__init__
+website.web.db.OracleDB.__init__
+website.web.db.PostgresDB.__init__
+website.web.db.SQLLiteral.__init__
+website.web.db.SQLParam.__init__
+website.web.db.SQLQuery.__init__
+website.web.db.SqliteDB.__init__
+website.web.db.Transaction.__init__
+website.web.db._ItplError.__init__
+website.web.form.Button.__init__
+website.web.form.Checkbox.__init__
+website.web.form.Dropdown.__init__
+website.web.form.Form.__init__
+website.web.form.GroupedDropdown.__init__
+website.web.form.Input.__init__
+website.web.form.Radio.__init__
+website.web.form.Validator.__init__
+website.web.form.regexp.__init__
+website.web.httpserver.LogMiddleware.__init__
+website.web.httpserver.StaticApp.__init__
+website.web.httpserver.StaticMiddleware.__init__
+website.web.session.DBStore.__init__
+website.web.session.DiskStore.__init__
+website.web.session.Session.__init__
+website.web.session.SessionExpired.__init__
+website.web.session.ShelfStore.__init__
+website.web.template.AssignmentNode.__init__
+website.web.template.BaseTemplate.__init__
+website.web.template.BlockNode.__init__
+website.web.template.CodeNode.__init__
+website.web.template.CompiledTemplate.__init__
+website.web.template.DefNode.__init__
+website.web.template.DefwithNode.__init__
+website.web.template.ExpressionNode.__init__
+website.web.template.ForLoop.__init__
+website.web.template.ForLoopContext.__init__
+website.web.template.ForNode.__init__
+website.web.template.GAE_Render.__init__
+website.web.template.LineNode.__init__
+website.web.template.Parser.__init__
+website.web.template.PythonTokenizer.__init__
+website.web.template.Render.__init__
+website.web.template.SafeVisitor.__init__
+website.web.template.StatementNode.__init__
+website.web.template.SuiteNode.__init__
+website.web.template.Template.__init__
+website.web.template.TemplateResult.__init__
+website.web.template.TextNode.__init__
+website.web.template.VarNode.__init__
+website.web.utils.CaptureStdout.__init__
+website.web.utils.IterBetter.__init__
+website.web.utils.Memoize.__init__
+website.web.utils.Profile.__init__
+website.web.utils.ThreadedDict.__init__
+website.web.utils._EmailMessage.__init__
+website.web.utils._re_subm_proxy.__init__
+website.web.webapi.Accepted.__init__
+website.web.webapi.BadRequest.__init__
+website.web.webapi.Conflict.__init__
+website.web.webapi.Created.__init__
+website.web.webapi.Forbidden.__init__
+website.web.webapi.Found.__init__
+website.web.webapi.Gone.__init__
+website.web.webapi.HTTPError.__init__
+website.web.webapi.NoMethod.__init__
+website.web.webapi.NotAcceptable.__init__
+website.web.webapi.NotModified.__init__
+website.web.webapi.OK.__init__
+website.web.webapi.PreconditionFailed.__init__
+website.web.webapi.Redirect.__init__
+website.web.webapi.SeeOther.__init__
+website.web.webapi.TempRedirect.__init__
+website.web.webapi.Unauthorized.__init__
+website.web.webapi.UnsupportedMediaType.__init__
+website.web.webapi._InternalError.__init__
+website.web.webapi._NotFound.__init__
+website.web.wsgiserver.CP_fileobject.__init__
+website.web.wsgiserver.CherryPyWSGIServer.__init__
+website.web.wsgiserver.ChunkedRFile.__init__
+website.web.wsgiserver.Gateway.__init__
+website.web.wsgiserver.HTTPConnection.__init__
+website.web.wsgiserver.HTTPRequest.__init__
+website.web.wsgiserver.HTTPServer.__init__
+website.web.wsgiserver.KnownLengthRFile.__init__
+website.web.wsgiserver.SSLAdapter.__init__
+website.web.wsgiserver.SizeCheckWrapper.__init__
+website.web.wsgiserver.ThreadPool.__init__
+website.web.wsgiserver.WSGIGateway.__init__
+website.web.wsgiserver.WSGIPathInfoDispatcher.__init__
+website.web.wsgiserver.WorkerThread.__init__" class="py-name" href="#" onclick="return doclink('link-153', '__init__', 'link-127');">__init__</a></tt><tt class="py-op">(</tt><tt id="link-154" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-154', 'name', 'link-57');">name</a></tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">attrs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line"> </tt>
+<a name="Radio.render"></a><div id="Radio.render-def"><a name="L296"></a><tt class="py-lineno">296</tt> <a class="py-toggle" href="#" id="Radio.render-toggle" onclick="return toggle('Radio.render');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Radio-class.html#render">render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Radio.render-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Radio.render-expanded"><a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">        <tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt class="py-string">'&lt;span&gt;'</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">arg</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">:</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">arg</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">tuple</tt><tt class="py-op">,</tt> <tt class="py-name">list</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">                <tt id="link-155" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-155', 'value', 'link-6');">value</a></tt><tt class="py-op">,</tt> <tt class="py-name">desc</tt><tt class="py-op">=</tt> <tt class="py-name">arg</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line">                <tt id="link-156" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-156', 'value', 'link-6');">value</a></tt><tt class="py-op">,</tt> <tt class="py-name">desc</tt> <tt class="py-op">=</tt> <tt class="py-name">arg</tt><tt class="py-op">,</tt> <tt class="py-name">arg</tt>  </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line">            <tt class="py-name">attrs</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-157" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-157', 'copy', 'link-0');">copy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line">            <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-158" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-158', 'name', 'link-57');">name</a></tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line">            <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'type'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'radio'</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line">            <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'value'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-159" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-159', 'value', 'link-6');">value</a></tt> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-160" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-160', 'value', 'link-6');">value</a></tt> <tt class="py-op">==</tt> <tt id="link-161" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-161', 'value', 'link-6');">value</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line">                <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'checked'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'checked'</tt> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line">            <tt class="py-name">x</tt> <tt class="py-op">+=</tt> <tt class="py-string">'&lt;input %s/&gt; %s'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">attrs</tt><tt class="py-op">,</tt> <tt id="link-162" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-162', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-163" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-163', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">desc</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line">        <tt class="py-name">x</tt> <tt class="py-op">+=</tt> <tt class="py-string">'&lt;/span&gt;'</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">x</tt> </tt>
+</div></div><a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"> </tt>
+<a name="Checkbox"></a><div id="Checkbox-def"><a name="L313"></a><tt class="py-lineno">313</tt> <a class="py-toggle" href="#" id="Checkbox-toggle" onclick="return toggle('Checkbox');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Checkbox-class.html">Checkbox</a><tt class="py-op">(</tt><tt class="py-base-class">Input</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Checkbox-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Checkbox-expanded"><a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line">    <tt class="py-docstring">"""Checkbox input.</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; Checkbox('foo', value='bar', checked=True).render()</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line"><tt class="py-docstring">    u'&lt;input checked="checked" type="checkbox" id="foo_bar" value="bar" name="foo"/&gt;'</tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; Checkbox('foo', value='bar').render()</tt> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line"><tt class="py-docstring">    u'&lt;input type="checkbox" id="foo_bar" value="bar" name="foo"/&gt;'</tt> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; c = Checkbox('foo', value='bar')</tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; c.validate('on')</tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line"><tt class="py-docstring">    True</tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; c.render()</tt> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line"><tt class="py-docstring">    u'&lt;input checked="checked" type="checkbox" id="foo_bar" value="bar" name="foo"/&gt;'</tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Checkbox.__init__"></a><div id="Checkbox.__init__-def"><a name="L326"></a><tt class="py-lineno">326</tt> <a class="py-toggle" href="#" id="Checkbox.__init__-toggle" onclick="return toggle('Checkbox.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Checkbox-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">attrs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Checkbox.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Checkbox.__init__-expanded"><a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">checked</tt> <tt class="py-op">=</tt> <tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-164" class="py-name"><a title="website.web.utils.ThreadedDict.pop" class="py-name" href="#" onclick="return doclink('link-164', 'pop', 'link-8');">pop</a></tt><tt class="py-op">(</tt><tt class="py-string">'checked'</tt><tt class="py-op">,</tt> <tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line">        <tt id="link-165" class="py-name" targets="Class website.web.form.Input=website.web.form.Input-class.html"><a title="website.web.form.Input" class="py-name" href="#" onclick="return doclink('link-165', 'Input', 'link-165');">Input</a></tt><tt class="py-op">.</tt><tt id="link-166" class="py-name"><a title="website.Interpreter.lexer.lexer.Lexer.__init__
+website.Interpreter.lexer.token.Token.__init__
+website.Interpreter.parser.expression.BinaryOp.__init__
+website.Interpreter.parser.expression.Const.__init__
+website.Interpreter.parser.expression.Func.__init__
+website.Interpreter.parser.expression.Parameter.__init__
+website.Interpreter.parser.parser.Parser.__init__
+website.web.application'.Reloader.__init__
+website.web.application'.application.__init__
+website.web.application'.auto_application.__init__
+website.web.browser.AppBrowser.__init__
+website.web.browser.AppHandler.__init__
+website.web.browser.Browser.__init__
+website.web.contrib.template.cache.__init__
+website.web.contrib.template.render_cheetah.__init__
+website.web.contrib.template.render_genshi.__init__
+website.web.contrib.template.render_jinja.__init__
+website.web.contrib.template.render_mako.__init__
+website.web.db.DB.__init__
+website.web.db.FirebirdDB.__init__
+website.web.db.MSSQLDB.__init__
+website.web.db.MySQLDB.__init__
+website.web.db.OracleDB.__init__
+website.web.db.PostgresDB.__init__
+website.web.db.SQLLiteral.__init__
+website.web.db.SQLParam.__init__
+website.web.db.SQLQuery.__init__
+website.web.db.SqliteDB.__init__
+website.web.db.Transaction.__init__
+website.web.db._ItplError.__init__
+website.web.form.Button.__init__
+website.web.form.Checkbox.__init__
+website.web.form.Dropdown.__init__
+website.web.form.Form.__init__
+website.web.form.GroupedDropdown.__init__
+website.web.form.Input.__init__
+website.web.form.Radio.__init__
+website.web.form.Validator.__init__
+website.web.form.regexp.__init__
+website.web.httpserver.LogMiddleware.__init__
+website.web.httpserver.StaticApp.__init__
+website.web.httpserver.StaticMiddleware.__init__
+website.web.session.DBStore.__init__
+website.web.session.DiskStore.__init__
+website.web.session.Session.__init__
+website.web.session.SessionExpired.__init__
+website.web.session.ShelfStore.__init__
+website.web.template.AssignmentNode.__init__
+website.web.template.BaseTemplate.__init__
+website.web.template.BlockNode.__init__
+website.web.template.CodeNode.__init__
+website.web.template.CompiledTemplate.__init__
+website.web.template.DefNode.__init__
+website.web.template.DefwithNode.__init__
+website.web.template.ExpressionNode.__init__
+website.web.template.ForLoop.__init__
+website.web.template.ForLoopContext.__init__
+website.web.template.ForNode.__init__
+website.web.template.GAE_Render.__init__
+website.web.template.LineNode.__init__
+website.web.template.Parser.__init__
+website.web.template.PythonTokenizer.__init__
+website.web.template.Render.__init__
+website.web.template.SafeVisitor.__init__
+website.web.template.StatementNode.__init__
+website.web.template.SuiteNode.__init__
+website.web.template.Template.__init__
+website.web.template.TemplateResult.__init__
+website.web.template.TextNode.__init__
+website.web.template.VarNode.__init__
+website.web.utils.CaptureStdout.__init__
+website.web.utils.IterBetter.__init__
+website.web.utils.Memoize.__init__
+website.web.utils.Profile.__init__
+website.web.utils.ThreadedDict.__init__
+website.web.utils._EmailMessage.__init__
+website.web.utils._re_subm_proxy.__init__
+website.web.webapi.Accepted.__init__
+website.web.webapi.BadRequest.__init__
+website.web.webapi.Conflict.__init__
+website.web.webapi.Created.__init__
+website.web.webapi.Forbidden.__init__
+website.web.webapi.Found.__init__
+website.web.webapi.Gone.__init__
+website.web.webapi.HTTPError.__init__
+website.web.webapi.NoMethod.__init__
+website.web.webapi.NotAcceptable.__init__
+website.web.webapi.NotModified.__init__
+website.web.webapi.OK.__init__
+website.web.webapi.PreconditionFailed.__init__
+website.web.webapi.Redirect.__init__
+website.web.webapi.SeeOther.__init__
+website.web.webapi.TempRedirect.__init__
+website.web.webapi.Unauthorized.__init__
+website.web.webapi.UnsupportedMediaType.__init__
+website.web.webapi._InternalError.__init__
+website.web.webapi._NotFound.__init__
+website.web.wsgiserver.CP_fileobject.__init__
+website.web.wsgiserver.CherryPyWSGIServer.__init__
+website.web.wsgiserver.ChunkedRFile.__init__
+website.web.wsgiserver.Gateway.__init__
+website.web.wsgiserver.HTTPConnection.__init__
+website.web.wsgiserver.HTTPRequest.__init__
+website.web.wsgiserver.HTTPServer.__init__
+website.web.wsgiserver.KnownLengthRFile.__init__
+website.web.wsgiserver.SSLAdapter.__init__
+website.web.wsgiserver.SizeCheckWrapper.__init__
+website.web.wsgiserver.ThreadPool.__init__
+website.web.wsgiserver.WSGIGateway.__init__
+website.web.wsgiserver.WSGIPathInfoDispatcher.__init__
+website.web.wsgiserver.WorkerThread.__init__" class="py-name" href="#" onclick="return doclink('link-166', '__init__', 'link-127');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt id="link-167" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-167', 'name', 'link-57');">name</a></tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">attrs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line">         </tt>
+<a name="Checkbox.get_default_id"></a><div id="Checkbox.get_default_id-def"><a name="L330"></a><tt class="py-lineno">330</tt> <a class="py-toggle" href="#" id="Checkbox.get_default_id-toggle" onclick="return toggle('Checkbox.get_default_id');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Checkbox-class.html#get_default_id">get_default_id</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Checkbox.get_default_id-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Checkbox.get_default_id-expanded"><a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line">        <tt id="link-168" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-168', 'value', 'link-6');">value</a></tt> <tt class="py-op">=</tt> <tt id="link-169" class="py-name"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-169', 'utils', 'link-3');">utils</a></tt><tt class="py-op">.</tt><tt id="link-170" class="py-name" targets="Function website.web.utils.safestr()=website.web.utils-module.html#safestr"><a title="website.web.utils.safestr" class="py-name" href="#" onclick="return doclink('link-170', 'safestr', 'link-170');">safestr</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-171" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-171', 'value', 'link-6');">value</a></tt> <tt class="py-keyword">or</tt> <tt class="py-string">""</tt><tt class="py-op">)</tt> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-172" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-172', 'name', 'link-57');">name</a></tt> <tt class="py-op">+</tt> <tt class="py-string">'_'</tt> <tt class="py-op">+</tt> <tt id="link-173" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-173', 'value', 'link-6');">value</a></tt><tt class="py-op">.</tt><tt class="py-name">replace</tt><tt class="py-op">(</tt><tt class="py-string">' '</tt><tt class="py-op">,</tt> <tt class="py-string">'_'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line"> </tt>
+<a name="Checkbox.render"></a><div id="Checkbox.render-def"><a name="L334"></a><tt class="py-lineno">334</tt> <a class="py-toggle" href="#" id="Checkbox.render-toggle" onclick="return toggle('Checkbox.render');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Checkbox-class.html#render">render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Checkbox.render-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Checkbox.render-expanded"><a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-174" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-174', 'copy', 'link-0');">copy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'type'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'checkbox'</tt> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-175" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-175', 'name', 'link-57');">name</a></tt> </tt>
+<a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'value'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-176" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-176', 'value', 'link-6');">value</a></tt> </tt>
+<a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line"> </tt>
+<a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">checked</tt><tt class="py-op">:</tt> </tt>
+<a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line">            <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'checked'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'checked'</tt>             </tt>
+<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;input %s/&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-name">attrs</tt> </tt>
+</div><a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line"> </tt>
+<a name="Checkbox.set_value"></a><div id="Checkbox.set_value-def"><a name="L344"></a><tt class="py-lineno">344</tt> <a class="py-toggle" href="#" id="Checkbox.set_value-toggle" onclick="return toggle('Checkbox.set_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Checkbox-class.html#set_value">set_value</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Checkbox.set_value-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Checkbox.set_value-expanded"><a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">checked</tt> <tt class="py-op">=</tt> <tt class="py-name">bool</tt><tt class="py-op">(</tt><tt id="link-177" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-177', 'value', 'link-6');">value</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line"> </tt>
+<a name="Checkbox.get_value"></a><div id="Checkbox.get_value-def"><a name="L347"></a><tt class="py-lineno">347</tt> <a class="py-toggle" href="#" id="Checkbox.get_value-toggle" onclick="return toggle('Checkbox.get_value');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Checkbox-class.html#get_value">get_value</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Checkbox.get_value-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Checkbox.get_value-expanded"><a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">checked</tt> </tt>
+</div></div><a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line"> </tt>
+<a name="Button"></a><div id="Button-def"><a name="L350"></a><tt class="py-lineno">350</tt> <a class="py-toggle" href="#" id="Button-toggle" onclick="return toggle('Button');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Button-class.html">Button</a><tt class="py-op">(</tt><tt class="py-base-class">Input</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Button-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Button-expanded"><a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line">    <tt class="py-docstring">"""HTML Button.</tt> </tt>
+<a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; Button("save").render()</tt> </tt>
+<a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line"><tt class="py-docstring">    u'&lt;button id="save" name="save"&gt;save&lt;/button&gt;'</tt> </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; Button("action", value="save", html="&lt;b&gt;Save Changes&lt;/b&gt;").render()</tt> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line"><tt class="py-docstring">    u'&lt;button id="action" value="save" name="action"&gt;&lt;b&gt;Save Changes&lt;/b&gt;&lt;/button&gt;'</tt> </tt>
+<a name="L357"></a><tt class="py-lineno">357</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Button.__init__"></a><div id="Button.__init__-def"><a name="L358"></a><tt class="py-lineno">358</tt> <a class="py-toggle" href="#" id="Button.__init__-toggle" onclick="return toggle('Button.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Button-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">attrs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Button.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Button.__init__-expanded"><a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-178" class="py-name" targets="Class website.web.form.Button=website.web.form.Button-class.html"><a title="website.web.form.Button" class="py-name" href="#" onclick="return doclink('link-178', 'Button', 'link-178');">Button</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-179" class="py-name"><a title="website.Interpreter.lexer.lexer.Lexer.__init__
+website.Interpreter.lexer.token.Token.__init__
+website.Interpreter.parser.expression.BinaryOp.__init__
+website.Interpreter.parser.expression.Const.__init__
+website.Interpreter.parser.expression.Func.__init__
+website.Interpreter.parser.expression.Parameter.__init__
+website.Interpreter.parser.parser.Parser.__init__
+website.web.application'.Reloader.__init__
+website.web.application'.application.__init__
+website.web.application'.auto_application.__init__
+website.web.browser.AppBrowser.__init__
+website.web.browser.AppHandler.__init__
+website.web.browser.Browser.__init__
+website.web.contrib.template.cache.__init__
+website.web.contrib.template.render_cheetah.__init__
+website.web.contrib.template.render_genshi.__init__
+website.web.contrib.template.render_jinja.__init__
+website.web.contrib.template.render_mako.__init__
+website.web.db.DB.__init__
+website.web.db.FirebirdDB.__init__
+website.web.db.MSSQLDB.__init__
+website.web.db.MySQLDB.__init__
+website.web.db.OracleDB.__init__
+website.web.db.PostgresDB.__init__
+website.web.db.SQLLiteral.__init__
+website.web.db.SQLParam.__init__
+website.web.db.SQLQuery.__init__
+website.web.db.SqliteDB.__init__
+website.web.db.Transaction.__init__
+website.web.db._ItplError.__init__
+website.web.form.Button.__init__
+website.web.form.Checkbox.__init__
+website.web.form.Dropdown.__init__
+website.web.form.Form.__init__
+website.web.form.GroupedDropdown.__init__
+website.web.form.Input.__init__
+website.web.form.Radio.__init__
+website.web.form.Validator.__init__
+website.web.form.regexp.__init__
+website.web.httpserver.LogMiddleware.__init__
+website.web.httpserver.StaticApp.__init__
+website.web.httpserver.StaticMiddleware.__init__
+website.web.session.DBStore.__init__
+website.web.session.DiskStore.__init__
+website.web.session.Session.__init__
+website.web.session.SessionExpired.__init__
+website.web.session.ShelfStore.__init__
+website.web.template.AssignmentNode.__init__
+website.web.template.BaseTemplate.__init__
+website.web.template.BlockNode.__init__
+website.web.template.CodeNode.__init__
+website.web.template.CompiledTemplate.__init__
+website.web.template.DefNode.__init__
+website.web.template.DefwithNode.__init__
+website.web.template.ExpressionNode.__init__
+website.web.template.ForLoop.__init__
+website.web.template.ForLoopContext.__init__
+website.web.template.ForNode.__init__
+website.web.template.GAE_Render.__init__
+website.web.template.LineNode.__init__
+website.web.template.Parser.__init__
+website.web.template.PythonTokenizer.__init__
+website.web.template.Render.__init__
+website.web.template.SafeVisitor.__init__
+website.web.template.StatementNode.__init__
+website.web.template.SuiteNode.__init__
+website.web.template.Template.__init__
+website.web.template.TemplateResult.__init__
+website.web.template.TextNode.__init__
+website.web.template.VarNode.__init__
+website.web.utils.CaptureStdout.__init__
+website.web.utils.IterBetter.__init__
+website.web.utils.Memoize.__init__
+website.web.utils.Profile.__init__
+website.web.utils.ThreadedDict.__init__
+website.web.utils._EmailMessage.__init__
+website.web.utils._re_subm_proxy.__init__
+website.web.webapi.Accepted.__init__
+website.web.webapi.BadRequest.__init__
+website.web.webapi.Conflict.__init__
+website.web.webapi.Created.__init__
+website.web.webapi.Forbidden.__init__
+website.web.webapi.Found.__init__
+website.web.webapi.Gone.__init__
+website.web.webapi.HTTPError.__init__
+website.web.webapi.NoMethod.__init__
+website.web.webapi.NotAcceptable.__init__
+website.web.webapi.NotModified.__init__
+website.web.webapi.OK.__init__
+website.web.webapi.PreconditionFailed.__init__
+website.web.webapi.Redirect.__init__
+website.web.webapi.SeeOther.__init__
+website.web.webapi.TempRedirect.__init__
+website.web.webapi.Unauthorized.__init__
+website.web.webapi.UnsupportedMediaType.__init__
+website.web.webapi._InternalError.__init__
+website.web.webapi._NotFound.__init__
+website.web.wsgiserver.CP_fileobject.__init__
+website.web.wsgiserver.CherryPyWSGIServer.__init__
+website.web.wsgiserver.ChunkedRFile.__init__
+website.web.wsgiserver.Gateway.__init__
+website.web.wsgiserver.HTTPConnection.__init__
+website.web.wsgiserver.HTTPRequest.__init__
+website.web.wsgiserver.HTTPServer.__init__
+website.web.wsgiserver.KnownLengthRFile.__init__
+website.web.wsgiserver.SSLAdapter.__init__
+website.web.wsgiserver.SizeCheckWrapper.__init__
+website.web.wsgiserver.ThreadPool.__init__
+website.web.wsgiserver.WSGIGateway.__init__
+website.web.wsgiserver.WSGIPathInfoDispatcher.__init__
+website.web.wsgiserver.WorkerThread.__init__" class="py-name" href="#" onclick="return doclink('link-179', '__init__', 'link-127');">__init__</a></tt><tt class="py-op">(</tt><tt id="link-180" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-180', 'name', 'link-57');">name</a></tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">validators</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">attrs</tt><tt class="py-op">)</tt> </tt>
+<a name="L360"></a><tt class="py-lineno">360</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">description</tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+</div><a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line"> </tt>
+<a name="Button.render"></a><div id="Button.render-def"><a name="L362"></a><tt class="py-lineno">362</tt> <a class="py-toggle" href="#" id="Button.render-toggle" onclick="return toggle('Button.render');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Button-class.html#render">render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Button.render-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Button.render-expanded"><a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-181" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-181', 'copy', 'link-0');">copy</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L364"></a><tt class="py-lineno">364</tt>  <tt class="py-line">        <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-182" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-182', 'name', 'link-57');">name</a></tt> </tt>
+<a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-183" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-183', 'value', 'link-6');">value</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line">            <tt class="py-name">attrs</tt><tt class="py-op">[</tt><tt class="py-string">'value'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-184" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-184', 'value', 'link-6');">value</a></tt> </tt>
+<a name="L367"></a><tt class="py-lineno">367</tt>  <tt class="py-line">        <tt class="py-name">html</tt> <tt class="py-op">=</tt> <tt class="py-name">attrs</tt><tt class="py-op">.</tt><tt id="link-185" class="py-name"><a title="website.web.utils.ThreadedDict.pop" class="py-name" href="#" onclick="return doclink('link-185', 'pop', 'link-8');">pop</a></tt><tt class="py-op">(</tt><tt class="py-string">'html'</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt id="link-186" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-186', 'net', 'link-4');">net</a></tt><tt class="py-op">.</tt><tt id="link-187" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-187', 'websafe', 'link-25');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-188" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.name
+website.web.template.name" class="py-name" href="#" onclick="return doclink('link-188', 'name', 'link-57');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L368"></a><tt class="py-lineno">368</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;button %s&gt;%s&lt;/button&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">attrs</tt><tt class="py-op">,</tt> <tt class="py-name">html</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L369"></a><tt class="py-lineno">369</tt>  <tt class="py-line"> </tt>
+<a name="Hidden"></a><div id="Hidden-def"><a name="L370"></a><tt class="py-lineno">370</tt> <a class="py-toggle" href="#" id="Hidden-toggle" onclick="return toggle('Hidden');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Hidden-class.html">Hidden</a><tt class="py-op">(</tt><tt class="py-base-class">Input</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Hidden-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Hidden-expanded"><a name="L371"></a><tt class="py-lineno">371</tt>  <tt class="py-line">    <tt class="py-docstring">"""Hidden Input.</tt> </tt>
+<a name="L372"></a><tt class="py-lineno">372</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L373"></a><tt class="py-lineno">373</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; Hidden(name='foo', value='bar').render()</tt> </tt>
+<a name="L374"></a><tt class="py-lineno">374</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;input type="hidden" id="foo" value="bar" name="foo"/&gt;'</tt> </tt>
+<a name="L375"></a><tt class="py-lineno">375</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Hidden.is_hidden"></a><div id="Hidden.is_hidden-def"><a name="L376"></a><tt class="py-lineno">376</tt> <a class="py-toggle" href="#" id="Hidden.is_hidden-toggle" onclick="return toggle('Hidden.is_hidden');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Hidden-class.html#is_hidden">is_hidden</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Hidden.is_hidden-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Hidden.is_hidden-expanded"><a name="L377"></a><tt class="py-lineno">377</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L378"></a><tt class="py-lineno">378</tt>  <tt class="py-line">         </tt>
+<a name="Hidden.get_type"></a><div id="Hidden.get_type-def"><a name="L379"></a><tt class="py-lineno">379</tt> <a class="py-toggle" href="#" id="Hidden.get_type-toggle" onclick="return toggle('Hidden.get_type');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Hidden-class.html#get_type">get_type</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Hidden.get_type-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Hidden.get_type-expanded"><a name="L380"></a><tt class="py-lineno">380</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'hidden'</tt> </tt>
+</div></div><a name="L381"></a><tt class="py-lineno">381</tt>  <tt class="py-line"> </tt>
+<a name="File"></a><div id="File-def"><a name="L382"></a><tt class="py-lineno">382</tt> <a class="py-toggle" href="#" id="File-toggle" onclick="return toggle('File');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.File-class.html">File</a><tt class="py-op">(</tt><tt class="py-base-class">Input</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="File-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="File-expanded"><a name="L383"></a><tt class="py-lineno">383</tt>  <tt class="py-line">    <tt class="py-docstring">"""File input.</tt> </tt>
+<a name="L384"></a><tt class="py-lineno">384</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L385"></a><tt class="py-lineno">385</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; File(name='f').render()</tt> </tt>
+<a name="L386"></a><tt class="py-lineno">386</tt>  <tt class="py-line"><tt class="py-docstring">        u'&lt;input type="file" id="f" name="f"/&gt;'</tt> </tt>
+<a name="L387"></a><tt class="py-lineno">387</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="File.get_type"></a><div id="File.get_type-def"><a name="L388"></a><tt class="py-lineno">388</tt> <a class="py-toggle" href="#" id="File.get_type-toggle" onclick="return toggle('File.get_type');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.File-class.html#get_type">get_type</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="File.get_type-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="File.get_type-expanded"><a name="L389"></a><tt class="py-lineno">389</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'file'</tt> </tt>
+</div></div><a name="L390"></a><tt class="py-lineno">390</tt>  <tt class="py-line">     </tt>
+<a name="Validator"></a><div id="Validator-def"><a name="L391"></a><tt class="py-lineno">391</tt> <a class="py-toggle" href="#" id="Validator-toggle" onclick="return toggle('Validator');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.Validator-class.html">Validator</a><tt class="py-op">:</tt> </tt>
+</div><div id="Validator-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Validator-expanded"><a name="Validator.__deepcopy__"></a><div id="Validator.__deepcopy__-def"><a name="L392"></a><tt class="py-lineno">392</tt> <a class="py-toggle" href="#" id="Validator.__deepcopy__-toggle" onclick="return toggle('Validator.__deepcopy__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Validator-class.html#__deepcopy__">__deepcopy__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">memo</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt id="link-189" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-189', 'copy', 'link-0');">copy</a></tt><tt class="py-op">.</tt><tt id="link-190" class="py-name"><a title="website.web.form.AttributeList.copy
+website.web.utils.ThreadedDict.copy" class="py-name" href="#" onclick="return doclink('link-190', 'copy', 'link-0');">copy</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+</div><a name="Validator.__init__"></a><div id="Validator.__init__-def"><a name="L393"></a><tt class="py-lineno">393</tt> <a class="py-toggle" href="#" id="Validator.__init__-toggle" onclick="return toggle('Validator.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Validator-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">msg</tt><tt class="py-op">,</tt> <tt class="py-param">test</tt><tt class="py-op">,</tt> <tt class="py-param">jstest</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> <tt id="link-191" class="py-name"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-191', 'utils', 'link-3');">utils</a></tt><tt class="py-op">.</tt><tt id="link-192" class="py-name" targets="Function website.web.utils.autoassign()=website.web.utils-module.html#autoassign"><a title="website.web.utils.autoassign" class="py-name" href="#" onclick="return doclink('link-192', 'autoassign', 'link-192');">autoassign</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">locals</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="Validator.valid"></a><div id="Validator.valid-def"><a name="L394"></a><tt class="py-lineno">394</tt> <a class="py-toggle" href="#" id="Validator.valid-toggle" onclick="return toggle('Validator.valid');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.Validator-class.html#valid">valid</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+</div><a name="L395"></a><tt class="py-lineno">395</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-193" class="py-name" targets="Function website.Interpreter.lexer.lexer.test()=website.Interpreter.lexer.lexer-module.html#test,Function website.web.template.test()=website.web.template-module.html#test,Module website.web.test=website.web.test-module.html"><a title="website.Interpreter.lexer.lexer.test
+website.web.template.test
+website.web.test" class="py-name" href="#" onclick="return doclink('link-193', 'test', 'link-193');">test</a></tt><tt class="py-op">(</tt><tt id="link-194" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-194', 'value', 'link-6');">value</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L396"></a><tt class="py-lineno">396</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+</div></div><a name="L397"></a><tt class="py-lineno">397</tt>  <tt class="py-line"> </tt>
+<a name="L398"></a><tt class="py-lineno">398</tt>  <tt class="py-line"><tt id="link-195" class="py-name" targets="Variable website.web.form.notnull=website.web.form-module.html#notnull"><a title="website.web.form.notnull" class="py-name" href="#" onclick="return doclink('link-195', 'notnull', 'link-195');">notnull</a></tt> <tt class="py-op">=</tt> <tt id="link-196" class="py-name" targets="Class website.web.form.Validator=website.web.form.Validator-class.html"><a title="website.web.form.Validator" class="py-name" href="#" onclick="return doclink('link-196', 'Validator', 'link-196');">Validator</a></tt><tt class="py-op">(</tt><tt class="py-string">"Required"</tt><tt class="py-op">,</tt> <tt class="py-name">bool</tt><tt class="py-op">)</tt> </tt>
+<a name="L399"></a><tt class="py-lineno">399</tt>  <tt class="py-line"> </tt>
+<a name="regexp"></a><div id="regexp-def"><a name="L400"></a><tt class="py-lineno">400</tt> <a class="py-toggle" href="#" id="regexp-toggle" onclick="return toggle('regexp');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.form.regexp-class.html">regexp</a><tt class="py-op">(</tt><tt class="py-base-class">Validator</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="regexp-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="regexp-expanded"><a name="regexp.__init__"></a><div id="regexp.__init__-def"><a name="L401"></a><tt class="py-lineno">401</tt> <a class="py-toggle" href="#" id="regexp.__init__-toggle" onclick="return toggle('regexp.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.regexp-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">rexp</tt><tt class="py-op">,</tt> <tt class="py-param">msg</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="regexp.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="regexp.__init__-expanded"><a name="L402"></a><tt class="py-lineno">402</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">rexp</tt> <tt class="py-op">=</tt> <tt class="py-name">re</tt><tt class="py-op">.</tt><tt class="py-name">compile</tt><tt class="py-op">(</tt><tt class="py-name">rexp</tt><tt class="py-op">)</tt> </tt>
+<a name="L403"></a><tt class="py-lineno">403</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt class="py-name">msg</tt> </tt>
+</div><a name="L404"></a><tt class="py-lineno">404</tt>  <tt class="py-line">     </tt>
+<a name="regexp.valid"></a><div id="regexp.valid-def"><a name="L405"></a><tt class="py-lineno">405</tt> <a class="py-toggle" href="#" id="regexp.valid-toggle" onclick="return toggle('regexp.valid');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.form.regexp-class.html#valid">valid</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="regexp.valid-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="regexp.valid-expanded"><a name="L406"></a><tt class="py-lineno">406</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">bool</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">rexp</tt><tt class="py-op">.</tt><tt class="py-name">match</tt><tt class="py-op">(</tt><tt id="link-197" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-197', 'value', 'link-6');">value</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L407"></a><tt class="py-lineno">407</tt>  <tt class="py-line"> </tt>
+<a name="L408"></a><tt class="py-lineno">408</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L409"></a><tt class="py-lineno">409</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">doctest</tt> </tt>
+<a name="L410"></a><tt class="py-lineno">410</tt>  <tt class="py-line">    <tt class="py-name">doctest</tt><tt class="py-op">.</tt><tt class="py-name">testmod</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L411"></a><tt class="py-lineno">411</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Nov 28 02:31:24 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

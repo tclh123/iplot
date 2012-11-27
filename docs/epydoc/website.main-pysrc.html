@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>website.main</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="website-module.html">Package&nbsp;website</a> ::
+        Module&nbsp;main
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="website.main-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="website.main-module.html">Module website.main</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package website.web=website.web-module.html"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-0', 'web', 'link-0');">web</a></tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">json</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Package website.Interpreter=website.Interpreter-module.html"><a title="website.Interpreter" class="py-name" href="#" onclick="return doclink('link-1', 'Interpreter', 'link-1');">Interpreter</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable website.main.render=website.main-module.html#render,Method website.web.form.Button.render()=website.web.form.Button-class.html#render,Method website.web.form.Checkbox.render()=website.web.form.Checkbox-class.html#render,Method website.web.form.Dropdown.render()=website.web.form.Dropdown-class.html#render,Method website.web.form.Form.render()=website.web.form.Form-class.html#render,Method website.web.form.GroupedDropdown.render()=website.web.form.GroupedDropdown-class.html#render,Method website.web.form.Input.render()=website.web.form.Input-class.html#render,Method website.web.form.Radio.render()=website.web.form.Radio-class.html#render,Method website.web.form.Textarea.render()=website.web.form.Textarea-class.html#render"><a title="website.main.render
+website.web.form.Button.render
+website.web.form.Checkbox.render
+website.web.form.Dropdown.render
+website.web.form.Form.render
+website.web.form.GroupedDropdown.render
+website.web.form.Input.render
+website.web.form.Radio.render
+website.web.form.Textarea.render" class="py-name" href="#" onclick="return doclink('link-2', 'render', 'link-2');">render</a></tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-3', 'web', 'link-0');">web</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Module website.web.contrib.template=website.web.contrib.template-module.html,Module website.web.template=website.web.template-module.html"><a title="website.web.contrib.template
+website.web.template" class="py-name" href="#" onclick="return doclink('link-4', 'template', 'link-4');">template</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="website.main.render
+website.web.form.Button.render
+website.web.form.Checkbox.render
+website.web.form.Dropdown.render
+website.web.form.Form.render
+website.web.form.GroupedDropdown.render
+website.web.form.Input.render
+website.web.form.Radio.render
+website.web.form.Textarea.render" class="py-name" href="#" onclick="return doclink('link-5', 'render', 'link-2');">render</a></tt><tt class="py-op">(</tt><tt class="py-string">'templates'</tt><tt class="py-op">)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt id="link-6" class="py-name" targets="Variable website.main.urls=website.main-module.html#urls"><a title="website.main.urls" class="py-name" href="#" onclick="return doclink('link-6', 'urls', 'link-6');">urls</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">    <tt class="py-string">'/'</tt><tt class="py-op">,</tt> <tt class="py-string">'Index'</tt><tt class="py-op">,</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">    <tt class="py-string">'/service'</tt><tt class="py-op">,</tt> <tt class="py-string">'Service'</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt class="py-op">)</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="testlexer"></a><div id="testlexer-def"><a name="L15"></a><tt class="py-lineno"> 15</tt> <a class="py-toggle" href="#" id="testlexer-toggle" onclick="return toggle('testlexer');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.main-module.html#testlexer">testlexer</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="testlexer-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="testlexer-expanded"><a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">    <tt class="py-name">s</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">t</tt> <tt class="py-keyword">in</tt> <tt id="link-7" class="py-name" targets="Package website.Interpreter.lexer=website.Interpreter.lexer-module.html,Module website.Interpreter.lexer.lexer=website.Interpreter.lexer.lexer-module.html"><a title="website.Interpreter.lexer
+website.Interpreter.lexer.lexer" class="py-name" href="#" onclick="return doclink('link-7', 'lexer', 'link-7');">lexer</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Class website.Interpreter.lexer.lexer.Lexer=website.Interpreter.lexer.lexer.Lexer-class.html"><a title="website.Interpreter.lexer.lexer.Lexer" class="py-name" href="#" onclick="return doclink('link-8', 'Lexer', 'link-8');">Lexer</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">        <tt class="py-string">""" -- &#21512;&#27861;&#19982;&#38750;&#27861;&#36755;&#20837;&#30340;&#27979;&#35797;</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-string">            --  &lt;2&gt; &#20445;&#30041;&#23383;,  &#21442;&#25968;</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-string">            ORIGIN  SCALE  ROT  IS  TO  STEP  DRAW  FOR  FROM  T</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-string">            -- &lt;3&gt; &#20998;&#38548;&#31526;&#21644;&#36816;&#31639;&#31526;: SEMICO, L_BRACKET, R_BRACKET, COMMA,  PLUS, MINUS, MUL, DIV, POWER,</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-string">            ; ( ) , + - * / **</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-string">            // &lt;4&gt; &#24120;&#25968;&#65306;CONST_ID</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-string">            pi  e  3 3. 3333.333</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-string">            -- &lt;1&gt; &#20986;&#38169;&#35760;&#21495;&#65288;&#38750;&#27861;&#36755;&#20837;&#65289;&#65306;ERRTOKEN</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-string">            -2 ? 0a orgian form  . $ % ^  &amp; ***</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-string">            -- &lt;5&gt; &#35821;&#21477;&#27979;&#35797;&#65292;&#20026;&#35821;&#27861;&#20998;&#26512;&#20570;&#20934;&#22791;</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-string">            FOR T FROM 0 TO 2*PI STEP PI/50 DRAW (cos(T),sin(T));</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-string">            -- &#31354;&#35760;&#21495;&#65288;&#28304;&#31243;&#24207;&#32467;&#26463;&#65289;&#65306;NONTOKEN,</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-string">        """</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">s</tt> <tt class="py-op">+=</tt> <tt id="link-9" class="py-name" targets="Static Method website.Interpreter.lexer.token.Token_Type.str()=website.Interpreter.lexer.token.Token_Type-class.html#str"><a title="website.Interpreter.lexer.token.Token_Type.str" class="py-name" href="#" onclick="return doclink('link-9', 'str', 'link-9');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">t</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">s</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="testparser"></a><div id="testparser-def"><a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="testparser-toggle" onclick="return toggle('testparser');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.main-module.html#testparser">testparser</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="testparser-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="testparser-expanded"><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-name">case</tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt class="py-name">p</tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name" targets="Package website.Interpreter.parser=website.Interpreter.parser-module.html,Module website.Interpreter.parser.parser=website.Interpreter.parser.parser-module.html"><a title="website.Interpreter.parser
+website.Interpreter.parser.parser" class="py-name" href="#" onclick="return doclink('link-10', 'parser', 'link-10');">parser</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Class website.Interpreter.parser.parser.Parser=website.Interpreter.parser.parser.Parser-class.html,Class website.web.template.Parser=website.web.template.Parser-class.html"><a title="website.Interpreter.parser.parser.Parser
+website.web.template.Parser" class="py-name" href="#" onclick="return doclink('link-11', 'Parser', 'link-11');">Parser</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-op">[</tt><tt class="py-string">"""</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-string">        //test1</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-string">--------------- &#20989;&#25968;f(t)=t&#30340;&#22270;&#24418;</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-string">-- origin is (200, 300);                                                -- &#35774;&#32622;&#21407;&#28857;&#30340;&#20559;&#31227;&#37327;</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-string">-- rot is pi/6;                                                         -- &#35774;&#32622;&#26059;&#36716;&#35282;&#24230;</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-string">-- scale is (2, 1);                                                     -- &#35774;&#32622;&#27178;&#22352;&#26631;&#21644;&#32437;&#22352;&#26631;&#30340;&#27604;&#20363;</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-string">for T from 0 to 200 step 1 draw (t, 0);         -- &#27178;&#22352;&#26631;&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-string">for T from 0 to 180 step 1 draw (0, t); -- &#32437;&#22352;&#26631;&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-string">for T from 0 to 150 step 1 draw (t, t); -- &#20989;&#25968;f(t)=t&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-string">        """</tt><tt class="py-op">,</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">         <tt class="py-string">"""</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-string">         //test2</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-string"> --------------- &#22270;&#24418;1&#65306;</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-string"> origin is (20, 200);                                                                   -- &#35774;&#32622;&#21407;&#28857;&#30340;&#20559;&#31227;&#37327;</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-string"> rot is 0;                                                                                              -- &#19981;&#26059;&#36716;</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-string"> scale is (40, 40);                                                                             -- &#35774;&#32622;&#27604;&#20363;</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 2*pi step pi/50 draw (t, -sin(t));             -- &#30011;T&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-string"> origin is (20, 240);                                                                   -- &#19979;&#31227;40&#21333;&#20301;</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 2*pi step pi/50 draw (t, -sin(t));             -- &#30011;T&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-string"> origin is (20, 280);                                                                   -- &#20877;&#19979;&#31227;40&#21333;&#20301;</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 2*pi step pi/50 draw (t, -sin(t));             -- &#30011;T&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-string"> --------------- &#22270;&#24418;2&#65306;</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-string"> origin is (380, 240);                                                                  -- &#21491;&#31227;</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-string"> scale is (80, 80/3);                                                                   -- y&#26041;&#21521;&#21387;&#32553;&#20026;&#19977;&#20998;&#20043;&#19968;</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-string"> rot is pi/2+0*pi/3 ;                                                                   -- &#26059;&#36716;&#21021;&#20540;&#35774;&#32622;</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-string"> for T from -pi to pi step pi/50 draw (cos(t), sin(t)); -- &#30011;T&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-string"> rot is pi/2+2*pi/3;                                                                            -- &#26059;&#36716;2/3*pi</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-string"> for T from -pi to pi step pi/50 draw (cos(t), sin(t)); -- &#30011;T&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-string"> rot is pi/2-2*pi/3;                                                                            -- &#20877;&#26059;&#36716;2/3*pi</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-string"> for T from -pi to pi step pi/50 draw (cos(t), sin(t)); -- &#30011;T&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-string"> --------------- &#22270;&#24418;3&#65306;</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-string"> origin is(580, 240);                                                                   -- &#20877;&#21491;&#31227;</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-string"> scale is (80, 80);                                                                             -- &#24674;&#22797;&#21407;&#27604;&#20363;</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-string"> rot is 0;                                                                                              -- &#19981;&#26059;&#36716;</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-string"> for t from 0 to 2*pi step pi/50 draw(cos(t),sin(t));   -- &#30011;T&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-string"> for t from 0 to Pi*20 step Pi/50 draw                                  -- &#30011;T&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-string">    ((1-1/(10/7))*Cos(T)+1/(10/7)*Cos(-T*((10/7)-1)),</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-string">     (1-1/(10/7))*Sin(T)+1/(10/7)*Sin(-T*((10/7)-1)));</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-string">         """</tt><tt class="py-op">,</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">         <tt class="py-string">"""</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-string">         //test3</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-string"> --------------- &#20989;&#25968;&#22797;&#26434;&#24230;&#22270;&#24418;&#65306;</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-string"> rot is 0;                                                                              -- &#19981;&#26059;&#36716;</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-string"> origin is (50, 400);                                                   -- &#35774;&#32622;&#26032;&#21407;&#28857;&#65288;&#36317;&#31995;&#32479;&#40664;&#35748;&#21407;&#28857;&#30340;&#20559;&#31227;&#37327;&#65289;</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-string"> scale is (2, 1);                                                               -- &#35774;&#32622;&#27604;&#20363;</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 300 step 1 draw (t, 0);                        -- &#27178;&#22352;&#26631;</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 300 step 1 draw (0, -t);               -- &#32437;&#22352;&#26631;</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-string"> scale is (2, 1);                                                               -- &#35774;&#32622;&#27604;&#20363;</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 300 step 1 draw (t, -t);               -- &#20989;&#25968;f(t)=t&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-string"> scale is (2, 0.1);                                                             -- &#35774;&#32622;&#27604;&#20363;</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 55 step 1 draw (t, -(t*t));            -- &#20989;&#25968;f(t)=t*t&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-string"> scale is (10, 5);                                                              -- &#35774;&#32622;&#27604;&#20363;</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 60 step 1 draw (t, -sqrt(t));  -- &#20989;&#25968;f(t)=sqrt(t)&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-string"> scale is (20, 0.1);                                                            -- &#35774;&#32622;&#27604;&#20363;</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 8 step 0.1 draw (t, -exp(t));  -- &#20989;&#25968;f(t)=exp(t)&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-string"> scale is (2, 20);                                                              -- &#35774;&#32622;&#27604;&#20363;</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-string"> //for T from 0 to 300 step 1 draw (t, -ln(t)); -- &#20989;&#25968;f(t)=ln(t)&#30340;&#36712;&#36857;          //ln &#20989;&#25968;&#26242;&#26102;&#27809;&#23454;&#29616;&#12290;</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-string">         """</tt><tt class="py-op">,</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">         <tt class="py-string">"""</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-string">         //test4</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-string"> origin is (350, 220);                                  -- &#21407;&#28857;&#20301;&#32622;</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-string"> rot is 0;                                              -- &#26059;&#36716;&#35282;&#24230;&#20026;&#38646;</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-string"> scale is (100, 100);                                   -- &#27178;&#12289;&#32437;&#22352;&#26631;&#27604;&#20363;&#22240;&#23376;</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-string"> for t from 0 to 2*pi step pi/100 draw(cos(t), sin(t)); -- &#30011;&#22253;</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-string"> scale is (150, 150);                                   -- &#27178;&#12289;&#32437;&#22352;&#26631;&#27604;&#20363;&#22240;&#23376;</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-string"> for t from 0 to 2*pi step pi/150 draw(cos(t), sin(t)); -- &#30011;&#22253;</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-string"> scale is (200, 200);                                   -- &#27178;&#12289;&#32437;&#22352;&#26631;&#27604;&#20363;&#22240;&#23376;</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-string"> for t from 0 to 2*pi step pi/200 draw(cos(t), sin(t)); -- &#30011;&#22253;</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-string">         """</tt><tt class="py-op">,</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">         <tt class="py-string">"""</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-string">         //test5</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-string"> --------------- &#27979;&#35797;f(t)=t*t&#19982;f(t)=t**2&#30340;&#22270;&#24418;&#65306;</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-string"> rot is 0;                                                                              -- &#19981;&#26059;&#36716;</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-string"> origin is (50, 400);                                                   -- &#35774;&#32622;&#26032;&#21407;&#28857;&#65288;&#36317;&#31995;&#32479;&#40664;&#35748;&#21407;&#28857;&#30340;&#20559;&#31227;&#37327;&#65289;</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-string"> scale is (1, 1);                                                               -- &#35774;&#32622;&#27604;&#20363;</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 300 step 1 draw (t, 0);                        -- &#27178;&#22352;&#26631;</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 300 step 1 draw (0, -t);               -- &#32437;&#22352;&#26631;</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-string"> scale is (2, 0.1);                                                             -- &#35774;&#32622;&#27604;&#20363;</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 55 step 1 draw (t, -(t*t));            -- &#20989;&#25968;f(t)=t*t&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-string"> origin is (150, 400);                                                  -- &#35774;&#32622;&#26032;&#21407;&#28857;&#65288;&#27178;&#22352;&#26631;&#21491;&#31227;100&#65289;</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-string"> for T from 0 to 55 step 1 draw (t, -(t**2));   -- &#20989;&#25968;f(t)=t**2&#30340;&#36712;&#36857;</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-string">         """</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-name">case</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method website.Interpreter.parser.parser.Parser.parse()=website.Interpreter.parser.parser.Parser-class.html#parse,Method website.web.template.Parser.parse()=website.web.template.Parser-class.html#parse"><a title="website.Interpreter.parser.parser.Parser.parse
+website.web.template.Parser.parse" class="py-name" href="#" onclick="return doclink('link-12', 'parse', 'link-12');">parse</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt class="py-name">output</tt> </tt>
+</div><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"> </tt>
+<a name="Index"></a><div id="Index-def"><a name="L139"></a><tt class="py-lineno">139</tt> <a class="py-toggle" href="#" id="Index-toggle" onclick="return toggle('Index');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.main.Index-class.html">Index</a><tt class="py-op">:</tt> </tt>
+</div><div id="Index-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Index-expanded"><a name="Index.GET"></a><div id="Index.GET-def"><a name="L140"></a><tt class="py-lineno">140</tt> <a class="py-toggle" href="#" id="Index.GET-toggle" onclick="return toggle('Index.GET');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.main.Index-class.html#GET">GET</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Index.GET-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Index.GET-expanded"><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt id="link-13" class="py-name" targets="Module website.web.form=website.web.form-module.html"><a title="website.web.form" class="py-name" href="#" onclick="return doclink('link-13', 'form', 'link-13');">form</a></tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name" targets="Variable website.main.my_form=website.main-module.html#my_form"><a title="website.main.my_form" class="py-name" href="#" onclick="return doclink('link-14', 'my_form', 'link-14');">my_form</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-15" class="py-name"><a title="website.main.render
+website.web.form.Button.render
+website.web.form.Checkbox.render
+website.web.form.Dropdown.render
+website.web.form.Form.render
+website.web.form.GroupedDropdown.render
+website.web.form.Input.render
+website.web.form.Radio.render
+website.web.form.Textarea.render" class="py-name" href="#" onclick="return doclink('link-15', 'render', 'link-2');">render</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Variable website.templates.index=website.templates-module.html#index"><a title="website.templates.index" class="py-name" href="#" onclick="return doclink('link-16', 'index', 'link-16');">index</a></tt><tt class="py-op">(</tt><tt id="link-17" class="py-name"><a title="website.web.form" class="py-name" href="#" onclick="return doclink('link-17', 'form', 'link-13');">form</a></tt><tt class="py-op">,</tt> <tt class="py-string">"Your text goes here."</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'welcome to wbmsg | code by tclh123'</tt> </tt>
+</div></div><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-comment">#    def POST(self):</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-comment">#        form = my_form()</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-comment">#        form.validates()</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-comment">#        s = form.value['textfield']</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-comment">#        return s</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"> </tt>
+<a name="Service"></a><div id="Service-def"><a name="L152"></a><tt class="py-lineno">152</tt> <a class="py-toggle" href="#" id="Service-toggle" onclick="return toggle('Service');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="website.main.Service-class.html">Service</a><tt class="py-op">:</tt> </tt>
+</div><div id="Service-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Service-expanded"><a name="Service.POST"></a><div id="Service.POST-def"><a name="L153"></a><tt class="py-lineno">153</tt> <a class="py-toggle" href="#" id="Service.POST-toggle" onclick="return toggle('Service.POST');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.main.Service-class.html#POST">POST</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Service.POST-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Service.POST-expanded"><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt id="link-18" class="py-name"><a title="website.web.form" class="py-name" href="#" onclick="return doclink('link-18', 'form', 'link-13');">form</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="website.main.my_form" class="py-name" href="#" onclick="return doclink('link-19', 'my_form', 'link-14');">my_form</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt id="link-20" class="py-name"><a title="website.web.form" class="py-name" href="#" onclick="return doclink('link-20', 'form', 'link-13');">form</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Method website.web.form.Form.validates()=website.web.form.Form-class.html#validates"><a title="website.web.form.Form.validates" class="py-name" href="#" onclick="return doclink('link-21', 'validates', 'link-21');">validates</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-name">source</tt> <tt class="py-op">=</tt> <tt id="link-22" class="py-name"><a title="website.web.form" class="py-name" href="#" onclick="return doclink('link-22', 'form', 'link-13');">form</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Variable website.web.db.SQLParam.value=website.web.db.SQLParam-class.html#value"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-23', 'value', 'link-23');">value</a></tt><tt class="py-op">[</tt><tt class="py-string">'textfield'</tt><tt class="py-op">]</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-name">p</tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="website.Interpreter.parser
+website.Interpreter.parser.parser" class="py-name" href="#" onclick="return doclink('link-24', 'parser', 'link-10');">parser</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="website.Interpreter.parser.parser.Parser
+website.web.template.Parser" class="py-name" href="#" onclick="return doclink('link-25', 'Parser', 'link-11');">Parser</a></tt><tt class="py-op">(</tt><tt class="py-name">source</tt><tt class="py-op">)</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="website.Interpreter.parser.parser.Parser.parse
+website.web.template.Parser.parse" class="py-name" href="#" onclick="return doclink('link-26', 'parse', 'link-12');">parse</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">json</tt><tt class="py-op">.</tt><tt class="py-name">dumps</tt><tt class="py-op">(</tt><tt class="py-name">p</tt><tt class="py-op">.</tt><tt class="py-name">output</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">json</tt><tt class="py-op">.</tt><tt class="py-name">dumps</tt><tt class="py-op">(</tt><tt id="link-27" class="py-name" targets="Function website.main.testparser()=website.main-module.html#testparser"><a title="website.main.testparser" class="py-name" href="#" onclick="return doclink('link-27', 'testparser', 'link-27');">testparser</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'Service'</tt> </tt>
+</div></div><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt id="link-28" class="py-name"><a title="website.main.my_form" class="py-name" href="#" onclick="return doclink('link-28', 'my_form', 'link-14');">my_form</a></tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-29', 'web', 'link-0');">web</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="website.web.form" class="py-name" href="#" onclick="return doclink('link-30', 'form', 'link-13');">form</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Class website.web.form.Form=website.web.form.Form-class.html"><a title="website.web.form.Form" class="py-name" href="#" onclick="return doclink('link-31', 'Form', 'link-31');">Form</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">    <tt id="link-32" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-32', 'web', 'link-0');">web</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="website.web.form" class="py-name" href="#" onclick="return doclink('link-33', 'form', 'link-13');">form</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Class website.web.form.Textarea=website.web.form.Textarea-class.html"><a title="website.web.form.Textarea" class="py-name" href="#" onclick="return doclink('link-34', 'Textarea', 'link-34');">Textarea</a></tt><tt class="py-op">(</tt><tt class="py-string">''</tt><tt class="py-op">,</tt> <tt class="py-name">class_</tt><tt class="py-op">=</tt><tt class="py-string">'textfield'</tt><tt class="py-op">,</tt> <tt class="py-name">id</tt><tt class="py-op">=</tt><tt class="py-string">'textfield'</tt><tt class="py-op">,</tt> <tt class="py-name">placeholder</tt><tt class="py-op">=</tt><tt class="py-string">"Input your source code here!"</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-name">app</tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-35', 'web', 'link-0');">web</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Class website.web.application'.application=website.web.application%27.application-class.html"><a title="website.web.application'.application" class="py-name" href="#" onclick="return doclink('link-36', 'application', 'link-36');">application</a></tt><tt class="py-op">(</tt><tt id="link-37" class="py-name"><a title="website.main.urls" class="py-name" href="#" onclick="return doclink('link-37', 'urls', 'link-6');">urls</a></tt><tt class="py-op">,</tt> <tt id="link-38" class="py-name" targets="Variable website.web.template.Template.globals=website.web.template.Template-class.html#globals"><a title="website.web.template.Template.globals" class="py-name" href="#" onclick="return doclink('link-38', 'globals', 'link-38');">globals</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Method website.web.application'.application.wsgifunc()=website.web.application%27.application-class.html#wsgifunc"><a title="website.web.application'.application.wsgifunc" class="py-name" href="#" onclick="return doclink('link-39', 'wsgifunc', 'link-39');">wsgifunc</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Nov 28 02:31:25 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

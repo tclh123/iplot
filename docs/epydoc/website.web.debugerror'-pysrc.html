@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>website.web.debugerror'</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="website-module.html">Package&nbsp;website</a> ::
+        <a href="website.web-module.html">Package&nbsp;web</a> ::
+        Module&nbsp;debugerror'
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="website.web.debugerror%27-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="website.web.debugerror%27-module.html">Module website.web.debugerror'</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">pretty debug errors</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">(part of web.py)</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">portions adapted from Django &lt;djangoproject.com&gt; </tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">Copyright (c) 2005, the Lawrence Journal-World</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">Used under the modified BSD license:</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">http://www.xfree86.org/3.3.6/COPYRIGHT2.html#5</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-name">__all__</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"debugerror"</tt><tt class="py-op">,</tt> <tt class="py-string">"djangoerror"</tt><tt class="py-op">,</tt> <tt class="py-string">"emailerrors"</tt><tt class="py-op">]</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt><tt class="py-op">,</tt> <tt class="py-name">urlparse</tt><tt class="py-op">,</tt> <tt class="py-name">pprint</tt><tt class="py-op">,</tt> <tt class="py-name">traceback</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module website.web.contrib.template=website.web.contrib.template-module.html,Module website.web.template=website.web.template-module.html"><a title="website.web.contrib.template
+website.web.template" class="py-name" href="#" onclick="return doclink('link-0', 'template', 'link-0');">template</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class website.web.template.Template=website.web.template.Template-class.html"><a title="website.web.template.Template" class="py-name" href="#" onclick="return doclink('link-1', 'Template', 'link-1');">Template</a></tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module website.web.net=website.web.net-module.html"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-2', 'net', 'link-2');">net</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Function website.web.net.websafe()=website.web.net-module.html#websafe"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-3', 'websafe', 'link-3');">websafe</a></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name" targets="Module website.web.utils=website.web.utils-module.html"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-4', 'utils', 'link-4');">utils</a></tt> <tt class="py-keyword">import</tt> <tt id="link-5" class="py-name" targets="Function website.web.utils.sendmail()=website.web.utils-module.html#sendmail"><a title="website.web.utils.sendmail" class="py-name" href="#" onclick="return doclink('link-5', 'sendmail', 'link-5');">sendmail</a></tt><tt class="py-op">,</tt> <tt id="link-6" class="py-name" targets="Function website.web.utils.safestr()=website.web.utils-module.html#safestr"><a title="website.web.utils.safestr" class="py-name" href="#" onclick="return doclink('link-6', 'safestr', 'link-6');">safestr</a></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Module website.web.webapi=website.web.webapi-module.html"><a title="website.web.webapi" class="py-name" href="#" onclick="return doclink('link-7', 'webapi', 'link-7');">webapi</a></tt> <tt class="py-keyword">as</tt> <tt id="link-8" class="py-name" targets="Package website.web=website.web-module.html"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-8', 'web', 'link-8');">web</a></tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt><tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt id="link-9" class="py-name" targets="Variable website.web.debugerror'.whereami=website.web.debugerror%27-module.html#whereami"><a title="website.web.debugerror'.whereami" class="py-name" href="#" onclick="return doclink('link-9', 'whereami', 'link-9');">whereami</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Static Method website.web.db.SQLQuery.join()=website.web.db.SQLQuery-class.html#join"><a title="website.web.db.SQLQuery.join" class="py-name" href="#" onclick="return doclink('link-10', 'join', 'link-10');">join</a></tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">getcwd</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">__file__</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt id="link-11" class="py-name"><a title="website.web.debugerror'.whereami" class="py-name" href="#" onclick="return doclink('link-11', 'whereami', 'link-9');">whereami</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="website.web.db.SQLQuery.join" class="py-name" href="#" onclick="return doclink('link-12', 'join', 'link-10');">join</a></tt><tt class="py-op">(</tt><tt id="link-13" class="py-name"><a title="website.web.debugerror'.whereami" class="py-name" href="#" onclick="return doclink('link-13', 'whereami', 'link-9');">whereami</a></tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt id="link-14" class="py-name" targets="Variable website.web.debugerror'.djangoerror_t=website.web.debugerror%27-module.html#djangoerror_t"><a title="website.web.debugerror'.djangoerror_t" class="py-name" href="#" onclick="return doclink('link-14', 'djangoerror_t', 'link-14');">djangoerror_t</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"""\</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-string">$def with (exception_type, exception_value, frames)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-string">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-string">&lt;html lang="en"&gt;</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-string">&lt;head&gt;</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-string">  &lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-string">  &lt;meta name="robots" content="NONE,NOARCHIVE" /&gt;</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-string">  &lt;title&gt;$exception_type at $ctx.path&lt;/title&gt;</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-string">  &lt;style type="text/css"&gt;</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-string">    html * { padding:0; margin:0; }</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-string">    body * { padding:10px 20px; }</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-string">    body * * { padding:0; }</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-string">    body { font:small sans-serif; }</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-string">    body&gt;div { border-bottom:1px solid #ddd; }</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-string">    h1 { font-weight:normal; }</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-string">    h2 { margin-bottom:.8em; }</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-string">    h2 span { font-size:80%; color:#666; font-weight:normal; }</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-string">    h3 { margin:1em 0 .5em 0; }</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-string">    h4 { margin:0 0 .5em 0; font-weight: normal; }</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-string">    table { </tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-string">        border:1px solid #ccc; border-collapse: collapse; background:white; }</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-string">    tbody td, tbody th { vertical-align:top; padding:2px 3px; }</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-string">    thead th { </tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-string">        padding:1px 6px 1px 3px; background:#fefefe; text-align:left; </tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-string">        font-weight:normal; font-size:11px; border:1px solid #ddd; }</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-string">    tbody th { text-align:right; color:#666; padding-right:.5em; }</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-string">    table.vars { margin:5px 0 2px 40px; }</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-string">    table.vars td, table.req td { font-family:monospace; }</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-string">    table td.code { width:100%;}</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-string">    table td.code div { overflow:hidden; }</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-string">    table.source th { color:#666; }</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-string">    table.source td { </tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-string">        font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-string">    ul.traceback { list-style-type:none; }</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-string">    ul.traceback li.frame { margin-bottom:1em; }</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-string">    div.context { margin: 10px 0; }</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-string">    div.context ol { </tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-string">        padding-left:30px; margin:0 10px; list-style-position: inside; }</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-string">    div.context ol li { </tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-string">        font-family:monospace; white-space:pre; color:#666; cursor:pointer; }</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-string">    div.context ol.context-line li { color:black; background-color:#ccc; }</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-string">    div.context ol.context-line li span { float: right; }</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-string">    div.commands { margin-left: 40px; }</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-string">    div.commands a { color:black; text-decoration:none; }</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-string">    #summary { background: #ffc; }</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-string">    #summary h2 { font-weight: normal; color: #666; }</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-string">    #explanation { background:#eee; }</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-string">    #template, #template-not-exist { background:#f6f6f6; }</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-string">    #template-not-exist ul { margin: 0 0 0 20px; }</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-string">    #traceback { background:#eee; }</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-string">    #requestinfo { background:#f6f6f6; padding-left:120px; }</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-string">    #summary table { border:none; background:transparent; }</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-string">    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-string">    #requestinfo h3 { margin-bottom:-1em; }</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-string">    .error { background: #ffc; }</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-string">    .specific { color:#cc3300; font-weight:bold; }</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-string">  &lt;/style&gt;</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-string">  &lt;script type="text/javascript"&gt;</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-string">  //&lt;!--</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-string">    function getElementsByClassName(oElm, strTagName, strClassName){</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-string">        // Written by Jonathan Snook, http://www.snook.ca/jon; </tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-string">        // Add-ons by Robert Nyman, http://www.robertnyman.com</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-string">        var arrElements = (strTagName == "*" &amp;&amp; document.all)? document.all :</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-string">        oElm.getElementsByTagName(strTagName);</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-string">        var arrReturnElements = new Array();</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-string">        strClassName = strClassName.replace(/\-/g, "\\-");</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-string">        var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$$)");</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-string">        var oElement;</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-string">        for(var i=0; i&lt;arrElements.length; i++){</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-string">            oElement = arrElements[i];</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-string">            if(oRegExp.test(oElement.className)){</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-string">                arrReturnElements.push(oElement);</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-string">            }</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-string">        }</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-string">        return (arrReturnElements)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-string">    }</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-string">    function hideAll(elems) {</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-string">      for (var e = 0; e &lt; elems.length; e++) {</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-string">        elems[e].style.display = 'none';</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-string">      }</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-string">    }</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-string">    window.onload = function() {</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-string">      hideAll(getElementsByClassName(document, 'table', 'vars'));</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-string">      hideAll(getElementsByClassName(document, 'ol', 'pre-context'));</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-string">      hideAll(getElementsByClassName(document, 'ol', 'post-context'));</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-string">    }</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-string">    function toggle() {</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-string">      for (var i = 0; i &lt; arguments.length; i++) {</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-string">        var e = document.getElementById(arguments[i]);</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-string">        if (e) {</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-string">          e.style.display = e.style.display == 'none' ? 'block' : 'none';</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-string">        }</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-string">      }</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-string">      return false;</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-string">    }</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-string">    function varToggle(link, id) {</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-string">      toggle('v' + id);</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-string">      var s = link.getElementsByTagName('span')[0];</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-string">      var uarr = String.fromCharCode(0x25b6);</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-string">      var darr = String.fromCharCode(0x25bc);</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-string">      s.innerHTML = s.innerHTML == uarr ? darr : uarr;</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-string">      return false;</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-string">    }</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-string">    //--&gt;</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-string">  &lt;/script&gt;</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-string">&lt;/head&gt;</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-string">&lt;body&gt;</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-string">$def dicttable (d, kls='req', id=None):</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-string">    $ items = d and d.items() or []</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-string">    $items.sort()</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-string">    $:dicttable_items(items, kls, id)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-string">        </tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-string">$def dicttable_items(items, kls='req', id=None):</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-string">    $if items:</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-string">        &lt;table class="$kls"</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-string">        $if id: id="$id"</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-string">        &gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Variable&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-string">        &lt;tbody&gt;</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-string">        $for k, v in items:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-string">            &lt;tr&gt;&lt;td&gt;$k&lt;/td&gt;&lt;td class="code"&gt;&lt;div&gt;$prettify(v)&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-string">        &lt;/tbody&gt;</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-string">        &lt;/table&gt;</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"><tt class="py-string">    $else:</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-string">        &lt;p&gt;No data.&lt;/p&gt;</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-string">&lt;div id="summary"&gt;</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-string">  &lt;h1&gt;$exception_type at $ctx.path&lt;/h1&gt;</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-string">  &lt;h2&gt;$exception_value&lt;/h2&gt;</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-string">  &lt;table&gt;&lt;tr&gt;</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-string">    &lt;th&gt;Python&lt;/th&gt;</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-string">    &lt;td&gt;$frames[0].filename in $frames[0].function, line $frames[0].lineno&lt;/td&gt;</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-string">  &lt;/tr&gt;&lt;tr&gt;</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-string">    &lt;th&gt;Web&lt;/th&gt;</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-string">    &lt;td&gt;$ctx.method $ctx.home$ctx.path&lt;/td&gt;</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-string">  &lt;/tr&gt;&lt;/table&gt;</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-string">&lt;/div&gt;</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-string">&lt;div id="traceback"&gt;</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-string">&lt;h2&gt;Traceback &lt;span&gt;(innermost first)&lt;/span&gt;&lt;/h2&gt;</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-string">&lt;ul class="traceback"&gt;</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-string">$for frame in frames:</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-string">    &lt;li class="frame"&gt;</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-string">    &lt;code&gt;$frame.filename&lt;/code&gt; in &lt;code&gt;$frame.function&lt;/code&gt;</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-string">    $if frame.context_line is not None:</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-string">        &lt;div class="context" id="c$frame.id"&gt;</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-string">        $if frame.pre_context:</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-string">            &lt;ol start="$frame.pre_context_lineno" class="pre-context" id="pre$frame.id"&gt;</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-string">            $for line in frame.pre_context:</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-string">                &lt;li onclick="toggle('pre$frame.id', 'post$frame.id')"&gt;$line&lt;/li&gt;</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-string">            &lt;/ol&gt;</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-string">            &lt;ol start="$frame.lineno" class="context-line"&gt;&lt;li onclick="toggle('pre$frame.id', 'post$frame.id')"&gt;$frame.context_line &lt;span&gt;...&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-string">        $if frame.post_context:</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-string">            &lt;ol start='${frame.lineno + 1}' class="post-context" id="post$frame.id"&gt;</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-string">            $for line in frame.post_context:</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-string">                &lt;li onclick="toggle('pre$frame.id', 'post$frame.id')"&gt;$line&lt;/li&gt;</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-string">            &lt;/ol&gt;</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-string">      &lt;/div&gt;</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-string">    </tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-string">    $if frame.vars:</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-string">        &lt;div class="commands"&gt;</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-string">        &lt;a href='#' onclick="return varToggle(this, '$frame.id')"&gt;&lt;span&gt;&amp;#x25b6;&lt;/span&gt; Local vars&lt;/a&gt;</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-string">        $# $inspect.formatargvalues(*inspect.getargvalues(frame['tb'].tb_frame))</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"><tt class="py-string">        &lt;/div&gt;</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"><tt class="py-string">        $:dicttable(frame.vars, kls='vars', id=('v' + str(frame.id)))</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-string">      &lt;/li&gt;</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-string">  &lt;/ul&gt;</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-string">&lt;/div&gt;</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-string">&lt;div id="requestinfo"&gt;</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-string">$if ctx.output or ctx.headers:</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-string">    &lt;h2&gt;Response so far&lt;/h2&gt;</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"><tt class="py-string">    &lt;h3&gt;HEADERS&lt;/h3&gt;</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-string">    $:dicttable_items(ctx.headers)</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-string">    &lt;h3&gt;BODY&lt;/h3&gt;</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-string">    &lt;p class="req" style="padding-bottom: 2em"&gt;&lt;code&gt;</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"><tt class="py-string">    $ctx.output</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"><tt class="py-string">    &lt;/code&gt;&lt;/p&gt;</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"><tt class="py-string">  </tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"><tt class="py-string">&lt;h2&gt;Request information&lt;/h2&gt;</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-string">&lt;h3&gt;INPUT&lt;/h3&gt;</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-string">$:dicttable(web.input(_unicode=False))</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-string">&lt;h3 id="cookie-info"&gt;COOKIES&lt;/h3&gt;</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-string">$:dicttable(web.cookies())</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt class="py-string">&lt;h3 id="meta-info"&gt;META&lt;/h3&gt;</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"><tt class="py-string">$ newctx = [(k, v) for (k, v) in ctx.iteritems() if not k.startswith('_') and not isinstance(v, dict)]</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"><tt class="py-string">$:dicttable(dict(newctx))</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"><tt class="py-string">&lt;h3 id="meta-info"&gt;ENVIRONMENT&lt;/h3&gt;</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-string">$:dicttable(ctx.env)</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-string">&lt;/div&gt;</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt class="py-string">&lt;div id="explanation"&gt;</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"><tt class="py-string">  &lt;p&gt;</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"><tt class="py-string">    You're seeing this error because you have &lt;code&gt;web.config.debug&lt;/code&gt;</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"><tt class="py-string">    set to &lt;code&gt;True&lt;/code&gt;. Set that to &lt;code&gt;False&lt;/code&gt; if you don't want to see this.</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"><tt class="py-string">  &lt;/p&gt;</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"><tt class="py-string">&lt;/div&gt;</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"><tt class="py-string">&lt;/body&gt;</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-string">&lt;/html&gt;</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"><tt id="link-15" class="py-name" targets="Variable website.web.debugerror'.djangoerror_r=website.web.debugerror%27-module.html#djangoerror_r"><a title="website.web.debugerror'.djangoerror_r" class="py-name" href="#" onclick="return doclink('link-15', 'djangoerror_r', 'link-15');">djangoerror_r</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"> </tt>
+<a name="djangoerror"></a><div id="djangoerror-def"><a name="L230"></a><tt class="py-lineno">230</tt> <a class="py-toggle" href="#" id="djangoerror-toggle" onclick="return toggle('djangoerror');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.debugerror'-module.html#djangoerror">djangoerror</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="djangoerror-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="djangoerror-expanded"><a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">_get_lines_from_file</tt><tt class="py-op">(</tt><tt class="py-param">filename</tt><tt class="py-op">,</tt> <tt class="py-param">lineno</tt><tt class="py-op">,</tt> <tt class="py-param">context_lines</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"><tt class="py-docstring">        Returns context_lines before and after lineno from file.</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line"><tt class="py-docstring">        Returns (pre_context_lineno, pre_context, context_line, post_context).</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">            <tt class="py-name">source</tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name" targets="Method website.web.browser.Browser.open()=website.web.browser.Browser-class.html#open"><a title="website.web.browser.Browser.open" class="py-name" href="#" onclick="return doclink('link-16', 'open', 'link-16');">open</a></tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method website.web.wsgiserver.ChunkedRFile.readlines()=website.web.wsgiserver.ChunkedRFile-class.html#readlines,Method website.web.wsgiserver.KnownLengthRFile.readlines()=website.web.wsgiserver.KnownLengthRFile-class.html#readlines,Method website.web.wsgiserver.SizeCheckWrapper.readlines()=website.web.wsgiserver.SizeCheckWrapper-class.html#readlines"><a title="website.web.wsgiserver.ChunkedRFile.readlines
+website.web.wsgiserver.KnownLengthRFile.readlines
+website.web.wsgiserver.SizeCheckWrapper.readlines" class="py-name" href="#" onclick="return doclink('link-17', 'readlines', 'link-17');">readlines</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">            <tt class="py-name">lower_bound</tt> <tt class="py-op">=</tt> <tt class="py-name">max</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">lineno</tt> <tt class="py-op">-</tt> <tt class="py-name">context_lines</tt><tt class="py-op">)</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">            <tt class="py-name">upper_bound</tt> <tt class="py-op">=</tt> <tt class="py-name">lineno</tt> <tt class="py-op">+</tt> <tt class="py-name">context_lines</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">            <tt class="py-name">pre_context</tt> <tt class="py-op">=</tt> \ </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">                <tt class="py-op">[</tt><tt class="py-name">line</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-string">'\n'</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">source</tt><tt class="py-op">[</tt><tt class="py-name">lower_bound</tt><tt class="py-op">:</tt><tt class="py-name">lineno</tt><tt class="py-op">]</tt><tt class="py-op">]</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">            <tt class="py-name">context_line</tt> <tt class="py-op">=</tt> <tt class="py-name">source</tt><tt class="py-op">[</tt><tt class="py-name">lineno</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-string">'\n'</tt><tt class="py-op">)</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">            <tt class="py-name">post_context</tt> <tt class="py-op">=</tt> \ </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">                <tt class="py-op">[</tt><tt class="py-name">line</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-string">'\n'</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">source</tt><tt class="py-op">[</tt><tt class="py-name">lineno</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-name">upper_bound</tt><tt class="py-op">]</tt><tt class="py-op">]</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">lower_bound</tt><tt class="py-op">,</tt> <tt class="py-name">pre_context</tt><tt class="py-op">,</tt> <tt class="py-name">context_line</tt><tt class="py-op">,</tt> <tt class="py-name">post_context</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-op">(</tt><tt class="py-name">OSError</tt><tt class="py-op">,</tt> <tt class="py-name">IOError</tt><tt class="py-op">,</tt> <tt class="py-name">IndexError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt>     </tt>
+</div><a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">     </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">    <tt class="py-name">exception_type</tt><tt class="py-op">,</tt> <tt class="py-name">exception_value</tt><tt class="py-op">,</tt> <tt class="py-name">tback</tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">    <tt class="py-name">frames</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">    <tt class="py-keyword">while</tt> <tt class="py-name">tback</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">        <tt class="py-name">filename</tt> <tt class="py-op">=</tt> <tt class="py-name">tback</tt><tt class="py-op">.</tt><tt class="py-name">tb_frame</tt><tt class="py-op">.</tt><tt class="py-name">f_code</tt><tt class="py-op">.</tt><tt class="py-name">co_filename</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">        <tt class="py-name">function</tt> <tt class="py-op">=</tt> <tt class="py-name">tback</tt><tt class="py-op">.</tt><tt class="py-name">tb_frame</tt><tt class="py-op">.</tt><tt class="py-name">f_code</tt><tt class="py-op">.</tt><tt class="py-name">co_name</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt class="py-name">lineno</tt> <tt class="py-op">=</tt> <tt class="py-name">tback</tt><tt class="py-op">.</tt><tt class="py-name">tb_lineno</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">        <tt class="py-comment"># hack to get correct line number for templates</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">        <tt class="py-name">lineno</tt> <tt class="py-op">+=</tt> <tt class="py-name">tback</tt><tt class="py-op">.</tt><tt class="py-name">tb_frame</tt><tt class="py-op">.</tt><tt class="py-name">f_locals</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method website.web.form.Form.get()=website.web.form.Form-class.html#get,Method website.web.utils.ThreadedDict.get()=website.web.utils.ThreadedDict-class.html#get"><a title="website.web.form.Form.get
+website.web.utils.ThreadedDict.get" class="py-name" href="#" onclick="return doclink('link-18', 'get', 'link-18');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">"__lineoffset__"</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">         </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">        <tt class="py-name">pre_context_lineno</tt><tt class="py-op">,</tt> <tt class="py-name">pre_context</tt><tt class="py-op">,</tt> <tt class="py-name">context_line</tt><tt class="py-op">,</tt> <tt class="py-name">post_context</tt> <tt class="py-op">=</tt> \ </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">            <tt class="py-name">_get_lines_from_file</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">,</tt> <tt class="py-name">lineno</tt><tt class="py-op">,</tt> <tt class="py-number">7</tt><tt class="py-op">)</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'__hidetraceback__'</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">tback</tt><tt class="py-op">.</tt><tt class="py-name">tb_frame</tt><tt class="py-op">.</tt><tt class="py-name">f_locals</tt><tt class="py-op">:</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">            <tt class="py-name">frames</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Method website.web.db.SQLQuery.append()=website.web.db.SQLQuery-class.html#append"><a title="website.web.db.SQLQuery.append" class="py-name" href="#" onclick="return doclink('link-19', 'append', 'link-19');">append</a></tt><tt class="py-op">(</tt><tt id="link-20" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-20', 'web', 'link-8');">web</a></tt><tt class="py-op">.</tt><tt class="py-name">storage</tt><tt class="py-op">(</tt><tt class="py-op">{</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">                <tt class="py-string">'tback'</tt><tt class="py-op">:</tt> <tt class="py-name">tback</tt><tt class="py-op">,</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">                <tt class="py-string">'filename'</tt><tt class="py-op">:</tt> <tt class="py-name">filename</tt><tt class="py-op">,</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">                <tt class="py-string">'function'</tt><tt class="py-op">:</tt> <tt class="py-name">function</tt><tt class="py-op">,</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">                <tt class="py-string">'lineno'</tt><tt class="py-op">:</tt> <tt class="py-name">lineno</tt><tt class="py-op">,</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">                <tt class="py-string">'vars'</tt><tt class="py-op">:</tt> <tt class="py-name">tback</tt><tt class="py-op">.</tt><tt class="py-name">tb_frame</tt><tt class="py-op">.</tt><tt class="py-name">f_locals</tt><tt class="py-op">,</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">                <tt class="py-string">'id'</tt><tt class="py-op">:</tt> <tt class="py-name">id</tt><tt class="py-op">(</tt><tt class="py-name">tback</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">                <tt class="py-string">'pre_context'</tt><tt class="py-op">:</tt> <tt class="py-name">pre_context</tt><tt class="py-op">,</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">                <tt class="py-string">'context_line'</tt><tt class="py-op">:</tt> <tt class="py-name">context_line</tt><tt class="py-op">,</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">                <tt class="py-string">'post_context'</tt><tt class="py-op">:</tt> <tt class="py-name">post_context</tt><tt class="py-op">,</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">                <tt class="py-string">'pre_context_lineno'</tt><tt class="py-op">:</tt> <tt class="py-name">pre_context_lineno</tt><tt class="py-op">,</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">            <tt class="py-op">}</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">        <tt class="py-name">tback</tt> <tt class="py-op">=</tt> <tt class="py-name">tback</tt><tt class="py-op">.</tt><tt class="py-name">tb_next</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">    <tt class="py-name">frames</tt><tt class="py-op">.</tt><tt class="py-name">reverse</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">    <tt class="py-name">urljoin</tt> <tt class="py-op">=</tt> <tt class="py-name">urlparse</tt><tt class="py-op">.</tt><tt class="py-name">urljoin</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">prettify</tt><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt>  </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">            <tt id="link-21" class="py-name" targets="Method website.Interpreter.parser.parser.Parser.out()=website.Interpreter.parser.parser.Parser-class.html#out"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-21', 'out', 'link-21');">out</a></tt> <tt class="py-op">=</tt> <tt class="py-name">pprint</tt><tt class="py-op">.</tt><tt class="py-name">pformat</tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">:</tt>  </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">            <tt id="link-22" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-22', 'out', 'link-21');">out</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'[could not display: &lt;'</tt> <tt class="py-op">+</tt> <tt class="py-name">e</tt><tt class="py-op">.</tt><tt class="py-name">__class__</tt><tt class="py-op">.</tt><tt class="py-name">__name__</tt> <tt class="py-op">+</tt> \ </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">                  <tt class="py-string">': '</tt><tt class="py-op">+</tt><tt id="link-23" class="py-name" targets="Static Method website.Interpreter.lexer.token.Token_Type.str()=website.Interpreter.lexer.token.Token_Type-class.html#str"><a title="website.Interpreter.lexer.token.Token_Type.str" class="py-name" href="#" onclick="return doclink('link-23', 'str', 'link-23');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">'&gt;]'</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-24" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-24', 'out', 'link-21');">out</a></tt> </tt>
+</div><a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">         </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt id="link-25" class="py-name"><a title="website.web.debugerror'.djangoerror_r" class="py-name" href="#" onclick="return doclink('link-25', 'djangoerror_r', 'link-15');">djangoerror_r</a></tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-26" class="py-name"><a title="website.web.debugerror'.djangoerror_r" class="py-name" href="#" onclick="return doclink('link-26', 'djangoerror_r', 'link-15');">djangoerror_r</a></tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">        <tt id="link-27" class="py-name"><a title="website.web.debugerror'.djangoerror_r" class="py-name" href="#" onclick="return doclink('link-27', 'djangoerror_r', 'link-15');">djangoerror_r</a></tt> <tt class="py-op">=</tt> <tt id="link-28" class="py-name"><a title="website.web.template.Template" class="py-name" href="#" onclick="return doclink('link-28', 'Template', 'link-1');">Template</a></tt><tt class="py-op">(</tt><tt id="link-29" class="py-name"><a title="website.web.debugerror'.djangoerror_t" class="py-name" href="#" onclick="return doclink('link-29', 'djangoerror_t', 'link-14');">djangoerror_t</a></tt><tt class="py-op">,</tt> <tt class="py-name">filename</tt><tt class="py-op">=</tt><tt class="py-name">__file__</tt><tt class="py-op">,</tt> <tt class="py-name">filter</tt><tt class="py-op">=</tt><tt id="link-30" class="py-name"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-30', 'websafe', 'link-3');">websafe</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line">         </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">    <tt class="py-name">t</tt> <tt class="py-op">=</tt> <tt id="link-31" class="py-name"><a title="website.web.debugerror'.djangoerror_r" class="py-name" href="#" onclick="return doclink('link-31', 'djangoerror_r', 'link-15');">djangoerror_r</a></tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">    <tt id="link-32" class="py-name" targets="Variable website.web.template.Template.globals=website.web.template.Template-class.html#globals"><a title="website.web.template.Template.globals" class="py-name" href="#" onclick="return doclink('link-32', 'globals', 'link-32');">globals</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">'ctx'</tt><tt class="py-op">:</tt> <tt id="link-33" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-33', 'web', 'link-8');">web</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Variable website.web.ctx=website.web-module.html#ctx,Variable website.web.db.DB.ctx=website.web.db.DB-class.html#ctx,Variable website.web.webapi.ctx=website.web.webapi-module.html#ctx"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-34', 'ctx', 'link-34');">ctx</a></tt><tt class="py-op">,</tt> <tt class="py-string">'web'</tt><tt class="py-op">:</tt><tt id="link-35" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-35', 'web', 'link-8');">web</a></tt><tt class="py-op">,</tt> <tt class="py-string">'dict'</tt><tt class="py-op">:</tt><tt class="py-name">dict</tt><tt class="py-op">,</tt> <tt class="py-string">'str'</tt><tt class="py-op">:</tt><tt id="link-36" class="py-name"><a title="website.Interpreter.lexer.token.Token_Type.str" class="py-name" href="#" onclick="return doclink('link-36', 'str', 'link-23');">str</a></tt><tt class="py-op">,</tt> <tt class="py-string">'prettify'</tt><tt class="py-op">:</tt> <tt class="py-name">prettify</tt><tt class="py-op">}</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">    <tt class="py-name">t</tt><tt class="py-op">.</tt><tt class="py-name">t</tt><tt class="py-op">.</tt><tt class="py-name">func_globals</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Method website.web.db.DB.update()=website.web.db.DB-class.html#update,Method website.web.utils.ThreadedDict.update()=website.web.utils.ThreadedDict-class.html#update"><a title="website.web.db.DB.update
+website.web.utils.ThreadedDict.update" class="py-name" href="#" onclick="return doclink('link-37', 'update', 'link-37');">update</a></tt><tt class="py-op">(</tt><tt id="link-38" class="py-name"><a title="website.web.template.Template.globals" class="py-name" href="#" onclick="return doclink('link-38', 'globals', 'link-32');">globals</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">t</tt><tt class="py-op">(</tt><tt class="py-name">exception_type</tt><tt class="py-op">,</tt> <tt class="py-name">exception_value</tt><tt class="py-op">,</tt> <tt class="py-name">frames</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line"> </tt>
+<a name="debugerror"></a><div id="debugerror-def"><a name="L297"></a><tt class="py-lineno">297</tt> <a class="py-toggle" href="#" id="debugerror-toggle" onclick="return toggle('debugerror');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.debugerror'-module.html#debugerror">debugerror</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="debugerror-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="debugerror-expanded"><a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line"><tt class="py-docstring">    A replacement for `internalerror` that presents a nice page with lots</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line"><tt class="py-docstring">    of debug information for the programmer.</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line"><tt class="py-docstring">    (Based on the beautiful 500 page from [Django](http://djangoproject.com/), </tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line"><tt class="py-docstring">    designed by [Wilson Miner](http://wilsonminer.com/).)</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-39" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-39', 'web', 'link-8');">web</a></tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Class website.web.webapi._InternalError=website.web.webapi._InternalError-class.html"><a title="website.web.webapi._InternalError" class="py-name" href="#" onclick="return doclink('link-40', '_InternalError', 'link-40');">_InternalError</a></tt><tt class="py-op">(</tt><tt id="link-41" class="py-name" targets="Function website.web.debugerror'.djangoerror()=website.web.debugerror%27-module.html#djangoerror"><a title="website.web.debugerror'.djangoerror" class="py-name" href="#" onclick="return doclink('link-41', 'djangoerror', 'link-41');">djangoerror</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line"> </tt>
+<a name="emailerrors"></a><div id="emailerrors-def"><a name="L307"></a><tt class="py-lineno">307</tt> <a class="py-toggle" href="#" id="emailerrors-toggle" onclick="return toggle('emailerrors');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.debugerror'-module.html#emailerrors">emailerrors</a><tt class="py-op">(</tt><tt class="py-param">to_address</tt><tt class="py-op">,</tt> <tt class="py-param">olderror</tt><tt class="py-op">,</tt> <tt class="py-param">from_address</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="emailerrors-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="emailerrors-expanded"><a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line"><tt class="py-docstring">    Wraps the old `internalerror` handler (pass as `olderror`) to </tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line"><tt class="py-docstring">    additionally email all errors to `to_address`, to aid in</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line"><tt class="py-docstring">    debugging production websites.</tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line"><tt class="py-docstring">    Emails contain a normal text traceback as well as an</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line"><tt class="py-docstring">    attachment containing the nice `debugerror` page.</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line">    <tt class="py-name">from_address</tt> <tt class="py-op">=</tt> <tt class="py-name">from_address</tt> <tt class="py-keyword">or</tt> <tt class="py-name">to_address</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line"> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">emailerrors_internal</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line">        <tt class="py-name">error</tt> <tt class="py-op">=</tt> <tt class="py-name">olderror</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line">        <tt class="py-name">tb</tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line">        <tt class="py-name">error_name</tt> <tt class="py-op">=</tt> <tt class="py-name">tb</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line">        <tt class="py-name">error_value</tt> <tt class="py-op">=</tt> <tt class="py-name">tb</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line">        <tt class="py-name">tb_txt</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="website.web.db.SQLQuery.join" class="py-name" href="#" onclick="return doclink('link-42', 'join', 'link-10');">join</a></tt><tt class="py-op">(</tt><tt class="py-name">traceback</tt><tt class="py-op">.</tt><tt class="py-name">format_exception</tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">tb</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line">        <tt class="py-name">path</tt> <tt class="py-op">=</tt> <tt id="link-43" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-43', 'web', 'link-8');">web</a></tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-44', 'ctx', 'link-34');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">path</tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line">        <tt id="link-45" class="py-name" targets="Method website.web.application'.application.request()=website.web.application%27.application-class.html#request"><a title="website.web.application'.application.request" class="py-name" href="#" onclick="return doclink('link-45', 'request', 'link-45');">request</a></tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-46', 'web', 'link-8');">web</a></tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-47', 'ctx', 'link-34');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">method</tt> <tt class="py-op">+</tt> <tt class="py-string">' '</tt> <tt class="py-op">+</tt> <tt id="link-48" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-48', 'web', 'link-8');">web</a></tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-49', 'ctx', 'link-34');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">home</tt> <tt class="py-op">+</tt> <tt id="link-50" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-50', 'web', 'link-8');">web</a></tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-51', 'ctx', 'link-34');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">fullpath</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line">         </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line">        <tt id="link-52" class="py-name" targets="Variable website.web.webapi.BadRequest.message=website.web.webapi.BadRequest-class.html#message,Variable website.web.webapi.Conflict.message=website.web.webapi.Conflict-class.html#message,Variable website.web.webapi.Forbidden.message=website.web.webapi.Forbidden-class.html#message,Variable website.web.webapi.Gone.message=website.web.webapi.Gone-class.html#message,Variable website.web.webapi.NotAcceptable.message=website.web.webapi.NotAcceptable-class.html#message,Variable website.web.webapi.PreconditionFailed.message=website.web.webapi.PreconditionFailed-class.html#message,Variable website.web.webapi.Unauthorized.message=website.web.webapi.Unauthorized-class.html#message,Variable website.web.webapi.UnsupportedMediaType.message=website.web.webapi.UnsupportedMediaType-class.html#message,Variable website.web.webapi._InternalError.message=website.web.webapi._InternalError-class.html#message,Variable website.web.webapi._NotFound.message=website.web.webapi._NotFound-class.html#message"><a title="website.web.webapi.BadRequest.message
+website.web.webapi.Conflict.message
+website.web.webapi.Forbidden.message
+website.web.webapi.Gone.message
+website.web.webapi.NotAcceptable.message
+website.web.webapi.PreconditionFailed.message
+website.web.webapi.Unauthorized.message
+website.web.webapi.UnsupportedMediaType.message
+website.web.webapi._InternalError.message
+website.web.webapi._NotFound.message" class="py-name" href="#" onclick="return doclink('link-52', 'message', 'link-52');">message</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"\n%s\n\n%s\n\n"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-53" class="py-name"><a title="website.web.application'.application.request" class="py-name" href="#" onclick="return doclink('link-53', 'request', 'link-45');">request</a></tt><tt class="py-op">,</tt> <tt class="py-name">tb_txt</tt><tt class="py-op">)</tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line">         </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line">        <tt id="link-54" class="py-name"><a title="website.web.utils.sendmail" class="py-name" href="#" onclick="return doclink('link-54', 'sendmail', 'link-5');">sendmail</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line">            <tt class="py-string">"your buggy site &lt;%s&gt;"</tt> <tt class="py-op">%</tt> <tt class="py-name">from_address</tt><tt class="py-op">,</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line">            <tt class="py-string">"the bugfixer &lt;%s&gt;"</tt> <tt class="py-op">%</tt> <tt class="py-name">to_address</tt><tt class="py-op">,</tt> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line">            <tt class="py-string">"bug: %(error_name)s: %(error_value)s (%(path)s)"</tt> <tt class="py-op">%</tt> <tt class="py-name">locals</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line">            <tt id="link-55" class="py-name"><a title="website.web.webapi.BadRequest.message
+website.web.webapi.Conflict.message
+website.web.webapi.Forbidden.message
+website.web.webapi.Gone.message
+website.web.webapi.NotAcceptable.message
+website.web.webapi.PreconditionFailed.message
+website.web.webapi.Unauthorized.message
+website.web.webapi.UnsupportedMediaType.message
+website.web.webapi._InternalError.message
+website.web.webapi._NotFound.message" class="py-name" href="#" onclick="return doclink('link-55', 'message', 'link-52');">message</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line">            <tt class="py-name">attachments</tt><tt class="py-op">=</tt><tt class="py-op">[</tt> </tt>
+<a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line">                <tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">=</tt><tt class="py-string">"bug.html"</tt><tt class="py-op">,</tt> <tt class="py-name">content</tt><tt class="py-op">=</tt><tt id="link-56" class="py-name"><a title="website.web.utils.safestr" class="py-name" href="#" onclick="return doclink('link-56', 'safestr', 'link-6');">safestr</a></tt><tt class="py-op">(</tt><tt id="link-57" class="py-name"><a title="website.web.debugerror'.djangoerror" class="py-name" href="#" onclick="return doclink('link-57', 'djangoerror', 'link-41');">djangoerror</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line">            <tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line">        <tt class="py-op">)</tt> </tt>
+<a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">error</tt> </tt>
+</div><a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line">     </tt>
+<a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">emailerrors_internal</tt> </tt>
+</div><a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line"> </tt>
+<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line">    <tt id="link-58" class="py-name" targets="Variable website.main.urls=website.main-module.html#urls"><a title="website.main.urls" class="py-name" href="#" onclick="return doclink('link-58', 'urls', 'link-58');">urls</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line">        <tt class="py-string">'/'</tt><tt class="py-op">,</tt> <tt class="py-string">'index'</tt> </tt>
+<a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line">    <tt class="py-op">)</tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line">    <tt class="py-keyword">from</tt> <tt id="link-59" class="py-name" targets="Class website.web.application'.application=website.web.application%27.application-class.html"><a title="website.web.application'.application" class="py-name" href="#" onclick="return doclink('link-59', 'application', 'link-59');">application</a></tt> <tt class="py-keyword">import</tt> <tt id="link-60" class="py-name"><a title="website.web.application'.application" class="py-name" href="#" onclick="return doclink('link-60', 'application', 'link-59');">application</a></tt> </tt>
+<a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line">    <tt class="py-name">app</tt> <tt class="py-op">=</tt> <tt id="link-61" class="py-name"><a title="website.web.application'.application" class="py-name" href="#" onclick="return doclink('link-61', 'application', 'link-59');">application</a></tt><tt class="py-op">(</tt><tt id="link-62" class="py-name"><a title="website.main.urls" class="py-name" href="#" onclick="return doclink('link-62', 'urls', 'link-58');">urls</a></tt><tt class="py-op">,</tt> <tt id="link-63" class="py-name"><a title="website.web.template.Template.globals" class="py-name" href="#" onclick="return doclink('link-63', 'globals', 'link-32');">globals</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line">    <tt class="py-name">app</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name" targets="Method website.web.application'.application.internalerror()=website.web.application%27.application-class.html#internalerror"><a title="website.web.application'.application.internalerror" class="py-name" href="#" onclick="return doclink('link-64', 'internalerror', 'link-64');">internalerror</a></tt> <tt class="py-op">=</tt> <tt id="link-65" class="py-name" targets="Function website.web.debugerror'.debugerror()=website.web.debugerror%27-module.html#debugerror"><a title="website.web.debugerror'.debugerror" class="py-name" href="#" onclick="return doclink('link-65', 'debugerror', 'link-65');">debugerror</a></tt> </tt>
+<a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line">     </tt>
+<a name="index"></a><div id="index-def"><a name="L350"></a><tt class="py-lineno">350</tt> <a class="py-toggle" href="#" id="index-toggle" onclick="return toggle('index');">-</a><tt class="py-line">    <tt class="py-keyword">class</tt> <a class="py-def-name" href="website.web.debugerror'.index-class.html">index</a><tt class="py-op">:</tt> </tt>
+</div><div id="index-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="index-expanded"><a name="index.GET"></a><div id="index.GET-def"><a name="L351"></a><tt class="py-lineno">351</tt> <a class="py-toggle" href="#" id="index.GET-toggle" onclick="return toggle('index.GET');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.debugerror'.index-class.html#GET">GET</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="index.GET-collapsed" style="display:none;" pad="+++" indent="++++++++++++++++"></div><div id="index.GET-expanded"><a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line">            <tt class="py-name">thisdoesnotexist</tt> </tt>
+</div></div><a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line"> </tt>
+<a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line">    <tt class="py-name">app</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name" targets="Method website.web.application'.application.run()=website.web.application%27.application-class.html#run,Method website.web.wsgiserver.WorkerThread.run()=website.web.wsgiserver.WorkerThread-class.html#run"><a title="website.web.application'.application.run
+website.web.wsgiserver.WorkerThread.run" class="py-name" href="#" onclick="return doclink('link-66', 'run', 'link-66');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Nov 28 02:31:24 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

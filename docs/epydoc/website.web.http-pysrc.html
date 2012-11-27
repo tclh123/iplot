@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>website.web.http</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="website-module.html">Package&nbsp;website</a> ::
+        <a href="website.web-module.html">Package&nbsp;web</a> ::
+        Module&nbsp;http
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="website.web.http-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="website.web.http-module.html">Module website.web.http</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">HTTP Utilities</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">(from web.py)</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-name">__all__</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line">  <tt class="py-string">"expires"</tt><tt class="py-op">,</tt> <tt class="py-string">"lastmodified"</tt><tt class="py-op">,</tt>  </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line">  <tt class="py-string">"prefixurl"</tt><tt class="py-op">,</tt> <tt class="py-string">"modified"</tt><tt class="py-op">,</tt>  </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">  <tt class="py-string">"changequery"</tt><tt class="py-op">,</tt> <tt class="py-string">"url"</tt><tt class="py-op">,</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">  <tt class="py-string">"profiler"</tt><tt class="py-op">,</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-op">]</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt><tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">,</tt> <tt class="py-name">threading</tt><tt class="py-op">,</tt> <tt class="py-name">urllib</tt><tt class="py-op">,</tt> <tt class="py-name">urlparse</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">try</tt><tt class="py-op">:</tt> <tt class="py-keyword">import</tt> <tt class="py-name">datetime</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">except</tt> <tt class="py-name">ImportError</tt><tt class="py-op">:</tt> <tt class="py-keyword">pass</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module website.web.net=website.web.net-module.html"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-0', 'net', 'link-0');">net</a></tt><tt class="py-op">,</tt> <tt id="link-1" class="py-name" targets="Module website.web.utils=website.web.utils-module.html"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-1', 'utils', 'link-1');">utils</a></tt><tt class="py-op">,</tt> <tt id="link-2" class="py-name" targets="Module website.web.webapi=website.web.webapi-module.html"><a title="website.web.webapi" class="py-name" href="#" onclick="return doclink('link-2', 'webapi', 'link-2');">webapi</a></tt> <tt class="py-keyword">as</tt> <tt id="link-3" class="py-name" targets="Package website.web=website.web-module.html"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-3', 'web', 'link-3');">web</a></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="prefixurl"></a><div id="prefixurl-def"><a name="L18"></a><tt class="py-lineno"> 18</tt> <a class="py-toggle" href="#" id="prefixurl-toggle" onclick="return toggle('prefixurl');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.http-module.html#prefixurl">prefixurl</a><tt class="py-op">(</tt><tt class="py-param">base</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="prefixurl-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="prefixurl-expanded"><a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">    Sorry, this function is really difficult to explain.</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">    Maybe some other time.</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Function website.web.http.url()=website.web.http-module.html#url"><a title="website.web.http.url" class="py-name" href="#" onclick="return doclink('link-4', 'url', 'link-4');">url</a></tt> <tt class="py-op">=</tt> <tt id="link-5" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-5', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Variable website.web.ctx=website.web-module.html#ctx,Variable website.web.db.DB.ctx=website.web.db.DB-class.html#ctx,Variable website.web.webapi.ctx=website.web.webapi-module.html#ctx"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-6', 'ctx', 'link-6');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">lstrip</tt><tt class="py-op">(</tt><tt class="py-string">'/'</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">xrange</tt><tt class="py-op">(</tt><tt id="link-7" class="py-name"><a title="website.web.http.url" class="py-name" href="#" onclick="return doclink('link-7', 'url', 'link-4');">url</a></tt><tt class="py-op">.</tt><tt class="py-name">count</tt><tt class="py-op">(</tt><tt class="py-string">'/'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-name">base</tt> <tt class="py-op">+=</tt> <tt class="py-string">'../'</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">base</tt><tt class="py-op">:</tt>  </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-name">base</tt> <tt class="py-op">=</tt> <tt class="py-string">'./'</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">base</tt> </tt>
+</div><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="expires"></a><div id="expires-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="expires-toggle" onclick="return toggle('expires');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.http-module.html#expires">expires</a><tt class="py-op">(</tt><tt class="py-param">delta</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="expires-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="expires-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">    Outputs an `Expires` header for `delta` from now. </tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">    `delta` is a `timedelta` object or a number of seconds.</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">delta</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">,</tt> <tt class="py-name">long</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">delta</tt> <tt class="py-op">=</tt> <tt class="py-name">datetime</tt><tt class="py-op">.</tt><tt class="py-name">timedelta</tt><tt class="py-op">(</tt><tt class="py-name">seconds</tt><tt class="py-op">=</tt><tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-name">date_obj</tt> <tt class="py-op">=</tt> <tt class="py-name">datetime</tt><tt class="py-op">.</tt><tt class="py-name">datetime</tt><tt class="py-op">.</tt><tt class="py-name">utcnow</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-name">delta</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt id="link-8" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-8', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Function website.web.webapi.header()=website.web.webapi-module.html#header"><a title="website.web.webapi.header" class="py-name" href="#" onclick="return doclink('link-9', 'header', 'link-9');">header</a></tt><tt class="py-op">(</tt><tt class="py-string">'Expires'</tt><tt class="py-op">,</tt> <tt id="link-10" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-10', 'net', 'link-0');">net</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Function website.web.net.httpdate()=website.web.net-module.html#httpdate"><a title="website.web.net.httpdate" class="py-name" href="#" onclick="return doclink('link-11', 'httpdate', 'link-11');">httpdate</a></tt><tt class="py-op">(</tt><tt class="py-name">date_obj</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="lastmodified"></a><div id="lastmodified-def"><a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="lastmodified-toggle" onclick="return toggle('lastmodified');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.http-module.html#lastmodified">lastmodified</a><tt class="py-op">(</tt><tt class="py-param">date_obj</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="lastmodified-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="lastmodified-expanded"><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-docstring">"""Outputs a `Last-Modified` header for `datetime`."""</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt id="link-12" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-12', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="website.web.webapi.header" class="py-name" href="#" onclick="return doclink('link-13', 'header', 'link-9');">header</a></tt><tt class="py-op">(</tt><tt class="py-string">'Last-Modified'</tt><tt class="py-op">,</tt> <tt id="link-14" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-14', 'net', 'link-0');">net</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="website.web.net.httpdate" class="py-name" href="#" onclick="return doclink('link-15', 'httpdate', 'link-11');">httpdate</a></tt><tt class="py-op">(</tt><tt class="py-name">date_obj</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="modified"></a><div id="modified-def"><a name="L44"></a><tt class="py-lineno"> 44</tt> <a class="py-toggle" href="#" id="modified-toggle" onclick="return toggle('modified');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.http-module.html#modified">modified</a><tt class="py-op">(</tt><tt class="py-param">date</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">etag</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="modified-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="modified-expanded"><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">    Checks to see if the page has been modified since the version in the</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">    requester's cache.</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">    When you publish pages, you can include `Last-Modified` and `ETag`</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">    with the date the page was last modified and an opaque token for</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">    the particular version, respectively. When readers reload the page, </tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">    the browser sends along the modification date and etag value for</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">    the version it has in its cache. If the page hasn't changed, </tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">    the server can just return `304 Not Modified` and not have to </tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">    send the whole page again.</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">    This function takes the last-modified date `date` and the ETag `etag`</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">    and checks the headers to see if they match. If they do, it returns </tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">    `True`, or otherwise it raises NotModified error. It also sets </tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">    `Last-Modified` and `ETag` output headers.</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt class="py-name">__builtin__</tt> <tt class="py-keyword">import</tt> <tt class="py-name">set</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">ImportError</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-comment"># for python 2.3</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt class="py-name">sets</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Set</tt> <tt class="py-keyword">as</tt> <tt class="py-name">set</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-name">n</tt> <tt class="py-op">=</tt> <tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">x</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-string">'" '</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt id="link-16" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-16', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-17', 'ctx', 'link-6');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">env</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method website.web.form.Form.get()=website.web.form.Form-class.html#get,Method website.web.utils.ThreadedDict.get()=website.web.utils.ThreadedDict-class.html#get"><a title="website.web.form.Form.get
+website.web.utils.ThreadedDict.get" class="py-name" href="#" onclick="return doclink('link-18', 'get', 'link-18');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">'HTTP_IF_NONE_MATCH'</tt><tt class="py-op">,</tt> <tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">','</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-name">m</tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-19', 'net', 'link-0');">net</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Function website.web.net.parsehttpdate()=website.web.net-module.html#parsehttpdate"><a title="website.web.net.parsehttpdate" class="py-name" href="#" onclick="return doclink('link-20', 'parsehttpdate', 'link-20');">parsehttpdate</a></tt><tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-21', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-22', 'ctx', 'link-6');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">env</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="website.web.form.Form.get
+website.web.utils.ThreadedDict.get" class="py-name" href="#" onclick="return doclink('link-23', 'get', 'link-18');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">'HTTP_IF_MODIFIED_SINCE'</tt><tt class="py-op">,</tt> <tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">';'</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt id="link-24" class="py-name" targets="Method website.web.form.Input.validate()=website.web.form.Input-class.html#validate"><a title="website.web.form.Input.validate" class="py-name" href="#" onclick="return doclink('link-24', 'validate', 'link-24');">validate</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">etag</tt><tt class="py-op">:</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'*'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">n</tt> <tt class="py-keyword">or</tt> <tt class="py-name">etag</tt> <tt class="py-keyword">in</tt> <tt class="py-name">n</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">            <tt id="link-25" class="py-name"><a title="website.web.form.Input.validate" class="py-name" href="#" onclick="return doclink('link-25', 'validate', 'link-24');">validate</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">date</tt> <tt class="py-keyword">and</tt> <tt class="py-name">m</tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-comment"># we subtract a second because </tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-comment"># HTTP dates don't have sub-second precision</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">date</tt><tt class="py-op">-</tt><tt class="py-name">datetime</tt><tt class="py-op">.</tt><tt class="py-name">timedelta</tt><tt class="py-op">(</tt><tt class="py-name">seconds</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;=</tt> <tt class="py-name">m</tt><tt class="py-op">:</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">            <tt id="link-26" class="py-name"><a title="website.web.form.Input.validate" class="py-name" href="#" onclick="return doclink('link-26', 'validate', 'link-24');">validate</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">     </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">date</tt><tt class="py-op">:</tt> <tt id="link-27" class="py-name" targets="Function website.web.http.lastmodified()=website.web.http-module.html#lastmodified"><a title="website.web.http.lastmodified" class="py-name" href="#" onclick="return doclink('link-27', 'lastmodified', 'link-27');">lastmodified</a></tt><tt class="py-op">(</tt><tt class="py-name">date</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">etag</tt><tt class="py-op">:</tt> <tt id="link-28" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-28', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="website.web.webapi.header" class="py-name" href="#" onclick="return doclink('link-29', 'header', 'link-9');">header</a></tt><tt class="py-op">(</tt><tt class="py-string">'ETag'</tt><tt class="py-op">,</tt> <tt class="py-string">'"'</tt> <tt class="py-op">+</tt> <tt class="py-name">etag</tt> <tt class="py-op">+</tt> <tt class="py-string">'"'</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-30" class="py-name"><a title="website.web.form.Input.validate" class="py-name" href="#" onclick="return doclink('link-30', 'validate', 'link-24');">validate</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt id="link-31" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-31', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt class="py-name">notmodified</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="urlencode"></a><div id="urlencode-def"><a name="L87"></a><tt class="py-lineno"> 87</tt> <a class="py-toggle" href="#" id="urlencode-toggle" onclick="return toggle('urlencode');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.http-module.html#urlencode">urlencode</a><tt class="py-op">(</tt><tt class="py-param">query</tt><tt class="py-op">,</tt> <tt class="py-param">doseq</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="urlencode-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="urlencode-expanded"><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">    Same as urllib.urlencode, but supports unicode strings.</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; urlencode({'text':'foo bar'})</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">        'text=foo+bar'</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; urlencode({'x': [1, 2]}, doseq=True)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">        'x=1&amp;x=2'</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">convert</tt><tt class="py-op">(</tt><tt class="py-param">value</tt><tt class="py-op">,</tt> <tt class="py-param">doseq</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">doseq</tt> <tt class="py-keyword">and</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt id="link-32" class="py-name" targets="Variable website.web.db.SQLParam.value=website.web.db.SQLParam-class.html#value"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-32', 'value', 'link-32');">value</a></tt><tt class="py-op">,</tt> <tt class="py-name">list</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">convert</tt><tt class="py-op">(</tt><tt class="py-name">v</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt id="link-33" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-33', 'value', 'link-32');">value</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-34" class="py-name"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-34', 'utils', 'link-1');">utils</a></tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Function website.web.utils.safestr()=website.web.utils-module.html#safestr"><a title="website.web.utils.safestr" class="py-name" href="#" onclick="return doclink('link-35', 'safestr', 'link-35');">safestr</a></tt><tt class="py-op">(</tt><tt id="link-36" class="py-name"><a title="website.web.db.SQLParam.value" class="py-name" href="#" onclick="return doclink('link-36', 'value', 'link-32');">value</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">         </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt id="link-37" class="py-name" targets="Method website.web.db.DB.query()=website.web.db.DB-class.html#query,Method website.web.db.SQLQuery.query()=website.web.db.SQLQuery-class.html#query,Method website.web.db.SqliteDB.query()=website.web.db.SqliteDB-class.html#query"><a title="website.web.db.DB.query
+website.web.db.SQLQuery.query
+website.web.db.SqliteDB.query" class="py-name" href="#" onclick="return doclink('link-37', 'query', 'link-37');">query</a></tt> <tt class="py-op">=</tt> <tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">(</tt><tt class="py-name">k</tt><tt class="py-op">,</tt> <tt class="py-name">convert</tt><tt class="py-op">(</tt><tt class="py-name">v</tt><tt class="py-op">,</tt> <tt class="py-name">doseq</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt> <tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt id="link-38" class="py-name"><a title="website.web.db.DB.query
+website.web.db.SQLQuery.query
+website.web.db.SqliteDB.query" class="py-name" href="#" onclick="return doclink('link-38', 'query', 'link-37');">query</a></tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Variable website.web.db.SQLQuery.items=website.web.db.SQLQuery-class.html#items,Method website.web.utils.ThreadedDict.items()=website.web.utils.ThreadedDict-class.html#items"><a title="website.web.db.SQLQuery.items
+website.web.utils.ThreadedDict.items" class="py-name" href="#" onclick="return doclink('link-39', 'items', 'link-39');">items</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Function website.web.http.urlencode()=website.web.http-module.html#urlencode"><a title="website.web.http.urlencode" class="py-name" href="#" onclick="return doclink('link-40', 'urlencode', 'link-40');">urlencode</a></tt><tt class="py-op">(</tt><tt id="link-41" class="py-name"><a title="website.web.db.DB.query
+website.web.db.SQLQuery.query
+website.web.db.SqliteDB.query" class="py-name" href="#" onclick="return doclink('link-41', 'query', 'link-37');">query</a></tt><tt class="py-op">,</tt> <tt class="py-name">doseq</tt><tt class="py-op">=</tt><tt class="py-name">doseq</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="changequery"></a><div id="changequery-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="changequery-toggle" onclick="return toggle('changequery');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.http-module.html#changequery">changequery</a><tt class="py-op">(</tt><tt class="py-param">query</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="changequery-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="changequery-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">    Imagine you're at `/foo?a=1&amp;b=2`. Then `changequery(a=3)` will return</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">    `/foo?a=3&amp;b=2` -- the same URL but with the arguments you requested</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">    changed.</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-42" class="py-name"><a title="website.web.db.DB.query
+website.web.db.SQLQuery.query
+website.web.db.SqliteDB.query" class="py-name" href="#" onclick="return doclink('link-42', 'query', 'link-37');">query</a></tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt id="link-43" class="py-name"><a title="website.web.db.DB.query
+website.web.db.SQLQuery.query
+website.web.db.SqliteDB.query" class="py-name" href="#" onclick="return doclink('link-43', 'query', 'link-37');">query</a></tt> <tt class="py-op">=</tt> <tt id="link-44" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-44', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Function website.web.webapi.rawinput()=website.web.webapi-module.html#rawinput"><a title="website.web.webapi.rawinput" class="py-name" href="#" onclick="return doclink('link-45', 'rawinput', 'link-45');">rawinput</a></tt><tt class="py-op">(</tt><tt class="py-name">method</tt><tt class="py-op">=</tt><tt class="py-string">'get'</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt> <tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt class="py-name">kw</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name" targets="Method website.web.utils.ThreadedDict.iteritems()=website.web.utils.ThreadedDict-class.html#iteritems"><a title="website.web.utils.ThreadedDict.iteritems" class="py-name" href="#" onclick="return doclink('link-46', 'iteritems', 'link-46');">iteritems</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">v</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">            <tt id="link-47" class="py-name"><a title="website.web.db.DB.query
+website.web.db.SQLQuery.query
+website.web.db.SqliteDB.query" class="py-name" href="#" onclick="return doclink('link-47', 'query', 'link-37');">query</a></tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method website.web.utils.ThreadedDict.pop()=website.web.utils.ThreadedDict-class.html#pop"><a title="website.web.utils.ThreadedDict.pop" class="py-name" href="#" onclick="return doclink('link-48', 'pop', 'link-48');">pop</a></tt><tt class="py-op">(</tt><tt class="py-name">k</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">            <tt id="link-49" class="py-name"><a title="website.web.db.DB.query
+website.web.db.SQLQuery.query
+website.web.db.SqliteDB.query" class="py-name" href="#" onclick="return doclink('link-49', 'query', 'link-37');">query</a></tt><tt class="py-op">[</tt><tt class="py-name">k</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">v</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt id="link-50" class="py-name" targets="Method website.Interpreter.parser.parser.Parser.out()=website.Interpreter.parser.parser.Parser-class.html#out"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-50', 'out', 'link-50');">out</a></tt> <tt class="py-op">=</tt> <tt id="link-51" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-51', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-52', 'ctx', 'link-6');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">path</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-53" class="py-name"><a title="website.web.db.DB.query
+website.web.db.SQLQuery.query
+website.web.db.SqliteDB.query" class="py-name" href="#" onclick="return doclink('link-53', 'query', 'link-37');">query</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt id="link-54" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-54', 'out', 'link-50');">out</a></tt> <tt class="py-op">+=</tt> <tt class="py-string">'?'</tt> <tt class="py-op">+</tt> <tt id="link-55" class="py-name"><a title="website.web.http.urlencode" class="py-name" href="#" onclick="return doclink('link-55', 'urlencode', 'link-40');">urlencode</a></tt><tt class="py-op">(</tt><tt id="link-56" class="py-name"><a title="website.web.db.DB.query
+website.web.db.SQLQuery.query
+website.web.db.SqliteDB.query" class="py-name" href="#" onclick="return doclink('link-56', 'query', 'link-37');">query</a></tt><tt class="py-op">,</tt> <tt class="py-name">doseq</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-57" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-57', 'out', 'link-50');">out</a></tt> </tt>
+</div><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"> </tt>
+<a name="url"></a><div id="url-def"><a name="L123"></a><tt class="py-lineno">123</tt> <a class="py-toggle" href="#" id="url-toggle" onclick="return toggle('url');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.http-module.html#url">url</a><tt class="py-op">(</tt><tt class="py-param">path</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">doseq</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="url-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="url-expanded"><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring">    Makes url by concatenating web.ctx.homepath and path and the </tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">    query string created using the arguments.</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">path</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-name">path</tt> <tt class="py-op">=</tt> <tt id="link-58" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-58', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-59" class="py-name"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-59', 'ctx', 'link-6');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">path</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-string">"/"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt id="link-60" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-60', 'out', 'link-50');">out</a></tt> <tt class="py-op">=</tt> <tt id="link-61" class="py-name"><a title="website.web" class="py-name" href="#" onclick="return doclink('link-61', 'web', 'link-3');">web</a></tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="website.web.ctx
+website.web.db.DB.ctx
+website.web.webapi.ctx" class="py-name" href="#" onclick="return doclink('link-62', 'ctx', 'link-6');">ctx</a></tt><tt class="py-op">.</tt><tt class="py-name">homepath</tt> <tt class="py-op">+</tt> <tt class="py-name">path</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt id="link-63" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-63', 'out', 'link-50');">out</a></tt> <tt class="py-op">=</tt> <tt class="py-name">path</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">kw</tt><tt class="py-op">:</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt id="link-64" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-64', 'out', 'link-50');">out</a></tt> <tt class="py-op">+=</tt> <tt class="py-string">'?'</tt> <tt class="py-op">+</tt> <tt id="link-65" class="py-name"><a title="website.web.http.urlencode" class="py-name" href="#" onclick="return doclink('link-65', 'urlencode', 'link-40');">urlencode</a></tt><tt class="py-op">(</tt><tt class="py-name">kw</tt><tt class="py-op">,</tt> <tt class="py-name">doseq</tt><tt class="py-op">=</tt><tt class="py-name">doseq</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">     </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-66" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-66', 'out', 'link-50');">out</a></tt> </tt>
+</div><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"> </tt>
+<a name="profiler"></a><div id="profiler-def"><a name="L140"></a><tt class="py-lineno">140</tt> <a class="py-toggle" href="#" id="profiler-toggle" onclick="return toggle('profiler');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="website.web.http-module.html#profiler">profiler</a><tt class="py-op">(</tt><tt class="py-param">app</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="profiler-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="profiler-expanded"><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-docstring">"""Outputs basic profiling information at the bottom of each response."""</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt class="py-keyword">from</tt> <tt id="link-67" class="py-name"><a title="website.web.utils" class="py-name" href="#" onclick="return doclink('link-67', 'utils', 'link-1');">utils</a></tt> <tt class="py-keyword">import</tt> <tt class="py-name">profile</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">    <tt class="py-keyword">def</tt> <tt class="py-def-name">profile_internal</tt><tt class="py-op">(</tt><tt class="py-param">e</tt><tt class="py-op">,</tt> <tt class="py-param">o</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt id="link-68" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-68', 'out', 'link-50');">out</a></tt><tt class="py-op">,</tt> <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">profile</tt><tt class="py-op">(</tt><tt class="py-name">app</tt><tt class="py-op">)</tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">,</tt> <tt class="py-name">o</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt id="link-69" class="py-name"><a title="website.Interpreter.parser.parser.Parser.out" class="py-name" href="#" onclick="return doclink('link-69', 'out', 'link-50');">out</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-op">[</tt><tt class="py-string">'&lt;pre&gt;'</tt> <tt class="py-op">+</tt> <tt id="link-70" class="py-name"><a title="website.web.net" class="py-name" href="#" onclick="return doclink('link-70', 'net', 'link-0');">net</a></tt><tt class="py-op">.</tt><tt id="link-71" class="py-name" targets="Function website.web.net.websafe()=website.web.net-module.html#websafe"><a title="website.web.net.websafe" class="py-name" href="#" onclick="return doclink('link-71', 'websafe', 'link-71');">websafe</a></tt><tt class="py-op">(</tt><tt class="py-name">result</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">'&lt;/pre&gt;'</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">profile_internal</tt> </tt>
+</div><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">doctest</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">    <tt class="py-name">doctest</tt><tt class="py-op">.</tt><tt class="py-name">testmod</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Nov 28 02:31:24 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

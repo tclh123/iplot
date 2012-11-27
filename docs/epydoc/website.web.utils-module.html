@@ -1,0 +1,1978 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>website.web.utils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="website-module.html">Package&nbsp;website</a> ::
+        <a href="website.web-module.html">Package&nbsp;web</a> ::
+        Module&nbsp;utils
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="website.web.utils-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module utils</h1><p class="nomargin-top"><span class="codelink"><a href="website.web.utils-pysrc.html">source&nbsp;code</a></span></p>
+<p>General Utilities (part of web.py)</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.CaptureStdout-class.html" class="summary-name">CaptureStdout</a><br />
+      Captures everything `func` prints to stdout and returns it instead.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.Counter-class.html" class="summary-name">Counter</a><br />
+      Keeps count of how many times something is added.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.IterBetter-class.html" class="summary-name">IterBetter</a><br />
+      Returns an object that can be used as an iterator but can also be 
+        used via __getitem__ (although it cannot go backwards -- that is, 
+        you cannot request `iterbetter[0]` after requesting 
+        `iterbetter[1]`).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.Memoize-class.html" class="summary-name">Memoize</a><br />
+      'Memoizes' a function, caching its return values for each input.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.Profile-class.html" class="summary-name">Profile</a><br />
+      Profiles `func` and returns a tuple containing its output and a 
+        string with human-readable profiling information.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.Storage-class.html" class="summary-name">Storage</a><br />
+      A Storage object is like a dictionary except `obj.foo` can be used 
+        in addition to `obj['foo']`.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.ThreadedDict-class.html" class="summary-name">ThreadedDict</a><br />
+      Thread local storage.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.TimeoutError-class.html" class="summary-name">TimeoutError</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils._EmailMessage-class.html" class="summary-name" onclick="show_private();">_EmailMessage</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils._hack-class.html" class="summary-name" onclick="show_private();">_hack</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils._re_subm_proxy-class.html" class="summary-name" onclick="show_private();">_re_subm_proxy</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.CaptureStdout-class.html" class="summary-name">capturestdout</a><br />
+      Captures everything `func` prints to stdout and returns it instead.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.Counter-class.html" class="summary-name">counter</a><br />
+      Keeps count of how many times something is added.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.IterBetter-class.html" class="summary-name">iterbetter</a><br />
+      Returns an object that can be used as an iterator but can also be 
+        used via __getitem__ (although it cannot go backwards -- that is, 
+        you cannot request `iterbetter[0]` after requesting 
+        `iterbetter[1]`).
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.Memoize-class.html" class="summary-name">memoize</a><br />
+      'Memoizes' a function, caching its return values for each input.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.Profile-class.html" class="summary-name">profile</a><br />
+      Profiles `func` and returns a tuple containing its output and a 
+        string with human-readable profiling information.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.Storage-class.html" class="summary-name">storage</a><br />
+      A Storage object is like a dictionary except `obj.foo` can be used 
+        in addition to `obj['foo']`.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils.ThreadedDict-class.html" class="summary-name">threadeddict</a><br />
+      Thread local storage.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_strips"></a><span class="summary-sig-name">_strips</span>(<span class="summary-sig-arg">direction</span>,
+        <span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">remove</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#_strips">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#autoassign" class="summary-sig-name">autoassign</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">locals</span>)</span><br />
+      Automatically assigns local variables to `self`.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#autoassign">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#commify" class="summary-sig-name">commify</a>(<span class="summary-sig-arg">n</span>)</span><br />
+      Add commas to an integer `n`.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#commify">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#cond" class="summary-sig-name">cond</a>(<span class="summary-sig-arg">predicate</span>,
+        <span class="summary-sig-arg">consequence</span>,
+        <span class="summary-sig-arg">alternative</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Function replacement for if-else to use in expressions.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#cond">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="dateify"></a><span class="summary-sig-name">dateify</span>(<span class="summary-sig-arg">datestring</span>)</span><br />
+      Formats a numified `datestring` properly.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#dateify">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#datestr" class="summary-sig-name">datestr</a>(<span class="summary-sig-arg">then</span>,
+        <span class="summary-sig-arg">now</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Converts a (UTC) datetime object to a nice string representation.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#datestr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#denumify" class="summary-sig-name">denumify</a>(<span class="summary-sig-arg">string</span>,
+        <span class="summary-sig-arg">pattern</span>)</span><br />
+      Formats `string` according to `pattern`, where the letter X gets 
+      replaced by characters from `string`.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#denumify">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#dictadd" class="summary-sig-name">dictadd</a>(<span class="summary-sig-arg">*dicts</span>)</span><br />
+      Returns a dictionary consisting of the keys in the argument 
+      dictionaries.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#dictadd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#dictfind" class="summary-sig-name">dictfind</a>(<span class="summary-sig-arg">dictionary</span>,
+        <span class="summary-sig-arg">element</span>)</span><br />
+      Returns a key whose value in `dictionary` is `element` or, if none 
+      exists, None.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#dictfind">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#dictfindall" class="summary-sig-name">dictfindall</a>(<span class="summary-sig-arg">dictionary</span>,
+        <span class="summary-sig-arg">element</span>)</span><br />
+      Returns the keys whose values in `dictionary` are `element` or, if 
+      none exists, [].</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#dictfindall">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#dictincr" class="summary-sig-name">dictincr</a>(<span class="summary-sig-arg">dictionary</span>,
+        <span class="summary-sig-arg">element</span>)</span><br />
+      Increments `element` in `dictionary`, setting it to one if it doesn't
+      exist.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#dictincr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#dictreverse" class="summary-sig-name">dictreverse</a>(<span class="summary-sig-arg">mapping</span>)</span><br />
+      Returns a new dictionary with keys and values swapped.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#dictreverse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#group" class="summary-sig-name">group</a>(<span class="summary-sig-arg">seq</span>,
+        <span class="summary-sig-arg">size</span>)</span><br />
+      Returns an iterator over a series of lists of length size from 
+      iterable.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#group">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#intget" class="summary-sig-name">intget</a>(<span class="summary-sig-arg">integer</span>,
+        <span class="summary-sig-arg">default</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns `integer` as an int or `default` if it can't.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#intget">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="iterview"></a><span class="summary-sig-name">iterview</span>(<span class="summary-sig-arg">x</span>)</span><br />
+      Takes an iterable `x` and returns an iterator over it which prints 
+      its progress to stderr as it iterates through.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#iterview">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#listget" class="summary-sig-name">listget</a>(<span class="summary-sig-arg">lst</span>,
+        <span class="summary-sig-arg">ind</span>,
+        <span class="summary-sig-arg">default</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns `lst[ind]` if it exists, `default` otherwise.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#listget">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#lstrips" class="summary-sig-name">lstrips</a>(<span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">remove</span>)</span><br />
+      removes the string `remove` from the left of `text`</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#lstrips">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#nthstr" class="summary-sig-name">nthstr</a>(<span class="summary-sig-arg">n</span>)</span><br />
+      Formats an ordinal.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#nthstr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#numify" class="summary-sig-name">numify</a>(<span class="summary-sig-arg">string</span>)</span><br />
+      Removes all non-digit characters from `string`.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#numify">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#re_subm" class="summary-sig-name">re_subm</a>(<span class="summary-sig-arg">pat</span>,
+        <span class="summary-sig-arg">repl</span>,
+        <span class="summary-sig-arg">string</span>)</span><br />
+      Like re.sub, but returns the replacement _and_ the match object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#re_subm">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#requeue" class="summary-sig-name">requeue</a>(<span class="summary-sig-arg">queue</span>,
+        <span class="summary-sig-arg">index</span>=<span class="summary-sig-default">-1</span>)</span><br />
+      Returns the element at index after moving it to the beginning of the 
+      queue.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#requeue">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#restack" class="summary-sig-name">restack</a>(<span class="summary-sig-arg">stack</span>,
+        <span class="summary-sig-arg">index</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Returns the element at index after moving it to the top of stack.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#restack">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#rstrips" class="summary-sig-name">rstrips</a>(<span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">remove</span>)</span><br />
+      removes the string `remove` from the right of `text`</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#rstrips">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="safeiter"></a><span class="summary-sig-name">safeiter</span>(<span class="summary-sig-arg">it</span>,
+        <span class="summary-sig-arg">cleanup</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ignore_errors</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Makes an iterator safe by ignoring the exceptions occured during the 
+      iteration.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#safeiter">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#safemarkdown" class="summary-sig-name">safemarkdown</a>(<span class="summary-sig-arg">text</span>)</span><br />
+      Converts text to HTML following the rules of Markdown, but blocking 
+      any outside HTML input, so that only the things supported by Markdown
+      can be used.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#safemarkdown">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#safestr" class="summary-sig-name">safestr</a>(<span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">encoding</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">utf-8</code><code class="variable-quote">'</code></span>)</span><br />
+      Converts any given object to utf-8 encoded string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#safestr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#safeunicode" class="summary-sig-name">safeunicode</a>(<span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">encoding</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">utf-8</code><code class="variable-quote">'</code></span>)</span><br />
+      Converts any given object to unicode string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#safeunicode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="safewrite"></a><span class="summary-sig-name">safewrite</span>(<span class="summary-sig-arg">filename</span>,
+        <span class="summary-sig-arg">content</span>)</span><br />
+      Writes the content to a temp file and then moves the temp file to 
+      given filename to avoid overwriting the existing file in case of 
+      errors.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#safewrite">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#sendmail" class="summary-sig-name">sendmail</a>(<span class="summary-sig-arg">from_address</span>,
+        <span class="summary-sig-arg">to_address</span>,
+        <span class="summary-sig-arg">subject</span>,
+        <span class="summary-sig-arg">message</span>,
+        <span class="summary-sig-arg">headers</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**kw</span>)</span><br />
+      Sends the email message `message` with mail and envelope headers for 
+      from `from_address_` to `to_address` with `subject`.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#sendmail">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#storify" class="summary-sig-name">storify</a>(<span class="summary-sig-arg">mapping</span>,
+        <span class="summary-sig-arg">*requireds</span>,
+        <span class="summary-sig-arg">**defaults</span>)</span><br />
+      Creates a `storage` object from dictionary `mapping`, raising 
+      `KeyError` if d doesn't have all of the keys in `requireds` and using
+      the default values for keys found in `defaults`.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#storify">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#strips" class="summary-sig-name">strips</a>(<span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">remove</span>)</span><br />
+      removes the string `remove` from the both sides of `text`</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#strips">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#timelimit" class="summary-sig-name">timelimit</a>(<span class="summary-sig-arg">timeout</span>)</span><br />
+      A decorator to limit a function to `timeout` seconds, raising 
+      `TimeoutError` if it takes longer.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#timelimit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#to36" class="summary-sig-name">to36</a>(<span class="summary-sig-arg">q</span>)</span><br />
+      Converts an integer to base 36 (a useful scheme for human-sayable 
+      IDs).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#to36">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#tryall" class="summary-sig-name">tryall</a>(<span class="summary-sig-arg">context</span>,
+        <span class="summary-sig-arg">prefix</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Tries a series of functions and prints their results.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#tryall">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#uniq" class="summary-sig-name">uniq</a>(<span class="summary-sig-arg">seq</span>,
+        <span class="summary-sig-arg">key</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Removes duplicate elements from a list while preserving the order of 
+      the rest.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#uniq">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.utils-module.html#utf8" class="summary-sig-name">utf8</a>(<span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">encoding</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">utf-8</code><code class="variable-quote">'</code></span>)</span><br />
+      Converts any given object to utf-8 encoded string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.utils-pysrc.html#safestr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'website.web'"><code class="variable-quote">'</code><code class="variable-string">website.web</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.utils-module.html#iters" class="summary-name">iters</a> = <code title="(&lt;type 'list'&gt;, &lt;type 'tuple'&gt;, &lt;type 'set'&gt;, &lt;type 'set'&gt;)">(&lt;type 'list'&gt;, &lt;type 'tuple'&gt;, &lt;type 'set'&gt;, &lt;type 's<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="r_url"></a><span class="summary-name">r_url</span> = <code title="re.compile(r'(?&lt;!\()(http://(\S+))')">re.compile(r'<code class="re-group">(?&lt;!</code>\(<code class="re-group">)</code><code class="re-group">(</code>http://<code class="re-group">(</code>\S<code class="re-op">+</code><code class="re-group">)</code><code class="re-group">)</code>')</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="re_compile"></a><span class="summary-name">re_compile</span> = <code title="&lt;website.web.utils.Memoize instance at 0x10f991e18&gt;">&lt;website.web.utils.Memoize instance at 0x10f991e18&gt;</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="autoassign"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">autoassign</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">locals</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#autoassign">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+Automatically assigns local variables to `self`.
+
+    &gt;&gt;&gt; self = storage()
+    &gt;&gt;&gt; autoassign(self, dict(a=1, b=2))
+    &gt;&gt;&gt; self
+    &lt;Storage {'a': 1, 'b': 2}&gt;
+
+Generally used in `__init__` methods, as in:
+
+    def __init__(self, foo, bar, baz=1): autoassign(self, locals())
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="commify"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">commify</span>(<span class="sig-arg">n</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#commify">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Add commas to an integer `n`.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>commify(1)
+<span class="py-output">'1'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>commify(123)
+<span class="py-output">'123'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>commify(1234)
+<span class="py-output">'1,234'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>commify(1234567890)
+<span class="py-output">'1,234,567,890'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>commify(123.0)
+<span class="py-output">'123.0'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>commify(1234.5)
+<span class="py-output">'1,234.5'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>commify(1234.56789)
+<span class="py-output">'1,234.56789'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>commify(<span class="py-string">'%.2f'</span> % 1234.5)
+<span class="py-output">'1,234.50'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>commify(None)
+<span class="py-prompt">&gt;&gt;&gt;</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="cond"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">cond</span>(<span class="sig-arg">predicate</span>,
+        <span class="sig-arg">consequence</span>,
+        <span class="sig-arg">alternative</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#cond">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Function replacement for if-else to use in expressions.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>x = 2
+<span class="py-prompt">&gt;&gt;&gt; </span>cond(x % 2 == 0, <span class="py-string">&quot;even&quot;</span>, <span class="py-string">&quot;odd&quot;</span>)
+<span class="py-output">'even'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>cond(x % 2 == 0, <span class="py-string">&quot;even&quot;</span>, <span class="py-string">&quot;odd&quot;</span>) + <span class="py-string">'_row'</span>
+<span class="py-output">'even_row'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="datestr"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">datestr</span>(<span class="sig-arg">then</span>,
+        <span class="sig-arg">now</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#datestr">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts a (UTC) datetime object to a nice string representation.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> datetime <span class="py-keyword">import</span> datetime, timedelta
+<span class="py-prompt">&gt;&gt;&gt; </span>d = datetime(1970, 5, 1)
+<span class="py-prompt">&gt;&gt;&gt; </span>datestr(d, now=d)
+<span class="py-output">'0 microseconds ago'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> t, v <span class="py-keyword">in</span> {
+<span class="py-more">... </span>  timedelta(microseconds=1): <span class="py-string">'1 microsecond ago'</span>,
+<span class="py-more">... </span>  timedelta(microseconds=2): <span class="py-string">'2 microseconds ago'</span>,
+<span class="py-more">... </span>  -timedelta(microseconds=1): <span class="py-string">'1 microsecond from now'</span>,
+<span class="py-more">... </span>  -timedelta(microseconds=2): <span class="py-string">'2 microseconds from now'</span>,
+<span class="py-more">... </span>  timedelta(microseconds=2000): <span class="py-string">'2 milliseconds ago'</span>,
+<span class="py-more">... </span>  timedelta(seconds=2): <span class="py-string">'2 seconds ago'</span>,
+<span class="py-more">... </span>  timedelta(seconds=2*60): <span class="py-string">'2 minutes ago'</span>,
+<span class="py-more">... </span>  timedelta(seconds=2*60*60): <span class="py-string">'2 hours ago'</span>,
+<span class="py-more">... </span>  timedelta(days=2): <span class="py-string">'2 days ago'</span>,
+<span class="py-more">... </span>}.iteritems():
+<span class="py-more">... </span>    assert datestr(d, now=d+t) == v
+<span class="py-prompt">&gt;&gt;&gt; </span>datestr(datetime(1970, 1, 1), now=d)
+<span class="py-output">'January  1'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>datestr(datetime(1969, 1, 1), now=d)
+<span class="py-output">'January  1, 1969'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>datestr(datetime(1970, 6, 1), now=d)
+<span class="py-output">'June  1, 1970'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>datestr(None)
+<span class="py-output">''</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="denumify"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">denumify</span>(<span class="sig-arg">string</span>,
+        <span class="sig-arg">pattern</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#denumify">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Formats `string` according to `pattern`, where the letter X gets 
+  replaced by characters from `string`.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>denumify(<span class="py-string">&quot;8005551212&quot;</span>, <span class="py-string">&quot;(XXX) XXX-XXXX&quot;</span>)
+<span class="py-output">'(800) 555-1212'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="dictadd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dictadd</span>(<span class="sig-arg">*dicts</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#dictadd">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a dictionary consisting of the keys in the argument 
+  dictionaries. If they share a key, the value from the last argument is 
+  used.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>dictadd({1: 0, 2: 0}, {2: 1, 3: 1})
+<span class="py-output">{1: 0, 2: 1, 3: 1}</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="dictfind"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dictfind</span>(<span class="sig-arg">dictionary</span>,
+        <span class="sig-arg">element</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#dictfind">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a key whose value in `dictionary` is `element` or, if none 
+  exists, None.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>d = {1:2, 3:4}
+<span class="py-prompt">&gt;&gt;&gt; </span>dictfind(d, 4)
+<span class="py-output">3</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>dictfind(d, 5)</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="dictfindall"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dictfindall</span>(<span class="sig-arg">dictionary</span>,
+        <span class="sig-arg">element</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#dictfindall">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the keys whose values in `dictionary` are `element` or, if 
+  none exists, [].</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>d = {1:4, 3:4}
+<span class="py-prompt">&gt;&gt;&gt; </span>dictfindall(d, 4)
+<span class="py-output">[1, 3]</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>dictfindall(d, 5)
+<span class="py-output">[]</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="dictincr"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dictincr</span>(<span class="sig-arg">dictionary</span>,
+        <span class="sig-arg">element</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#dictincr">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Increments `element` in `dictionary`, setting it to one if it doesn't 
+  exist.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>d = {1:2, 3:4}
+<span class="py-prompt">&gt;&gt;&gt; </span>dictincr(d, 1)
+<span class="py-output">3</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>d[1]
+<span class="py-output">3</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>dictincr(d, 5)
+<span class="py-output">1</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>d[5]
+<span class="py-output">1</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="dictreverse"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dictreverse</span>(<span class="sig-arg">mapping</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#dictreverse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a new dictionary with keys and values swapped.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>dictreverse({1: 2, 3: 4})
+<span class="py-output">{2: 1, 4: 3}</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="group"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">group</span>(<span class="sig-arg">seq</span>,
+        <span class="sig-arg">size</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#group">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns an iterator over a series of lists of length size from 
+  iterable.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>list(group([1,2,3,4], 2))
+<span class="py-output">[[1, 2], [3, 4]]</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>list(group([1,2,3,4,5], 2))
+<span class="py-output">[[1, 2], [3, 4], [5]]</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="intget"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">intget</span>(<span class="sig-arg">integer</span>,
+        <span class="sig-arg">default</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#intget">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns `integer` as an int or `default` if it can't.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>intget(<span class="py-string">'3'</span>)
+<span class="py-output">3</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>intget(<span class="py-string">'3a'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>intget(<span class="py-string">'3a'</span>, 0)
+<span class="py-output">0</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="listget"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">listget</span>(<span class="sig-arg">lst</span>,
+        <span class="sig-arg">ind</span>,
+        <span class="sig-arg">default</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#listget">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns `lst[ind]` if it exists, `default` otherwise.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>listget([<span class="py-string">'a'</span>], 0)
+<span class="py-output">'a'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>listget([<span class="py-string">'a'</span>], 1)
+<span class="py-prompt">&gt;&gt;&gt; </span>listget([<span class="py-string">'a'</span>], 1, <span class="py-string">'b'</span>)
+<span class="py-output">'b'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="lstrips"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">lstrips</span>(<span class="sig-arg">text</span>,
+        <span class="sig-arg">remove</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#lstrips">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>removes the string `remove` from the left of `text`</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>lstrips(<span class="py-string">&quot;foobar&quot;</span>, <span class="py-string">&quot;foo&quot;</span>)
+<span class="py-output">'bar'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>lstrips(<span class="py-string">'http://foo.org/'</span>, [<span class="py-string">'http://'</span>, <span class="py-string">'https://'</span>])
+<span class="py-output">'foo.org/'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>lstrips(<span class="py-string">'FOOBARBAZ'</span>, [<span class="py-string">'FOO'</span>, <span class="py-string">'BAR'</span>])
+<span class="py-output">'BAZ'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>lstrips(<span class="py-string">'FOOBARBAZ'</span>, [<span class="py-string">'BAR'</span>, <span class="py-string">'FOO'</span>])
+<span class="py-output">'BARBAZ'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="nthstr"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">nthstr</span>(<span class="sig-arg">n</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#nthstr">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Formats an ordinal. Doesn't handle negative numbers.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>nthstr(1)
+<span class="py-output">'1st'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>nthstr(0)
+<span class="py-output">'0th'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>[nthstr(x) <span class="py-keyword">for</span> x <span class="py-keyword">in</span> [2, 3, 4, 5, 10, 11, 12, 13, 14, 15]]
+<span class="py-output">['2nd', '3rd', '4th', '5th', '10th', '11th', '12th', '13th', '14th', '15th']</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>[nthstr(x) <span class="py-keyword">for</span> x <span class="py-keyword">in</span> [91, 92, 93, 94, 99, 100, 101, 102]]
+<span class="py-output">['91st', '92nd', '93rd', '94th', '99th', '100th', '101st', '102nd']</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>[nthstr(x) <span class="py-keyword">for</span> x <span class="py-keyword">in</span> [111, 112, 113, 114, 115]]
+<span class="py-output">['111th', '112th', '113th', '114th', '115th']</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="numify"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">numify</span>(<span class="sig-arg">string</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#numify">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes all non-digit characters from `string`.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>numify(<span class="py-string">'800-555-1212'</span>)
+<span class="py-output">'8005551212'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>numify(<span class="py-string">'800.555.1212'</span>)
+<span class="py-output">'8005551212'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="re_subm"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">re_subm</span>(<span class="sig-arg">pat</span>,
+        <span class="sig-arg">repl</span>,
+        <span class="sig-arg">string</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#re_subm">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Like re.sub, but returns the replacement _and_ the match object.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t, m = re_subm(<span class="py-string">'g(oo+)fball'</span>, r<span class="py-string">'f\1lish'</span>, <span class="py-string">'goooooofball'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>t
+<span class="py-output">'foooooolish'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>m.groups()
+<span class="py-output">('oooooo',)</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="requeue"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">requeue</span>(<span class="sig-arg">queue</span>,
+        <span class="sig-arg">index</span>=<span class="sig-default">-1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#requeue">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the element at index after moving it to the beginning of the 
+  queue.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>x = [1, 2, 3, 4]
+<span class="py-prompt">&gt;&gt;&gt; </span>requeue(x)
+<span class="py-output">4</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>x
+<span class="py-output">[4, 1, 2, 3]</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="restack"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">restack</span>(<span class="sig-arg">stack</span>,
+        <span class="sig-arg">index</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#restack">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the element at index after moving it to the top of stack.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>x = [1, 2, 3, 4]
+<span class="py-prompt">&gt;&gt;&gt; </span>restack(x)
+<span class="py-output">1</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>x
+<span class="py-output">[2, 3, 4, 1]</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="rstrips"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">rstrips</span>(<span class="sig-arg">text</span>,
+        <span class="sig-arg">remove</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#rstrips">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>removes the string `remove` from the right of `text`</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>rstrips(<span class="py-string">&quot;foobar&quot;</span>, <span class="py-string">&quot;bar&quot;</span>)
+<span class="py-output">'foo'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="safemarkdown"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">safemarkdown</span>(<span class="sig-arg">text</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#safemarkdown">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts text to HTML following the rules of Markdown, but blocking 
+  any outside HTML input, so that only the things supported by Markdown can
+  be used. Also converts raw URLs to links.</p>
+  <p>(requires [markdown.py](http://webpy.org/markdown.py))</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="safestr"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">safestr</span>(<span class="sig-arg">obj</span>,
+        <span class="sig-arg">encoding</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">utf-8</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#safestr">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts any given object to utf-8 encoded string.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>safestr(<span class="py-string">'hello'</span>)
+<span class="py-output">'hello'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>safestr(u<span class="py-string">'\u1234'</span>)
+<span class="py-output">'\xe1\x88\xb4'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>safestr(2)
+<span class="py-output">'2'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="safeunicode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">safeunicode</span>(<span class="sig-arg">obj</span>,
+        <span class="sig-arg">encoding</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">utf-8</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#safeunicode">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts any given object to unicode string.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>safeunicode(<span class="py-string">'hello'</span>)
+<span class="py-output">u'hello'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>safeunicode(2)
+<span class="py-output">u'2'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>safeunicode(<span class="py-string">'\xe1\x88\xb4'</span>)
+<span class="py-output">u'\u1234'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="sendmail"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sendmail</span>(<span class="sig-arg">from_address</span>,
+        <span class="sig-arg">to_address</span>,
+        <span class="sig-arg">subject</span>,
+        <span class="sig-arg">message</span>,
+        <span class="sig-arg">headers</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">**kw</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#sendmail">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sends the email message `message` with mail and envelope headers for 
+  from `from_address_` to `to_address` with `subject`. Additional email 
+  headers can be specified with the dictionary `headers.</p>
+  <p>Optionally cc, bcc and attachments can be specified as keyword 
+  arguments. Attachments must be an iterable and each attachment can be 
+  either a filename or a file object or a dictionary with filename, content
+  and optionally content_type keys.</p>
+  <p>If `web.config.smtp_server` is set, it will send the message to that 
+  SMTP server. Otherwise it will look for `/usr/sbin/sendmail`, the typical
+  location for the sendmail-style binary. To use sendmail from a different 
+  path, set `web.config.sendmail_path`.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="storify"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">storify</span>(<span class="sig-arg">mapping</span>,
+        <span class="sig-arg">*requireds</span>,
+        <span class="sig-arg">**defaults</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#storify">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a `storage` object from dictionary `mapping`, raising 
+  `KeyError` if d doesn't have all of the keys in `requireds` and using the
+  default values for keys found in `defaults`.</p>
+  <p>For example, `storify({'a':1, 'c':3}, b=2, c=0)` will return the 
+  equivalent of `storage({'a':1, 'b':2, 'c':3})`.</p>
+  <p>If a `storify` value is a list (e.g. multiple values in a form 
+  submission), `storify` returns the last element of the list, unless the 
+  key appears in `defaults` as a list. Thus:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>storify({<span class="py-string">'a'</span>:[1, 2]}).a
+<span class="py-output">2</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>storify({<span class="py-string">'a'</span>:[1, 2]}, a=[]).a
+<span class="py-output">[1, 2]</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>storify({<span class="py-string">'a'</span>:1}, a=[]).a
+<span class="py-output">[1]</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>storify({}, a=[]).a
+<span class="py-output">[]</span></pre>
+  <p>Similarly, if the value has a `value` attribute, `storify will return 
+  _its_ value, unless the key appears in `defaults` as a dictionary.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>storify({<span class="py-string">'a'</span>:storage(value=1)}).a
+<span class="py-output">1</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>storify({<span class="py-string">'a'</span>:storage(value=1)}, a={}).a
+<span class="py-output">&lt;Storage {'value': 1}&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>storify({}, a={}).a
+<span class="py-output">{}</span></pre>
+  <p>Optionally, keyword parameter `_unicode` can be passed to convert all 
+  values to unicode.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>storify({<span class="py-string">'x'</span>: <span class="py-string">'a'</span>}, _unicode=True)
+<span class="py-output">&lt;Storage {'x': u'a'}&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>storify({<span class="py-string">'x'</span>: storage(value=<span class="py-string">'a'</span>)}, x={}, _unicode=True)
+<span class="py-output">&lt;Storage {'x': &lt;Storage {'value': 'a'}&gt;}&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>storify({<span class="py-string">'x'</span>: storage(value=<span class="py-string">'a'</span>)}, _unicode=True)
+<span class="py-output">&lt;Storage {'x': u'a'}&gt;</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="strips"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">strips</span>(<span class="sig-arg">text</span>,
+        <span class="sig-arg">remove</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#strips">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>removes the string `remove` from the both sides of `text`</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>strips(<span class="py-string">&quot;foobarfoo&quot;</span>, <span class="py-string">&quot;foo&quot;</span>)
+<span class="py-output">'bar'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="timelimit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">timelimit</span>(<span class="sig-arg">timeout</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#timelimit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>A decorator to limit a function to `timeout` seconds, raising 
+  `TimeoutError` if it takes longer.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> time
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">def</span> <span class="py-defname">meaningoflife</span>():
+<span class="py-more">... </span>    time.sleep(.2)
+<span class="py-more">... </span>    return 42
+<span class="py-prompt">&gt;&gt;&gt; </span>
+<span class="py-prompt">&gt;&gt;&gt; </span>timelimit(.1)(meaningoflife)()
+<span class="py-except">Traceback (most recent call last):</span>
+<span class="py-except">    ...</span>
+<span class="py-except">TimeoutError: took too long</span>
+<span class="py-except"></span><span class="py-prompt">&gt;&gt;&gt; </span>timelimit(1)(meaningoflife)()
+<span class="py-output">42</span></pre>
+  <p>_Caveat:_ The function isn't stopped after `timeout` seconds but 
+  continues executing in a separate thread. (There seems to be no way to 
+  kill a thread.)</p>
+  <p>inspired by 
+  &lt;http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/473878&gt;</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="to36"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">to36</span>(<span class="sig-arg">q</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#to36">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts an integer to base 36 (a useful scheme for human-sayable 
+  IDs).</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>to36(35)
+<span class="py-output">'z'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>to36(119292)
+<span class="py-output">'2k1o'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>int(to36(939387374), 36)
+<span class="py-output">939387374</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>to36(0)
+<span class="py-output">'0'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>to36(-393)
+<span class="py-except">Traceback (most recent call last):</span>
+<span class="py-except">    ... </span>
+<span class="py-except">ValueError: must supply a positive integer</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="tryall"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">tryall</span>(<span class="sig-arg">context</span>,
+        <span class="sig-arg">prefix</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#tryall">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+Tries a series of functions and prints their results. 
+`context` is a dictionary mapping names to values; 
+the value will only be tried if it's callable.
+
+    &gt;&gt;&gt; tryall(dict(j=lambda: True))
+    j: True
+    ----------------------------------------
+    results:
+       True: 1
+
+For example, you might have a file `test/stuff.py` 
+with a series of functions testing various things in it. 
+At the bottom, have a line:
+
+    if __name__ == &quot;__main__&quot;: tryall(globals())
+
+Then you can run `python test/stuff.py` and get the results of 
+all the tests.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="uniq"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">uniq</span>(<span class="sig-arg">seq</span>,
+        <span class="sig-arg">key</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#uniq">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes duplicate elements from a list while preserving the order of 
+  the rest.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>uniq([9,0,2,1,0])
+<span class="py-output">[9, 0, 2, 1]</span></pre>
+  <p>The value of the optional `key` parameter should be a function that 
+  takes a single argument and returns a key to test the uniqueness.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>uniq([<span class="py-string">&quot;Foo&quot;</span>, <span class="py-string">&quot;foo&quot;</span>, <span class="py-string">&quot;bar&quot;</span>], key=<span class="py-keyword">lambda</span> s: s.lower())
+<span class="py-output">['Foo', 'bar']</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="utf8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">utf8</span>(<span class="sig-arg">obj</span>,
+        <span class="sig-arg">encoding</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">utf-8</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.utils-pysrc.html#safestr">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts any given object to utf-8 encoded string.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>safestr(<span class="py-string">'hello'</span>)
+<span class="py-output">'hello'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>safestr(u<span class="py-string">'\u1234'</span>)
+<span class="py-output">'\xe1\x88\xb4'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>safestr(2)
+<span class="py-output">'2'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="iters"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">iters</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+(&lt;type 'list'&gt;, &lt;type 'tuple'&gt;, &lt;type 'set'&gt;, &lt;type 'set'&gt;)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Nov 28 02:31:23 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

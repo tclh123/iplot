@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>website.web.template</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="website-module.html">Package&nbsp;website</a> ::
+        <a href="website.web-module.html">Package&nbsp;web</a> ::
+        Module&nbsp;template
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="website.web.template-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module template</h1><p class="nomargin-top"><span class="codelink"><a href="website.web.template-pysrc.html">source&nbsp;code</a></span></p>
+<pre class="literalblock">
+
+simple, elegant templating
+(part of web.py)
+
+Template design:
+
+Template string is split into tokens and the tokens are combined into nodes. 
+Parse tree is a nodelist. TextNode and ExpressionNode are simple nodes and 
+for-loop, if-loop etc are block nodes, which contain multiple child nodes. 
+
+Each node can emit some python string. python string emitted by the 
+root node is validated for safeeval and executed using python in the given environment.
+
+Enough care is taken to make sure the generated code and the template has line to line match, 
+so that the error messages can point to exact line number in template. (It doesn't work in some cases still.)
+
+Grammar:
+
+    template -&gt; defwith sections 
+    defwith -&gt; '$def with (' arguments ')' | ''
+    sections -&gt; section*
+    section -&gt; block | assignment | line
+
+    assignment -&gt; '$ ' &lt;assignment expression&gt;
+    line -&gt; (text|expr)*
+    text -&gt; &lt;any characters other than $&gt;
+    expr -&gt; '$' pyexpr | '$(' pyexpr ')' | '${' pyexpr '}'
+    pyexpr -&gt; &lt;python expression&gt;
+
+</pre>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.AssignmentNode-class.html" class="summary-name" onclick="show_private();">AssignmentNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.BaseTemplate-class.html" class="summary-name" onclick="show_private();">BaseTemplate</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.BlockNode-class.html" class="summary-name" onclick="show_private();">BlockNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.CodeNode-class.html" class="summary-name" onclick="show_private();">CodeNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.CompiledTemplate-class.html" class="summary-name" onclick="show_private();">CompiledTemplate</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.DefNode-class.html" class="summary-name" onclick="show_private();">DefNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.DefwithNode-class.html" class="summary-name" onclick="show_private();">DefwithNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.ElifNode-class.html" class="summary-name" onclick="show_private();">ElifNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.ElseNode-class.html" class="summary-name" onclick="show_private();">ElseNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.ExpressionNode-class.html" class="summary-name" onclick="show_private();">ExpressionNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.ForLoop-class.html" class="summary-name" onclick="show_private();">ForLoop</a><br />
+      Wrapper for expression in for stament to support loop.xxx helpers.
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.ForLoopContext-class.html" class="summary-name" onclick="show_private();">ForLoopContext</a><br />
+      Stackable context for ForLoop to support nested for loops.
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.ForNode-class.html" class="summary-name" onclick="show_private();">ForNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.GAE_Render-class.html" class="summary-name" onclick="show_private();">GAE_Render</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.IfNode-class.html" class="summary-name" onclick="show_private();">IfNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.LineNode-class.html" class="summary-name" onclick="show_private();">LineNode</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.ParseError-class.html" class="summary-name">ParseError</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.Parser-class.html" class="summary-name" onclick="show_private();">Parser</a><br />
+      Parser Base.
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.PythonTokenizer-class.html" class="summary-name" onclick="show_private();">PythonTokenizer</a><br />
+      Utility wrapper over python tokenizer.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.Render-class.html" class="summary-name">Render</a><br />
+      The most preferred way of using templates.
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.SafeVisitor-class.html" class="summary-name" onclick="show_private();">SafeVisitor</a><br />
+      Make sure code is safe by walking through the AST.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.SecurityError-class.html" class="summary-name">SecurityError</a><br />
+      The template seems to be trying to do something naughty.
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.StatementNode-class.html" class="summary-name" onclick="show_private();">StatementNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.SuiteNode-class.html" class="summary-name" onclick="show_private();">SuiteNode</a><br />
+      Suite is a list of sections.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.Template-class.html" class="summary-name">Template</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.TemplateResult-class.html" class="summary-name" onclick="show_private();">TemplateResult</a><br />
+      Dictionary like object for storing template output.
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.TextNode-class.html" class="summary-name" onclick="show_private();">TextNode</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.VarNode-class.html" class="summary-name" onclick="show_private();">VarNode</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template.Render-class.html" class="summary-name">render</a><br />
+      The most preferred way of using templates.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="compile_templates"></a><span class="summary-sig-name">compile_templates</span>(<span class="summary-sig-arg">root</span>)</span><br />
+      Compiles templates to python code.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.template-pysrc.html#compile_templates">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="frender"></a><span class="summary-sig-name">frender</span>(<span class="summary-sig-arg">path</span>,
+        <span class="summary-sig-arg">**keywords</span>)</span><br />
+      Creates a template from the given file path.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.template-pysrc.html#frender">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.template-module.html#splitline" class="summary-sig-name" onclick="show_private();">splitline</a>(<span class="summary-sig-arg">text</span>)</span><br />
+      Splits the given text at newline.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.template-pysrc.html#splitline">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.template-module.html#test" class="summary-sig-name">test</a>()</span><br />
+      Doctest for testing template module.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.template-pysrc.html#test">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template-module.html#ALLOWED_AST_NODES" class="summary-name" onclick="show_private();">ALLOWED_AST_NODES</a> = <code title="['Add',
+ 'And',
+ 'AssList',
+ 'AssName',
+ 'AssTuple',
+ 'Assign',
+ 'AugAssign',
+ 'Bitand',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Add</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">And</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">AssList</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">AssName</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">AssT</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="INDENT"></a><span class="summary-name">INDENT</span> = <code title="'    '"><code class="variable-quote">'</code><code class="variable-string">    </code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYWORDS"></a><span class="summary-name">KEYWORDS</span> = <code title="['pass', 'break', 'continue', 'return']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">pass</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">break</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">continue</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">return</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template-module.html#STATEMENT_NODES" class="summary-name" onclick="show_private();">STATEMENT_NODES</a> = <code title="{'code': &lt;class website.web.template.CodeNode at 0x10facda10&gt;,
+ 'def': &lt;class website.web.template.DefNode at 0x10facd7a0&gt;,
+ 'elif': &lt;class website.web.template.ElifNode at 0x10facd870&gt;,
+ 'else': &lt;class website.web.template.ElseNode at 0x10facd8d8&gt;,
+ 'for': &lt;class website.web.template.ForNode at 0x10facdae0&gt;,
+ 'if': &lt;class website.web.template.IfNode at 0x10facd940&gt;,
+ 'while': &lt;class website.web.template.BlockNode at 0x10facda78&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">code</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.template.CodeNod<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template-module.html#TEMPLATE_BUILTINS" class="summary-name" onclick="show_private();">TEMPLATE_BUILTINS</a> = <code title="{'False': False,
+ 'None': None,
+ 'True': True,
+ '__import__': &lt;built-in function __import__&gt;,
+ 'abs': &lt;built-in function abs&gt;,
+ 'all': &lt;built-in function all&gt;,
+ 'any': &lt;built-in function any&gt;,
+ 'bool': &lt;type 'bool'&gt;,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">False</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">None</code><code class="variable-quote">'</code><code class="variable-op">: </code>None<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">True</code><code class="variable-quote">'</code><code class="variable-op">: </code>Tru<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template-module.html#TEMPLATE_BUILTIN_NAMES" class="summary-name" onclick="show_private();">TEMPLATE_BUILTIN_NAMES</a> = <code title="['dict',
+ 'enumerate',
+ 'float',
+ 'int',
+ 'bool',
+ 'list',
+ 'long',
+ 'reversed',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">dict</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">enumerate</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">float</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">int</code><code class="variable-quote">'</code><code class="variable-op">,</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'website.web'"><code class="variable-quote">'</code><code class="variable-string">website.web</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.template-module.html#config" class="summary-name" onclick="show_private();">config</a> = <code title="&lt;Storage {'debug': True, '__doc__': '\nA configuration object for vari\
+ous aspects of web.py.\n\n`debug`\n   : when True, enables reloading, \
+disabled template caching and sets internalerror to debugerror.\n', 's\
+ession_parameters': &lt;Storage {'ignore_expiry': True, 'secure': False, \
+'cookie_domain': None, 'cookie_name': 'webpy_session_id', 'expired_mes\
+sage': 'Session expired', 'timeout': 86400, 'ignore_change_ip': True, \
+'secret_key': 'fLjUfxqXtfNoIldA0A0J', 'httponly': True, 'cookie_path':\
+ None}&gt;}&gt;">&lt;Storage {'debug': True, '__doc__': '\nA configuratio<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="name"></a><span class="summary-name">name</span> = <code title="'__import__'"><code class="variable-quote">'</code><code class="variable-string">__import__</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="re_compile"></a><span class="summary-name">re_compile</span> = <code title="&lt;website.web.utils.Memoize instance at 0x10f991e18&gt;">&lt;website.web.utils.Memoize instance at 0x10f991e18&gt;</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="splitline"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">splitline</span>(<span class="sig-arg">text</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.template-pysrc.html#splitline">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Splits the given text at newline.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>splitline(<span class="py-string">'foo\nbar'</span>)
+<span class="py-output">('foo\n', 'bar')</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>splitline(<span class="py-string">'foo'</span>)
+<span class="py-output">('foo', '')</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>splitline(<span class="py-string">''</span>)
+<span class="py-output">('', '')</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="test"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">test</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.template-pysrc.html#test">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Doctest for testing template module.</p>
+  <p>Define a utility function to run template test.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">class</span> <span class="py-defname">TestResult</span>:
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, t): self.t = t
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">__getattr__</span>(self, name): return getattr(self.t, name)
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self): return repr(unicode(self))
+<span class="py-more">...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">def</span> <span class="py-defname">t</span>(code, **keywords):
+<span class="py-more">... </span>    tmpl = Template(code, **keywords)
+<span class="py-more">... </span>    return <span class="py-keyword">lambda</span> *a, **kw: TestResult(tmpl(*a, **kw))
+<span class="py-more">...</span></pre>
+  <p>Simple tests.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'1'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with ()\n1'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (a)\n$a'</span>)(1)
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (a=0)\n$a'</span>)(1)
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (a=0)\n$a'</span>)(a=1)
+<span class="py-output">u'1\n'</span></pre>
+  <p>Test complicated expressions.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (x)\n$x.upper()'</span>)(<span class="py-string">'hello'</span>)
+<span class="py-output">u'HELLO\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$(2 * 3 + 4 * 5)'</span>)()
+<span class="py-output">u'26\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'${2 * 3 + 4 * 5}'</span>)()
+<span class="py-output">u'26\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (limit)\nkeep $(limit)ing.'</span>)(<span class="py-string">'go'</span>)
+<span class="py-output">u'keep going.\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (a)\n$a.b[0]'</span>)(storage(b=[1]))
+<span class="py-output">u'1\n'</span></pre>
+  <p>Test html escaping.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (x)\n$x'</span>, filename=<span class="py-string">'a.html'</span>)(<span class="py-string">'&lt;html&gt;'</span>)
+<span class="py-output">u'&amp;lt;html&amp;gt;\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (x)\n$x'</span>, filename=<span class="py-string">'a.txt'</span>)(<span class="py-string">'&lt;html&gt;'</span>)
+<span class="py-output">u'&lt;html&gt;\n'</span></pre>
+  <p>Test if, for and while.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$if 1: 1'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$if 1:\n    1'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t('$<span class="py-keyword">if</span> 1:\n    1\\')()
+<span class="py-output">u'1'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$if 0: 0\n$elif 1: 1'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$if 0: 0\n$elif None: 0\n$else: 1'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$if 0 &lt; 1 and 1 &lt; 2: 1'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$for x in [1, 2, 3]: $x'</span>)()
+<span class="py-output">u'1\n2\n3\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (d)\n$for k, v in d.iteritems(): $k'</span>)({1: 1})
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$for x in [1, 2, 3]:\n\t$x'</span>)()
+<span class="py-output">u'    1\n    2\n    3\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (a)\n$while a and a.pop():1'</span>)([1, 2, 3])
+<span class="py-output">u'1\n1\n1\n'</span></pre>
+  <p>The space after : must be ignored.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$if True: foo'</span>)()
+<span class="py-output">u'foo\n'</span></pre>
+  <p>Test loop.xxx.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">&quot;$for i in range(5):$loop.index, $loop.parity&quot;</span>)()
+<span class="py-output">u'1, odd\n2, even\n3, odd\n4, even\n5, odd\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">&quot;$for i in range(2):\n    $for j in range(2):$loop.parent.parity $loop.parity&quot;</span>)()
+<span class="py-output">u'odd odd\nodd even\neven odd\neven even\n'</span></pre>
+  <p>Test assignment.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$ a = 1\n$a'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$ a = [1]\n$a[0]'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$ a = {1: 1}\n$a.keys()[0]'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$ a = []\n$if not a: 1'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$ a = {}\n$if not a: 1'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$ a = -1\n$a'</span>)()
+<span class="py-output">u'-1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$ a = &quot;1&quot;\n$a'</span>)()
+<span class="py-output">u'1\n'</span></pre>
+  <p>Test comments.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$# 0'</span>)()
+<span class="py-output">u'\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'hello$#comment1\nhello$#comment2'</span>)()
+<span class="py-output">u'hello\nhello\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$#comment0\nhello$#comment1\nhello$#comment2'</span>)()
+<span class="py-output">u'\nhello\nhello\n'</span></pre>
+  <p>Test unicode.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (a)\n$a'</span>)(u<span class="py-string">'\u203d'</span>)
+<span class="py-output">u'\u203d\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (a)\n$a'</span>)(u<span class="py-string">'\u203d'</span>.encode(<span class="py-string">'utf-8'</span>))
+<span class="py-output">u'\u203d\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(u<span class="py-string">'$def with (a)\n$a $:a'</span>)(u<span class="py-string">'\u203d'</span>)
+<span class="py-output">u'\u203d \u203d\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(u<span class="py-string">'$def with ()\nfoo'</span>)()
+<span class="py-output">u'foo\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">def</span> <span class="py-defname">f</span>(x): return x
+<span class="py-more">...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>t(u<span class="py-string">'$def with (f)\n$:f(&quot;x&quot;)'</span>)(f)
+<span class="py-output">u'x\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (f)\n$:f(&quot;x&quot;)'</span>)(f)
+<span class="py-output">u'x\n'</span></pre>
+  <p>Test dollar escaping.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">&quot;Stop, $$money isn't evaluated.&quot;</span>)()
+<span class="py-output">u&quot;Stop, $money isn't evaluated.\n&quot;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">&quot;Stop, \$money isn't evaluated.&quot;</span>)()
+<span class="py-output">u&quot;Stop, $money isn't evaluated.\n&quot;</span></pre>
+  <p>Test space sensitivity.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with (x)\n$x'</span>)(1)
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$def with(x ,y)\n$x'</span>)(1, 1)
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$(1 + 2*3 + 4)'</span>)()
+<span class="py-output">u'11\n'</span></pre>
+  <p>Make sure globals are working.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$x'</span>)()
+<span class="py-except">Traceback (most recent call last):</span>
+<span class="py-except">    ...</span>
+<span class="py-except">NameError: global name 'x' is not defined</span>
+<span class="py-except"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$x'</span>, globals={<span class="py-string">'x'</span>: 1})()
+<span class="py-output">u'1\n'</span></pre>
+  <p>Can't change globals.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$ x = 2\n$x'</span>, globals={<span class="py-string">'x'</span>: 1})()
+<span class="py-output">u'2\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$ x = x + 1\n$x'</span>, globals={<span class="py-string">'x'</span>: 1})()
+<span class="py-except">Traceback (most recent call last):</span>
+<span class="py-except">    ...</span>
+<span class="py-except">UnboundLocalError: local variable 'x' referenced before assignment</span></pre>
+  <p>Make sure builtins are customizable.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$min(1, 2)'</span>)()
+<span class="py-output">u'1\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$min(1, 2)'</span>, builtins={})()
+<span class="py-except">Traceback (most recent call last):</span>
+<span class="py-except">    ...</span>
+<span class="py-except">NameError: global name 'min' is not defined</span></pre>
+  <p>Test vars.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>x = t(<span class="py-string">'$var x: 1'</span>)()
+<span class="py-prompt">&gt;&gt;&gt; </span>x.x
+<span class="py-output">u'1'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>x = t(<span class="py-string">'$var x = 1'</span>)()
+<span class="py-prompt">&gt;&gt;&gt; </span>x.x
+<span class="py-output">1</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>x = t(<span class="py-string">'$var x:  \n    foo\n    bar'</span>)()
+<span class="py-prompt">&gt;&gt;&gt; </span>x.x
+<span class="py-output">u'foo\nbar\n'</span></pre>
+  <p>Test BOM chars.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'\xef\xbb\xbf$def with(x)\n$x'</span>)(<span class="py-string">'foo'</span>)
+<span class="py-output">u'foo\n'</span></pre>
+  <p>Test for with weird cases.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">'$for i in range(10)[1:5]:\n    $i'</span>)()
+<span class="py-output">u'1\n2\n3\n4\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">&quot;$for k, v in {'a': 1, 'b': 2}.items():\n    $k $v&quot;</span>)()
+<span class="py-output">u'a 1\nb 2\n'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">&quot;$for k, v in ({'a': 1, 'b': 2}.items():\n    $k $v&quot;</span>)()
+<span class="py-except">Traceback (most recent call last):</span>
+<span class="py-except">    ...</span>
+<span class="py-except">SyntaxError: invalid syntax</span></pre>
+  <p>Test datetime.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> datetime
+<span class="py-prompt">&gt;&gt;&gt; </span>t(<span class="py-string">&quot;$def with (date)\n$date.strftime('%m %Y')&quot;</span>)(datetime.datetime(2009, 1, 1))
+<span class="py-output">u'01 2009\n'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="ALLOWED_AST_NODES"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ALLOWED_AST_NODES</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Add</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">And</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">AssList</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">AssName</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">AssTuple</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Assign</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">AugAssign</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Bitand</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="STATEMENT_NODES"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">STATEMENT_NODES</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">code</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.template.CodeNode at 0x10facda10&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">def</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.template.DefNode at 0x10facd7a0&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">elif</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.template.ElifNode at 0x10facd870&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">else</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.template.ElseNode at 0x10facd8d8&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">for</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.template.ForNode at 0x10facdae0&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">if</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.template.IfNode at 0x10facd940&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">while</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.template.BlockNode at 0x10facda78&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TEMPLATE_BUILTINS"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TEMPLATE_BUILTINS</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">False</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">None</code><code class="variable-quote">'</code><code class="variable-op">: </code>None<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">True</code><code class="variable-quote">'</code><code class="variable-op">: </code>True<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">__import__</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;built-in function __import__&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">abs</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;built-in function abs&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">all</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;built-in function all&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">any</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;built-in function any&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">bool</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;type 'bool'&gt;<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="TEMPLATE_BUILTIN_NAMES"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TEMPLATE_BUILTIN_NAMES</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">dict</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">enumerate</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">float</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">int</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">bool</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">list</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">long</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">reversed</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="config"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">config</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+&lt;Storage {'debug': True, '__doc__': '\nA configuration object for vari<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ous aspects of web.py.\n\n`debug`\n   : when True, enables reloading, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+disabled template caching and sets internalerror to debugerror.\n', 's<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ession_parameters': &lt;Storage {'ignore_expiry': True, 'secure': False, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+'cookie_domain': None, 'cookie_name': 'webpy_session_id', 'expired_mes<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+sage': 'Session expired', 'timeout': 86400, 'ignore_change_ip': True, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+'secret_key': 'fLjUfxqXtfNoIldA0A0J', 'httponly': True, 'cookie_path':<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ None}&gt;}&gt;
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Nov 28 02:31:23 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

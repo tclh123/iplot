@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>website.web.db</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="website-module.html">Package&nbsp;website</a> ::
+        <a href="website.web-module.html">Package&nbsp;web</a> ::
+        Module&nbsp;db
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="website.web.db-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module db</h1><p class="nomargin-top"><span class="codelink"><a href="website.web.db-pysrc.html">source&nbsp;code</a></span></p>
+<p>Database API (part of web.py)</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.DB-class.html" class="summary-name">DB</a><br />
+      Database
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.FirebirdDB-class.html" class="summary-name" onclick="show_private();">FirebirdDB</a><br />
+      Firebird Database.
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.MSSQLDB-class.html" class="summary-name" onclick="show_private();">MSSQLDB</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.MySQLDB-class.html" class="summary-name" onclick="show_private();">MySQLDB</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.OracleDB-class.html" class="summary-name" onclick="show_private();">OracleDB</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.PostgresDB-class.html" class="summary-name" onclick="show_private();">PostgresDB</a><br />
+      Postgres driver.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.SQLLiteral-class.html" class="summary-name">SQLLiteral</a><br />
+      Protects a string from `sqlquote`.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.SQLParam-class.html" class="summary-name">SQLParam</a><br />
+      Parameter in SQLQuery.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.SQLQuery-class.html" class="summary-name">SQLQuery</a><br />
+      You can pass this sort of thing as a clause in any db function.
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.SqliteDB-class.html" class="summary-name" onclick="show_private();">SqliteDB</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.Transaction-class.html" class="summary-name" onclick="show_private();">Transaction</a><br />
+      Database transaction.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.TransactionError-class.html" class="summary-name">TransactionError</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.UnknownDB-class.html" class="summary-name">UnknownDB</a><br />
+      raised for unsupported dbms
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.UnknownParamstyle-class.html" class="summary-name">UnknownParamstyle</a><br />
+      raised for unsupported db paramstyles
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db._ItplError-class.html" class="summary-name" onclick="show_private();">_ItplError</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.SQLLiteral-class.html" class="summary-name">sqlliteral</a><br />
+      Protects a string from `sqlquote`.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db.SQLParam-class.html" class="summary-name">sqlparam</a><br />
+      Parameter in SQLQuery.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.db-module.html#_interpolate" class="summary-sig-name" onclick="show_private();">_interpolate</a>(<span class="summary-sig-arg">format</span>)</span><br />
+      Takes a format string and returns a list of 2-tuples of the form 
+      (boolean, string) where boolean says whether string should be evaled 
+      or not.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#_interpolate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_sqllist"></a><span class="summary-sig-name">_sqllist</span>(<span class="summary-sig-arg">values</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#_sqllist">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.db-module.html#database" class="summary-sig-name">database</a>(<span class="summary-sig-arg">dburl</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**params</span>)</span><br />
+      Creates appropriate database using params.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#database">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="import_driver"></a><span class="summary-sig-name">import_driver</span>(<span class="summary-sig-arg">drivers</span>,
+        <span class="summary-sig-arg">preferred</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Import the first available driver or preferred driver.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#import_driver">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.db-module.html#register_database" class="summary-sig-name" onclick="show_private();">register_database</a>(<span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">clazz</span>)</span><br />
+      Register a database.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#register_database">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.db-module.html#reparam" class="summary-sig-name">reparam</a>(<span class="summary-sig-arg">string_</span>,
+        <span class="summary-sig-arg">dictionary</span>)</span><br />
+      Takes a string and a dictionary and interpolates the string using 
+      values from the dictionary.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#reparam">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.db-module.html#sqlify" class="summary-sig-name" onclick="show_private();">sqlify</a>(<span class="summary-sig-arg">obj</span>)</span><br />
+      converts `obj` to its proper SQL version</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#sqlify">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.db-module.html#sqllist" class="summary-sig-name">sqllist</a>(<span class="summary-sig-arg">lst</span>)</span><br />
+      Converts the arguments for use in something like a WHERE clause.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#sqllist">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.db-module.html#sqlors" class="summary-sig-name">sqlors</a>(<span class="summary-sig-arg">left</span>,
+        <span class="summary-sig-arg">lst</span>)</span><br />
+      `left is a SQL clause like `tablename.arg = ` and `lst` is a list of 
+      values.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#sqlors">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.db-module.html#sqlquote" class="summary-sig-name">sqlquote</a>(<span class="summary-sig-arg">a</span>)</span><br />
+      Ensures `a` is quoted properly for use in a SQL query.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#sqlquote">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="website.web.db-module.html#sqlwhere" class="summary-sig-name" onclick="show_private();">sqlwhere</a>(<span class="summary-sig-arg">dictionary</span>,
+        <span class="summary-sig-arg">grouping</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"> AND </code><code class="variable-quote">'</code></span>)</span><br />
+      Converts a `dictionary` to an SQL WHERE clause `SQLQuery`.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="website.web.db-pysrc.html#sqlwhere">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'website.web'"><code class="variable-quote">'</code><code class="variable-string">website.web</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db-module.html#_databases" class="summary-name" onclick="show_private();">_databases</a> = <code title="{'firebird': &lt;class website.web.db.FirebirdDB at 0x10fa37940&gt;,
+ 'mssql': &lt;class website.web.db.MSSQLDB at 0x10fa379a8&gt;,
+ 'mysql': &lt;class website.web.db.MySQLDB at 0x10fa37870&gt;,
+ 'oracle': &lt;class website.web.db.OracleDB at 0x10fa37a10&gt;,
+ 'postgres': &lt;class website.web.db.PostgresDB at 0x10fa37808&gt;,
+ 'sqlite': &lt;class website.web.db.SqliteDB at 0x10fa378d8&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">firebird</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.db.FirebirdDB at <code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db-module.html#config" class="summary-name" onclick="show_private();">config</a> = <code title="&lt;Storage {'debug': True, '__doc__': '\nA configuration object for vari\
+ous aspects of web.py.\n\n`debug`\n   : when True, enables reloading, \
+disabled template caching and sets internalerror to debugerror.\n', 's\
+ession_parameters': &lt;Storage {'ignore_expiry': True, 'secure': False, \
+'cookie_domain': None, 'cookie_name': 'webpy_session_id', 'expired_mes\
+sage': 'Session expired', 'timeout': 86400, 'ignore_change_ip': True, \
+'secret_key': 'fLjUfxqXtfNoIldA0A0J', 'httponly': True, 'cookie_path':\
+ None}&gt;}&gt;">&lt;Storage {'debug': True, '__doc__': '\nA configuratio<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="website.web.db-module.html#iters" class="summary-name" onclick="show_private();">iters</a> = <code title="(&lt;type 'list'&gt;, &lt;type 'tuple'&gt;, &lt;type 'set'&gt;, &lt;type 'set'&gt;)">(&lt;type 'list'&gt;, &lt;type 'tuple'&gt;, &lt;type 'set'&gt;, &lt;type 's<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_interpolate"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_interpolate</span>(<span class="sig-arg">format</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.db-pysrc.html#_interpolate">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Takes a format string and returns a list of 2-tuples of the form 
+  (boolean, string) where boolean says whether string should be evaled or 
+  not.</p>
+  <p>from &lt;http://lfw.org/python/Itpl.py&gt; (public domain, Ka-Ping 
+  Yee)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="database"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">database</span>(<span class="sig-arg">dburl</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">**params</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.db-pysrc.html#database">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates appropriate database using params.</p>
+  <p>Pooling will be enabled if DBUtils module is available. Pooling can be
+  disabled by passing pooling=False in params.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="register_database"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">register_database</span>(<span class="sig-arg">name</span>,
+        <span class="sig-arg">clazz</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.db-pysrc.html#register_database">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Register a database.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">class</span> <span class="py-defname">LegacyDB</span>(DB): 
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, **params): 
+<span class="py-more">... </span>       <span class="py-keyword">pass</span> 
+<span class="py-more">...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>register_database(<span class="py-string">'legacy'</span>, LegacyDB)
+<span class="py-prompt">&gt;&gt;&gt; </span>db = database(dbn=<span class="py-string">'legacy'</span>, db=<span class="py-string">'test'</span>, user=<span class="py-string">'joe'</span>, passwd=<span class="py-string">'secret'</span>)</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="reparam"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">reparam</span>(<span class="sig-arg">string_</span>,
+        <span class="sig-arg">dictionary</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.db-pysrc.html#reparam">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Takes a string and a dictionary and interpolates the string using 
+  values from the dictionary. Returns an `SQLQuery` for the result.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>reparam(<span class="py-string">&quot;s = $s&quot;</span>, dict(s=True))
+<span class="py-output">&lt;sql: &quot;s = 't'&quot;&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>reparam(<span class="py-string">&quot;s IN $s&quot;</span>, dict(s=[1, 2]))
+<span class="py-output">&lt;sql: 's IN (1, 2)'&gt;</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="sqlify"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sqlify</span>(<span class="sig-arg">obj</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.db-pysrc.html#sqlify">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>converts `obj` to its proper SQL version</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sqlify(None)
+<span class="py-output">'NULL'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>sqlify(True)
+<span class="py-output">&quot;'t'&quot;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>sqlify(3)
+<span class="py-output">'3'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="sqllist"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sqllist</span>(<span class="sig-arg">lst</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.db-pysrc.html#sqllist">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts the arguments for use in something like a WHERE clause.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sqllist([<span class="py-string">'a'</span>, <span class="py-string">'b'</span>])
+<span class="py-output">'a, b'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>sqllist(<span class="py-string">'a'</span>)
+<span class="py-output">'a'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>sqllist(u<span class="py-string">'abc'</span>)
+<span class="py-output">u'abc'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="sqlors"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sqlors</span>(<span class="sig-arg">left</span>,
+        <span class="sig-arg">lst</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.db-pysrc.html#sqlors">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>`left is a SQL clause like `tablename.arg = ` and `lst` is a list of 
+  values. Returns a reparam-style pair featuring the SQL that ORs together 
+  the clause for each item in the lst.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sqlors(<span class="py-string">'foo = '</span>, [])
+<span class="py-output">&lt;sql: '1=2'&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>sqlors(<span class="py-string">'foo = '</span>, [1])
+<span class="py-output">&lt;sql: 'foo = 1'&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>sqlors(<span class="py-string">'foo = '</span>, 1)
+<span class="py-output">&lt;sql: 'foo = 1'&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>sqlors(<span class="py-string">'foo = '</span>, [1,2,3])
+<span class="py-output">&lt;sql: '(foo = 1 OR foo = 2 OR foo = 3 OR 1=2)'&gt;</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="sqlquote"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sqlquote</span>(<span class="sig-arg">a</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.db-pysrc.html#sqlquote">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Ensures `a` is quoted properly for use in a SQL query.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'WHERE x = '</span> + sqlquote(True) + <span class="py-string">' AND y = '</span> + sqlquote(3)
+<span class="py-output">&lt;sql: &quot;WHERE x = 't' AND y = 3&quot;&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'WHERE x = '</span> + sqlquote(True) + <span class="py-string">' AND y IN '</span> + sqlquote([2, 3])
+<span class="py-output">&lt;sql: &quot;WHERE x = 't' AND y IN (2, 3)&quot;&gt;</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="sqlwhere"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sqlwhere</span>(<span class="sig-arg">dictionary</span>,
+        <span class="sig-arg">grouping</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"> AND </code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="website.web.db-pysrc.html#sqlwhere">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts a `dictionary` to an SQL WHERE clause `SQLQuery`.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sqlwhere({<span class="py-string">'cust_id'</span>: 2, <span class="py-string">'order_id'</span>:3})
+<span class="py-output">&lt;sql: 'order_id = 3 AND cust_id = 2'&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>sqlwhere({<span class="py-string">'cust_id'</span>: 2, <span class="py-string">'order_id'</span>:3}, grouping=<span class="py-string">', '</span>)
+<span class="py-output">&lt;sql: 'order_id = 3, cust_id = 2'&gt;</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>sqlwhere({<span class="py-string">'a'</span>: <span class="py-string">'a'</span>, <span class="py-string">'b'</span>: <span class="py-string">'b'</span>}).query()
+<span class="py-output">'a = %s AND b = %s'</span></pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_databases"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_databases</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">firebird</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.db.FirebirdDB at 0x10fa37940&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mssql</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.db.MSSQLDB at 0x10fa379a8&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">mysql</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.db.MySQLDB at 0x10fa37870&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">oracle</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.db.OracleDB at 0x10fa37a10&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">postgres</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.db.PostgresDB at 0x10fa37808&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">sqlite</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class website.web.db.SqliteDB at 0x10fa378d8&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="config"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">config</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+&lt;Storage {'debug': True, '__doc__': '\nA configuration object for vari<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ous aspects of web.py.\n\n`debug`\n   : when True, enables reloading, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+disabled template caching and sets internalerror to debugerror.\n', 's<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ession_parameters': &lt;Storage {'ignore_expiry': True, 'secure': False, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+'cookie_domain': None, 'cookie_name': 'webpy_session_id', 'expired_mes<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+sage': 'Session expired', 'timeout': 86400, 'ignore_change_ip': True, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+'secret_key': 'fLjUfxqXtfNoIldA0A0J', 'httponly': True, 'cookie_path':<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ None}&gt;}&gt;
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="iters"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">iters</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+(&lt;type 'list'&gt;, &lt;type 'tuple'&gt;, &lt;type 'set'&gt;, &lt;type 'set'&gt;)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="website-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Nov 28 02:31:23 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
